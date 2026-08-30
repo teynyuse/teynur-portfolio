@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "slug": "evolution-wall",
+    "title": "Evolution Wall",
+    "subtitle": "Interactive museum installation",
+    "year": 2026,
+    "description": "An interactive installation combining software, hardware and physical interaction.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Raspberry Pi",
+      "ESP32",
+      "RFID"
+    ],
+    "image": "/images/projects/evolution-wall.jpg",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "slug": "unreal-photo-experience",
+    "title": "Unreal Photo Experience",
+    "subtitle": "Interactive photo experience",
+    "year": 2026,
+    "description": "An interactive Unreal Engine experience for capturing photos and generating a QR-based mobile flow.",
+    "technologies": [
+      "Unreal Engine",
+      "Blueprints",
+      "Node.js"
+    ],
+    "image": "/images/projects/unreal-photo.jpg",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "slug": "vree",
+    "title": "Vree",
+    "subtitle": "Social scheduling app",
+    "year": 2026,
+    "description": "A mobile app concept designed to make finding time with friends easier.",
+    "technologies": [
+      "Product Design",
+      "UX",
+      "Mobile"
+    ],
+    "image": "/images/projects/vree.jpg",
+    "featured": true
+  }
+]
