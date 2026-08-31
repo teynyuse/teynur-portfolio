@@ -1,10 +1,17 @@
 .header {
   width: 100%;
-  background: var(--color-bg);
   margin-top: 2rem;
+
+  position: relative;
+  z-index: 2000;
+
+  background: var(--color-bg);
 }
 
 .nav {
+  position: relative;
+  z-index: 2002;
+
   height: 80px;
 
   display: grid;
@@ -28,7 +35,8 @@
 
   transition:
     opacity 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    color 0.25s ease;
 }
 
 .logo {
@@ -37,7 +45,6 @@
   font-weight: 800;
 }
 
-/* dezelfde dots-stijl als SectionTitle */
 .logoDots {
   height: 20px;
 
@@ -51,7 +58,9 @@
 
   opacity: 0;
 
-  transform: translateY(-0.3rem) translateX(-3px);
+  transform:
+    translateY(-0.3rem)
+    translateX(-3px);
 
   transition:
     opacity 0.25s ease,
@@ -65,18 +74,19 @@
   line-height: 5px;
 }
 
-/* home is actief */
 .logoActive .logoDots {
   opacity: 1;
 
-  transform: translateY(-0.3rem) translateX(0);
+  transform:
+    translateY(-0.3rem)
+    translateX(0);
 }
 
 /* =========================
-   NAVIGATION LINKS
+   DESKTOP NAVIGATION
 ========================= */
 
-.links {
+.desktopLinks {
   display: flex;
   align-items: center;
 
@@ -102,7 +112,6 @@
     transform 0.25s ease;
 }
 
-/* kleine versie van SectionTitle dots */
 .dots {
   height: 18px;
 
@@ -116,7 +125,9 @@
 
   opacity: 0;
 
-  transform: translateY(-0.25rem) translateX(-3px);
+  transform:
+    translateY(-0.25rem)
+    translateX(-3px);
 
   transition:
     opacity 0.25s ease,
@@ -130,7 +141,6 @@
   line-height: 4px;
 }
 
-/* actieve pagina */
 .active {
   font-weight: 700;
 }
@@ -138,14 +148,16 @@
 .active .dots {
   opacity: 1;
 
-  transform: translateY(-0.25rem) translateX(0);
+  transform:
+    translateY(-0.25rem)
+    translateX(0);
 }
 
 /* =========================
    LANGUAGE
 ========================= */
 
-.language {
+.desktopLanguage {
   justify-self: end;
 
   display: flex;
@@ -159,7 +171,8 @@
   line-height: 1;
 }
 
-.language button {
+.desktopLanguage button,
+.mobileLanguage button {
   padding: 0;
 
   border: 0;
@@ -183,7 +196,73 @@
 }
 
 /* =========================
-   HOVER
+   HAMBURGER
+========================= */
+
+.menuButton {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  position: relative;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.menuButton span {
+  position: absolute;
+
+  left: 9px;
+
+  width: 24px;
+  height: 2px;
+
+  background: var(--color-text-secondary);
+
+  transform-origin: center;
+
+  transition:
+    top 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.menuButton span:first-child {
+  top: 16px;
+}
+
+.menuButton span:last-child {
+  top: 24px;
+}
+
+.menuButtonOpen span:first-child {
+  top: 20px;
+
+  transform: rotate(45deg);
+}
+
+.menuButtonOpen span:last-child {
+  top: 20px;
+
+  transform: rotate(-45deg);
+}
+
+/* =========================
+   MOBILE MENU DEFAULT
+========================= */
+
+.mobileMenu {
+  display: none;
+}
+
+/* =========================
+   DESKTOP HOVER
 ========================= */
 
 @media (hover: hover) and (pointer: fine) {
@@ -194,7 +273,9 @@
   .navLink:hover .dots {
     opacity: 0.45;
 
-    transform: translateY(-0.25rem) translateX(0);
+    transform:
+      translateY(-0.25rem)
+      translateX(0);
   }
 
   .navLink.active:hover .dots {
@@ -208,14 +289,17 @@
   .logoLink:hover .logoDots {
     opacity: 0.45;
 
-    transform: translateY(-0.3rem) translateX(0);
+    transform:
+      translateY(-0.3rem)
+      translateX(0);
   }
 
   .logoActive:hover .logoDots {
     opacity: 1;
   }
 
-  .language button:hover {
+  .desktopLanguage button:hover,
+  .mobileLanguage button:hover {
     opacity: 1;
 
     transform: translateY(-1px);
@@ -223,58 +307,358 @@
 }
 
 /* =========================
-   RESPONSIVE
+   MOBILE
 ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
+  .header {
+    margin-top: 0;
+
+    position: relative;
+    z-index: 2000;
+
+    background: transparent;
+  }
+
   .nav {
-    height: 70px;
+    position: fixed;
 
-    grid-template-columns: auto 1fr auto;
+    top: 0;
+    left: 0;
+    right: 0;
 
-    gap: 20px;
+    z-index: 2003;
+
+    height: 88px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    align-items: center;
+
+    padding-top: 18px;
+    padding-bottom: 18px;
+
+    background: transparent;
+
+    pointer-events: none;
   }
 
-  .links {
-    justify-content: center;
-
-    gap: 14px;
+  .logoLink,
+  .menuButton {
+    pointer-events: auto;
   }
 
-  .navLink {
-    font-size: 13px;
+  .desktopLinks,
+  .desktopLanguage {
+    display: none;
   }
 
-  .language {
-    font-size: 13px;
+  /* =========================
+     MOBILE LOGO
+  ========================= */
+
+  .logoLink {
+    position: relative;
+
+    z-index: 2004;
+
+    justify-self: start;
+
+    color: var(--color-text-secondary);
   }
 
   .logo {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   .logoDots {
-    height: 17px;
+    height: 19px;
 
-    font-size: 24px;
+    font-size: 27px;
 
-    transform: translateY(-0.25rem) translateX(-3px);
+    transform:
+      translateY(-0.28rem)
+      translateX(-3px);
   }
 
   .logoActive .logoDots {
-    transform: translateY(-0.25rem) translateX(0);
+    transform:
+      translateY(-0.28rem)
+      translateX(0);
   }
 
-  .dots {
-    height: 15px;
+  /* =========================
+     MOBILE HAMBURGER
+  ========================= */
 
-    font-size: 20px;
+  .menuButton {
+    position: relative;
 
-    transform: translateY(-0.2rem) translateX(-3px);
+    z-index: 2004;
+
+    display: block;
+
+    justify-self: end;
   }
 
-  .active .dots {
-    transform: translateY(-0.2rem) translateX(0);
+  /* menu open = logo + X wit */
+
+  .header:has(.mobileMenuOpen) .logoLink {
+    color: var(--color-accent-text);
+  }
+
+  .header:has(.mobileMenuOpen) .menuButton span {
+    background: var(--color-accent-text);
+  }
+
+  /* =========================
+     FULLSCREEN PANEL
+  ========================= */
+
+  .mobileMenu {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2001;
+
+    display: block;
+
+    width: 100%;
+    height: 100svh;
+
+    background: var(--color-section-bg);
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateY(-12px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s linear 0.45s;
+  }
+
+  .mobileMenuOpen {
+    visibility: visible;
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s;
+  }
+
+  .mobileMenuInner {
+    width: 100%;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 125px;
+    padding-bottom: 34px;
+
+    color: var(--color-accent-text);
+  }
+
+  /* =========================
+     MOBILE LINKS
+  ========================= */
+
+  .mobileLinks {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    border-top: 0.5px solid currentColor;
+  }
+
+  .mobileLink {
+    min-height: 72px;
+
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    color: inherit;
+    text-decoration: none;
+
+    border-bottom: 0.5px solid currentColor;
+
+    opacity: 0;
+
+    transform: translateY(14px);
+
+    transition:
+      opacity 0.35s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .mobileMenuOpen .mobileLink {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+  .mobileIndex {
+    font-size: 9px;
+    line-height: 1;
+
+    opacity: 0.5;
+  }
+
+  .mobileLabel {
+    min-width: 0;
+
+    font-size: clamp(34px, 9.5vw, 48px);
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -0.03em;
+  }
+
+  /* =========================
+     ACTIVE MOBILE DOTS
+  ========================= */
+
+  .mobileDots {
+    width: 18px;
+    height: 34px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-size: 32px;
+    line-height: 0.2;
+    font-weight: 800;
+
+    opacity: 0;
+
+    transform: translateX(-4px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .mobileDots span {
+    display: block;
+
+    height: 10px;
+    line-height: 5px;
+  }
+
+  .mobileActive {
+    font-weight: 700;
+  }
+
+  .mobileActive .mobileDots {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+
+  /* =========================
+     MOBILE BOTTOM
+  ========================= */
+
+  .mobileMenuBottom {
+    width: 100%;
+
+    margin-top: auto;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    padding-top: 36px;
+  }
+
+  .mobileLanguage {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: var(--color-accent-text);
+
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .mobileMenuBottom p {
+    margin: 0;
+
+    color: var(--color-accent-text);
+
+    text-align: right;
+
+    font-size: 18px;
+    line-height: 0.95;
+
+    font-weight: 700;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+  .nav {
+    height: 82px;
+
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .mobileMenuInner {
+    padding-top: 108px;
+    padding-bottom: 28px;
+  }
+
+  .mobileLink {
+    min-height: 66px;
+
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+  }
+
+  .mobileLabel {
+    font-size: clamp(31px, 9vw, 40px);
+  }
+
+  .mobileIndex {
+    font-size: 8px;
+  }
+
+  .mobileMenuBottom {
+    padding-top: 28px;
+  }
+
+  .mobileMenuBottom p {
+    font-size: 16px;
+  }
+
+  .mobileLanguage {
+    font-size: 13px;
   }
 }
 
@@ -287,13 +671,25 @@
   .logoDots,
   .navLink,
   .dots,
-  .language button {
+  .desktopLanguage button,
+  .mobileLanguage button,
+  .menuButton span,
+  .mobileMenu,
+  .mobileLink,
+  .mobileDots {
     transition: none;
+  }
+
+  .mobileLink {
+    opacity: 1;
+
+    transform: none;
   }
 
   .logoLink:hover,
   .navLink:hover,
-  .language button:hover {
+  .desktopLanguage button:hover,
+  .mobileLanguage button:hover {
     transform: none;
   }
 }

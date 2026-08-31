@@ -58,3 +58,27 @@
 .grid > *:nth-child(3) {
   animation-delay: 0.34s;
 }
+
+@media (max-width: 700px) {
+  .section {
+    min-height: auto;
+
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+  .imageWrapper {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .card + .card {
+    border-left: 0.5px solid var(--color-border);
+  }
+}

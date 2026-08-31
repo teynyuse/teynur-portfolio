@@ -214,3 +214,42 @@
     transition: none;
   }
 }
+
+@media (max-width: 700px) {
+  .card {
+    width: 100%;
+  }
+
+  .imageWrapper {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .info {
+    min-height: auto;
+
+    padding: 14px;
+
+    gap: 12px;
+  }
+
+  .tags {
+    gap: 5px 10px;
+  }
+
+  .tag:nth-child(n + 3) {
+    display: none;
+  }
+
+  .info h3 {
+    font-size: 18px;
+  }
+
+  .info p {
+    font-size: 14px;
+  }
+
+  .year {
+    font-size: 11px;
+  }
+}
