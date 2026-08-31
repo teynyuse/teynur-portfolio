@@ -319,13 +319,8 @@
 
     background: transparent;
   }
-
   .nav {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
 
     z-index: 2003;
 
@@ -340,8 +335,6 @@
     padding-bottom: 18px;
 
     background: transparent;
-
-    pointer-events: none;
   }
 
   .logoLink,
