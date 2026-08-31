@@ -26,9 +26,30 @@ const kefa = localFont({
   variable: "--font-kefa",
 });
 
-export const metadata: Metadata = {
-  title: "Teynur Yuseinov",
-  description: "Developer, designer and maker.",
+export const metadata = {
+  metadataBase: new URL("https://www.teynuryuseinov.be"),
+
+  title: {
+    default: "Teynur Yuseinov — Developer, Designer & Maker",
+    template: "%s | Teynur Yuseinov",
+  },
+
+  description:
+    "Portfolio of Teynur Yuseinov, a developer and designer creating interactive digital and physical experiences across software, design and creative technology.",
+
+  authors: [
+    {
+      name: "Teynur Yuseinov",
+    },
+  ],
+
+  creator: "Teynur Yuseinov",
+
+  openGraph: {
+    type: "website",
+    locale: "en_BE",
+    siteName: "Teynur Yuseinov",
+  },
 };
 
 export default function RootLayout({

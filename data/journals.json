@@ -7,23 +7,5 @@
     "date": "2026-08-30",
     "excerpt": "What building my first physical interactive installation taught me.",
     "image": "/images/journal/physical-installation.jpg"
-  },
-  {
-    "id": 2,
-    "slug": "from-design-to-development",
-    "title": "From design to development",
-    "category": "Personal",
-    "date": "2026-08-20",
-    "excerpt": "How my background in design gradually led me into software development.",
-    "image": "/images/journal/design-development.jpg"
-  },
-  {
-    "id": 3,
-    "slug": "working-in-professional-it",
-    "title": "Stepping into professional IT",
-    "category": "Work",
-    "date": "2026-08-10",
-    "excerpt": "Things I learned when moving from school projects into a professional IT environment.",
-    "image": "/images/journal/professional-it.jpg"
   }
 ]

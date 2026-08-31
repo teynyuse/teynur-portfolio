@@ -5,36 +5,96 @@
     "title": "Evolution Wall",
     "subtitle": "Interactive museum installation",
     "year": 2026,
+    "featured": true,
     "tag": [
-      "Interactive"
+      "Interactive",
+      "Creative Technology",
+      "Internet of Things"
     ],
-    "description": "An interactive installation combining software, hardware and physical interaction.",
     "technologies": [
-      "UnrealEngine",
-      "Express.js",
+      "Unreal Engine",
       "Node.js",
+      "Express.js",
       "Blueprints"
     ],
     "image": "/images/projects/evolution-wall.jpg",
-    "featured": true
+    "seo": {
+      "title": "Evolution Wall – Interactive Museum Installation",
+      "description": "Evolution Wall is an interactive museum installation combining software, physical interaction and digital experiences.",
+      "keywords": [
+        "interactive installation",
+        "museum technology",
+        "Unreal Engine",
+        "creative technology",
+        "interaction design",
+        "portfolio"
+      ]
+    },
+    "overview": "An interactive installation that connects digital content with physical interaction to create an accessible museum experience.",
+    "details": {
+      "client": "Academic project",
+      "role": "Design and Development",
+      "type": "Interactive Installation",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Evolution Wall explores how software, visual design and physical interaction can work together in a museum environment. The experience was designed to make digital content feel tangible rather than presenting information on a traditional screen.",
+      "challenge": "The project required a clear interaction flow that visitors could understand immediately while also connecting several technical systems behind the scenes.",
+      "approach": "I designed the visitor journey, built the interactive experience and connected the application to supporting services responsible for content and media handling. The visual interface was kept deliberately simple so that the interaction remained the main focus.",
+      "result": "The final installation combines physical interaction with a responsive digital experience and demonstrates how software can become part of a physical environment."
+    },
+    "gallery": []
   },
   {
     "id": 2,
-    "slug": "Het Fossielenspoor",
+    "slug": "het-fossielenspoor",
     "title": "Het Fossielenspoor",
-    "subtitle": "Fysical and digital museum experience",
+    "subtitle": "Physical and digital museum experience",
     "year": 2026,
+    "featured": true,
     "tag": [
-      "Internet Of Things"
+      "Interactive",
+      "Internet of Things",
+      "Web Development"
     ],
-    "description": "A museum experience that combines physical and digital interaction to educate visitors about fossils.",
     "technologies": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Node.js",
+      "Express.js",
       "Raspberry Pi",
       "ESP32",
-      "Vite"
+      "RFID"
     ],
     "image": "/images/projects/het-fossielenspoor.jpg",
-    "featured": true
+    "seo": {
+      "title": "Het Fossielenspoor – Interactive Fossil Museum Experience",
+      "description": "Het Fossielenspoor is an interactive museum installation built with React, Raspberry Pi, RFID and ESP32 technology.",
+      "keywords": [
+        "Raspberry Pi project",
+        "RFID installation",
+        "interactive museum",
+        "React",
+        "ESP32",
+        "IoT",
+        "creative technology"
+      ]
+    },
+    "overview": "A museum experience in which visitors discover fossils through RFID-enabled physical objects, light, sound and an interactive touchscreen.",
+    "details": {
+      "client": "Huis van Kina",
+      "role": "Interaction Design and Development",
+      "type": "Interactive Museum Installation",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Het Fossielenspoor was designed as a playful way for children to discover fossils through physical exploration. Instead of navigating a conventional interface, visitors interact with physical fossil objects that trigger digital information on a touchscreen.",
+      "challenge": "The experience had to remain simple enough for young visitors while coordinating RFID detection, LED feedback, audio, images and interface states across several pieces of hardware.",
+      "approach": "I created a React and TypeScript interface running on a Raspberry Pi and connected RFID scanning to the application. An ESP32 controls LED feedback around the installation. Fossil information, images and audio are managed through structured data so the content can be updated without rebuilding the interface.",
+      "result": "The finished installation creates a direct connection between touching a physical object and discovering its digital story, combining web development, embedded hardware and interaction design in one experience."
+    },
+    "gallery": []
   },
   {
     "id": 3,
@@ -42,17 +102,39 @@
     "title": "Vree",
     "subtitle": "Social scheduling app",
     "year": 2026,
+    "featured": true,
     "tag": [
-      "Mobile"
-    ],
-    "description": "A mobile app concept designed to make finding time with friends easier.",
-    "technologies": [
       "Product Design",
-      "UX",
-      "Mobile"
+      "Mobile",
+      "Interaction Design"
     ],
+    "technologies": [],
     "image": "/images/projects/vree.jpg",
-    "featured": true
+    "seo": {
+      "title": "Vree – Social Scheduling App Concept",
+      "description": "Vree is a social scheduling app concept designed to make finding a moment to meet with friends easier.",
+      "keywords": [
+        "mobile app design",
+        "social scheduling",
+        "product design",
+        "interaction design",
+        "calendar app"
+      ]
+    },
+    "overview": "A mobile app concept focused on making it easier for friends to discover when they are available at the same time.",
+    "details": {
+      "client": "Personal project",
+      "role": "Product and Interaction Design",
+      "type": "Mobile Application",
+      "status": "Concept"
+    },
+    "content": {
+      "intro": "Vree started from a simple question: when are you free? The application is designed around shared availability instead of long conversations trying to find a date that works for everyone.",
+      "challenge": "Scheduling with friends often requires comparing several calendars, sending multiple messages and repeatedly suggesting dates.",
+      "approach": "The concept combines personal availability, calendar synchronisation and event-specific conversations. Friends can indicate when they are free and immediately discover matching moments.",
+      "result": "Vree turns scheduling into a shared social experience and provides a foundation for a mobile product centred around real-life meetings rather than another general-purpose chat platform."
+    },
+    "gallery": []
   },
   {
     "id": 4,
@@ -60,7 +142,7 @@
     "title": "Quibo",
     "subtitle": "Book exchange platform",
     "year": 2024,
-    "description": "Quibo was my graduation project for the Graduate Degree in Programming. It is a platform where users can exchange books, read reviews, organise their personal bookshelf and chat with other book lovers. The project combines sustainability with a social reading experience.",
+    "featured": false,
     "tag": [
       "Web Development"
     ],
@@ -71,7 +153,31 @@
       "Tailwind CSS"
     ],
     "image": "/images/covers/project1.jpg",
-    "featured": false
+    "seo": {
+      "title": "Quibo – Book Exchange Web Platform",
+      "description": "Quibo is a full-stack book exchange platform built with Next.js, Express.js and PostgreSQL.",
+      "keywords": [
+        "Next.js project",
+        "Express.js",
+        "PostgreSQL",
+        "book exchange platform",
+        "full stack development"
+      ]
+    },
+    "overview": "A full-stack platform that allows readers to exchange books, organise their collection and connect with other book lovers.",
+    "details": {
+      "client": "Artevelde University of Applied Sciences",
+      "role": "Full-stack Developer",
+      "type": "Web Application",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Quibo was my graduation project for the Graduate Degree in Programming. The platform was created around the idea of giving books a second life while bringing readers together.",
+      "challenge": "The application needed to combine several features such as book management, user accounts, reviews, exchanges and conversations while keeping the experience understandable.",
+      "approach": "I developed the frontend with Next.js and created a backend using Express.js and PostgreSQL. The application allows users to maintain a personal bookshelf, discover books from other users, read reviews and communicate with one another.",
+      "result": "Quibo became a complete full-stack application that combined the technical skills I developed throughout the programme into one graduation project."
+    },
+    "gallery": []
   },
   {
     "id": 5,
@@ -79,16 +185,41 @@
     "title": "Sweet Tooth",
     "subtitle": "Bakery brand identity",
     "year": 2024,
-    "description": "A complete brand identity created for Sweet Tooth, a bakery focused on cheesecakes and other desserts. The project included visual identity, packaging, logo design and a colour system designed to reflect the handcrafted and playful character of the brand.",
+    "featured": false,
     "tag": [
-      "Brand Identity"
+      "Brand Identity",
+      "Graphic Design"
     ],
     "technologies": [
       "Adobe Illustrator",
       "Adobe Photoshop"
     ],
     "image": "/images/covers/project2.jpg",
-    "featured": false
+    "seo": {
+      "title": "Sweet Tooth – Bakery Brand Identity Design",
+      "description": "Sweet Tooth is a bakery branding project featuring logo design, packaging and a complete visual identity.",
+      "keywords": [
+        "brand identity",
+        "bakery branding",
+        "graphic design",
+        "packaging design",
+        "logo design"
+      ]
+    },
+    "overview": "A warm and playful visual identity created for a bakery specialising in cheesecakes and handmade desserts.",
+    "details": {
+      "client": "Serhat Eyigün",
+      "role": "Brand and Graphic Designer",
+      "type": "Brand Identity",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Sweet Tooth is a visual identity created for a bakery focused on cheesecakes and handmade desserts. The goal was to translate the playful and handcrafted character of the products into a recognisable brand.",
+      "challenge": "The identity needed to feel professional while maintaining the warm and approachable personality associated with a small independent bakery.",
+      "approach": "I developed the visual language around typography, colour, logo design and packaging. The individual elements were designed to work together consistently across physical and digital applications.",
+      "result": "The finished identity gives Sweet Tooth a recognisable visual character that can be applied consistently across packaging, communication and promotional material."
+    },
+    "gallery": []
   },
   {
     "id": 6,
@@ -96,7 +227,7 @@
     "title": "Studio T",
     "subtitle": "Digital agency website",
     "year": 2022,
-    "description": "Studio T is a fictional digital agency created as a web design and development project. The website presents the agency, showcases its projects and provides visitors with a way to get in touch.",
+    "featured": false,
     "tag": [
       "Web Development"
     ],
@@ -105,7 +236,30 @@
       "CSS"
     ],
     "image": "/images/covers/project3.jpg",
-    "featured": false
+    "seo": {
+      "title": "Studio T – Digital Agency Website",
+      "description": "Studio T is a fictional digital agency website designed and developed using HTML and CSS.",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "web design",
+        "digital agency website"
+      ]
+    },
+    "overview": "A fictional digital agency website created to explore fundamental web design, layout and frontend development.",
+    "details": {
+      "client": "Academic project",
+      "role": "Designer and Developer",
+      "type": "Website",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Studio T is a fictional digital agency created as one of my earlier web design projects.",
+      "challenge": "The goal was to build a coherent agency website while learning how structure, typography and layout translate from design into code.",
+      "approach": "The website was developed using HTML and CSS and includes agency information, project presentation and contact content.",
+      "result": "The project formed part of my transition from visual design toward frontend development and helped establish the foundations of my web development skills."
+    },
+    "gallery": []
   },
   {
     "id": 7,
@@ -113,7 +267,7 @@
     "title": "Vandotrans",
     "subtitle": "Logistics company website",
     "year": 2024,
-    "description": "A WordPress website created for Vandotrans, a logistics company specialising in the transportation of goods and materials. The website provides an overview of the company's services and gives potential customers an easy way to get in touch.",
+    "featured": false,
     "tag": [
       "Web Development"
     ],
@@ -121,32 +275,79 @@
       "WordPress"
     ],
     "image": "/images/covers/project4.jpg",
-    "featured": false
+    "seo": {
+      "title": "Vandotrans – Logistics Company Website",
+      "description": "A WordPress business website created for logistics company Vandotrans.",
+      "keywords": [
+        "WordPress",
+        "business website",
+        "logistics website",
+        "web development"
+      ]
+    },
+    "overview": "A straightforward business website presenting the services and contact information of a logistics company.",
+    "details": {
+      "client": "Vandotrans",
+      "role": "Web Designer and Developer",
+      "type": "Business Website",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Vandotrans is a logistics company specialising in the transportation of goods and materials.",
+      "challenge": "The company required a straightforward online presence where customers could quickly understand its services and find contact information.",
+      "approach": "I created the website in WordPress with an emphasis on simple navigation and clear presentation of the company's services.",
+      "result": "The finished website provides Vandotrans with a practical digital presence that communicates its core services without unnecessary complexity."
+    },
+    "gallery": []
   },
   {
     "id": 8,
     "slug": "cereus-creative",
     "title": "Cereus Creative",
-    "subtitle": "Personal portfolio website",
+    "subtitle": "Previous portfolio website",
     "year": 2024,
-    "description": "Cereus Creative was my previous personal portfolio website, created as a place to present my development and creative work. The website was built with Nuxt.js and Tailwind CSS with a focus on a simple and responsive browsing experience.",
+    "featured": false,
     "tag": [
-      "Web Development"
+      "Web Development",
+      "Portfolio"
     ],
     "technologies": [
       "Nuxt.js",
       "Tailwind CSS"
     ],
     "image": "/images/covers/project5.jpg",
-    "featured": false
+    "seo": {
+      "title": "Cereus Creative – Portfolio Website",
+      "description": "Cereus Creative was a personal portfolio website built using Nuxt.js and Tailwind CSS.",
+      "keywords": [
+        "Nuxt.js",
+        "Tailwind CSS",
+        "portfolio website",
+        "frontend development"
+      ]
+    },
+    "overview": "My previous personal portfolio, created to combine my graphic design and development work in a single digital identity.",
+    "details": {
+      "client": "Personal project",
+      "role": "Designer and Developer",
+      "type": "Portfolio Website",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Cereus Creative was an earlier version of my personal portfolio and served as a place to bring together my design and programming work.",
+      "challenge": "My work covered several disciplines, so the website needed to present graphic design and development projects within one consistent visual system.",
+      "approach": "I built the portfolio with Nuxt.js and Tailwind CSS and developed a modular structure for presenting individual projects.",
+      "result": "The project gave me experience designing and developing a personal digital identity and eventually became the predecessor of my current portfolio."
+    },
+    "gallery": []
   },
   {
     "id": 9,
     "slug": "safe-place",
     "title": "Safe Place",
-    "subtitle": "Online support forum",
+    "subtitle": "Online support platform",
     "year": 2024,
-    "description": "Safe Place is an online platform designed for young people experiencing bullying. It includes a community forum, anonymous accounts and an activities section, with a focus on creating an accessible and supportive digital environment.",
+    "featured": false,
     "tag": [
       "Web Development"
     ],
@@ -156,7 +357,31 @@
       "Tailwind CSS"
     ],
     "image": "/images/covers/project6.jpg",
-    "featured": false
+    "seo": {
+      "title": "Safe Place – Laravel Community Platform",
+      "description": "Safe Place is an online community platform built with Laravel, PHP and Tailwind CSS.",
+      "keywords": [
+        "Laravel",
+        "PHP",
+        "Tailwind CSS",
+        "community platform",
+        "web application"
+      ]
+    },
+    "overview": "An online platform designed to provide young people with an accessible place for community support and information.",
+    "details": {
+      "client": "Academic project",
+      "role": "Web Developer",
+      "type": "Web Application",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Safe Place is a web platform designed around providing young people experiencing bullying with an accessible online community.",
+      "challenge": "The platform needed to support community interaction while allowing users to participate without exposing unnecessary personal information.",
+      "approach": "The application was built with Laravel and PHP and includes a forum, anonymous user functionality and an activities section. Tailwind CSS was used to create the responsive interface.",
+      "result": "The project provided practical experience in backend application development while exploring how digital platforms can support community-focused experiences."
+    },
+    "gallery": []
   },
   {
     "id": 10,
@@ -164,16 +389,53 @@
     "title": "Twins See",
     "subtitle": "Optician brand identity",
     "year": 2022,
-    "description": "A complete visual identity for Twins See, a fictional optician founded by twin sisters Martha and Carla. The branding combines a personal and approachable character with a professional visual system across the logo, icons, packaging, posters and business cards.",
+    "featured": false,
     "tag": [
-      "Brand Identity"
+      "Brand Identity",
+      "Graphic Design"
     ],
     "technologies": [
       "Adobe Illustrator",
       "Adobe Photoshop"
     ],
     "image": "/images/covers/project7.jpg",
-    "featured": false
+    "seo": {
+      "title": "Twins See – Optician Brand Identity",
+      "description": "Twins See is an optician branding project including logo design, visual communication and packaging.",
+      "keywords": [
+        "optician branding",
+        "brand identity",
+        "graphic design",
+        "logo design"
+      ]
+    },
+    "overview": "A visual identity built around the fictional story of twin sisters creating a modern and approachable optician brand.",
+    "details": {
+      "client": "Twins See",
+      "role": "Brand and Graphic Designer",
+      "type": "Brand Identity",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Twins See is a brand identity created around the fictional optician business of twin sisters Martha and Carla.",
+      "challenge": "The identity needed to communicate professionalism while still feeling personal, accessible and distinct from traditional clinical optical branding.",
+      "approach": "I developed the logo, colour system, graphic elements, icons, packaging, posters and business cards as parts of one coherent visual language.",
+      "result": "The project resulted in a complete visual identity that can consistently communicate the brand across both physical and promotional applications."
+    },
+    "gallery": [
+      {
+        "src": "/images/projects/twins-see/twins-see-1.jpg",
+        "alt": "Twins See visual identity design"
+      },
+      {
+        "src": "/images/projects/twins-see/twins-see-2.jpg",
+        "alt": "Twins See branding application"
+      },
+      {
+        "src": "/images/projects/twins-see/twins-see-3.jpg",
+        "alt": "Twins See graphic design and packaging"
+      }
+    ]
   },
   {
     "id": 11,
@@ -181,15 +443,52 @@
     "title": "Dija",
     "subtitle": "Beverage brand identity",
     "year": 2022,
-    "description": "Dija is a fictional sparkling beverage brand built around freshness, energy and colourful fruit flavours. The visual identity uses playful patterns, vibrant packaging and a contemporary summer-inspired aesthetic to create a distinctive product experience.",
+    "featured": false,
     "tag": [
-      "Brand Identity"
+      "Brand Identity",
+      "Packaging Design"
     ],
     "technologies": [
       "Adobe Illustrator",
       "Adobe Photoshop"
     ],
     "image": "/images/covers/project8.jpg",
-    "featured": false
+    "seo": {
+      "title": "Dija – Beverage Branding and Packaging Design",
+      "description": "Dija is a colourful beverage brand identity and packaging design project.",
+      "keywords": [
+        "beverage branding",
+        "packaging design",
+        "brand identity",
+        "graphic design"
+      ]
+    },
+    "overview": "A colourful sparkling beverage identity built around freshness, fruit flavours and a playful summer aesthetic.",
+    "details": {
+      "client": "Academic project",
+      "role": "Brand and Packaging Designer",
+      "type": "Brand Identity",
+      "status": "Completed"
+    },
+    "content": {
+      "intro": "Dija is a fictional sparkling beverage brand created around freshness, energy and colourful fruit flavours.",
+      "challenge": "The packaging needed to distinguish several flavours while allowing every product to remain clearly recognisable as part of the same brand.",
+      "approach": "I developed a flexible visual system using vibrant colour combinations, typography, illustration and repeating graphic patterns across the beverage packaging.",
+      "result": "The final identity creates a coherent product family while allowing each flavour to maintain its own visual personality."
+    },
+    "gallery": [
+      {
+        "src": "/images/projects/dija/dija-1.jpg",
+        "alt": "Dija beverage packaging design"
+      },
+      {
+        "src": "/images/projects/dija/dija-2.jpg",
+        "alt": "Dija brand identity"
+      },
+      {
+        "src": "/images/projects/dija/dija-3.jpg",
+        "alt": "Dija sparkling drink packaging"
+      }
+    ]
   }
 ]
