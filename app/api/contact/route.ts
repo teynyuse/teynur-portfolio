@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 
       return NextResponse.json(
         {
-          error: "RESEND_API_KEY is missing",
+          error: "Server configuration error.",
         },
         {
           status: 500,
@@ -20,19 +20,12 @@ export async function POST(request: Request) {
 
     const body = await request.json();
 
-    const {
-      name,
-      email,
-      subject,
-      message,
-    } = body;
+    const name = String(body.name || "").trim();
+    const email = String(body.email || "").trim();
+    const subject = String(body.subject || "").trim();
+    const message = String(body.message || "").trim();
 
-    if (
-      !name ||
-      !email ||
-      !subject ||
-      !message
-    ) {
+    if (!name || !email || !subject || !message) {
       return NextResponse.json(
         {
           error: "All fields are required.",
@@ -43,67 +36,206 @@ export async function POST(request: Request) {
       );
     }
 
-    const { data, error } =
-      await resend.emails.send({
-        from: "Portfolio <onboarding@resend.dev>",
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        {
+          error: "Please enter a valid email address.",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
 
-        to: [
-          "contact@teynuryuseinov.be",
-        ],
+    if (
+      name.length > 100 ||
+      email.length > 200 ||
+      subject.length > 200 ||
+      message.length > 5000
+    ) {
+      return NextResponse.json(
+        {
+          error: "One or more fields are too long.",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
 
-        replyTo: email,
+    const { data, error } = await resend.emails.send({
+      from: "Teynur Yuseinov <website@teynuryuseinov.be>",
+      to: ["contact@teynuryuseinov.be"],
 
-        subject: `[Portfolio] ${subject}`,
+      replyTo: email,
 
-        html: `
-          <div
+      subject: `[Portfolio] ${subject}`,
+
+      html: `
+        <!DOCTYPE html>
+        <html>
+          <body
             style="
-              font-family: Arial, sans-serif;
-              max-width: 600px;
-              margin: 0 auto;
-              line-height: 1.6;
+              margin: 0;
+              padding: 0;
+              background: #f4f4f4;
+              font-family: Arial, Helvetica, sans-serif;
+              color: #111111;
             "
           >
-            <h2>
-              New portfolio message
-            </h2>
+            <div
+              style="
+                max-width: 640px;
+                margin: 0 auto;
+                padding: 40px 20px;
+              "
+            >
+              <div
+                style="
+                  background: #ffffff;
+                  padding: 32px;
+                  border: 1px solid #dddddd;
+                "
+              >
+                <p
+                  style="
+                    margin: 0 0 8px;
+                    font-size: 12px;
+                    color: #777777;
+                  "
+                >
+                  Portfolio contact form
+                </p>
 
-            <p>
-              <strong>Name</strong><br>
-              ${escapeHtml(name)}
-            </p>
+                <h1
+                  style="
+                    margin: 0 0 32px;
+                    font-size: 28px;
+                    line-height: 1.2;
+                  "
+                >
+                  New message
+                </h1>
 
-            <p>
-              <strong>Email</strong><br>
-              ${escapeHtml(email)}
-            </p>
+                <div style="margin-bottom: 24px;">
+                  <p
+                    style="
+                      margin: 0 0 6px;
+                      font-size: 12px;
+                      color: #777777;
+                    "
+                  >
+                    Name
+                  </p>
 
-            <p>
-              <strong>Subject</strong><br>
-              ${escapeHtml(subject)}
-            </p>
+                  <p
+                    style="
+                      margin: 0;
+                      font-size: 16px;
+                    "
+                  >
+                    ${escapeHtml(name)}
+                  </p>
+                </div>
 
-            <p>
-              <strong>Message</strong>
-            </p>
+                <div style="margin-bottom: 24px;">
+                  <p
+                    style="
+                      margin: 0 0 6px;
+                      font-size: 12px;
+                      color: #777777;
+                    "
+                  >
+                    Email
+                  </p>
 
-            <p style="white-space: pre-wrap;">
-              ${escapeHtml(message)}
-            </p>
-          </div>
-        `,
-      });
+                  <p
+                    style="
+                      margin: 0;
+                      font-size: 16px;
+                    "
+                  >
+                    <a
+                      href="mailto:${escapeHtml(email)}"
+                      style="color: #111111;"
+                    >
+                      ${escapeHtml(email)}
+                    </a>
+                  </p>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                  <p
+                    style="
+                      margin: 0 0 6px;
+                      font-size: 12px;
+                      color: #777777;
+                    "
+                  >
+                    Subject
+                  </p>
+
+                  <p
+                    style="
+                      margin: 0;
+                      font-size: 16px;
+                    "
+                  >
+                    ${escapeHtml(subject)}
+                  </p>
+                </div>
+
+                <div>
+                  <p
+                    style="
+                      margin: 0 0 10px;
+                      font-size: 12px;
+                      color: #777777;
+                    "
+                  >
+                    Message
+                  </p>
+
+                  <p
+                    style="
+                      margin: 0;
+                      font-size: 16px;
+                      line-height: 1.7;
+                      white-space: pre-wrap;
+                    "
+                  >
+                    ${escapeHtml(message)}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </body>
+        </html>
+      `,
+
+      text: `
+New portfolio message
+
+Name:
+${name}
+
+Email:
+${email}
+
+Subject:
+${subject}
+
+Message:
+${message}
+      `.trim(),
+    });
 
     if (error) {
-      console.error(
-        "RESEND ERROR:",
-        error
-      );
+      console.error("Resend error:", error);
 
       return NextResponse.json(
         {
-          error: error.message,
-          details: error,
+          error: error.message || "Could not send message.",
         },
         {
           status: 500,
@@ -111,28 +243,31 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({
-      success: true,
-      id: data?.id,
-    });
-  } catch (error) {
-    console.error(
-      "CONTACT API ERROR:",
-      error
+    return NextResponse.json(
+      {
+        success: true,
+        id: data?.id,
+      },
+      {
+        status: 200,
+      }
     );
+  } catch (error) {
+    console.error("Contact API error:", error);
 
     return NextResponse.json(
       {
-        error:
-          error instanceof Error
-            ? error.message
-            : "Unknown error",
+        error: "Something went wrong while sending the message.",
       },
       {
         status: 500,
       }
     );
   }
+}
+
+function isValidEmail(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 function escapeHtml(value: string) {
