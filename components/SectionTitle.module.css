@@ -1,0 +1,57 @@
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  margin-bottom: 18px;
+  color: var(--color-text-secondary);
+}
+
+.sectionTitle h2 {
+  margin: 0;
+  font-size: var(--font-size-section);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.dots {
+  height: 34px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-size: 48px;
+  line-height: 0.25;
+  font-weight: 800;
+}
+
+.dots span {
+  display: block;
+  height: 15px;
+  line-height: 7px;
+}
+
+.dots {
+  transform: translateY(-0.5rem);
+}
+.dark {
+  color: var(--color-text-secondary);
+}
+
+.light {
+  color: var(--color-accent-text);
+}
+
+.sectionTitle {
+  opacity: 0;
+  transform: translateX(-10px);
+
+  animation: sectionTitleIn 0.55s ease forwards;
+}
+
+@keyframes sectionTitleIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -4,6 +4,7 @@ export type Project = {
   title: string;
   subtitle: string;
   year: number;
+  tag?: string[];
   description: string;
   technologies: string[];
   image: string;

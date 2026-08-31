@@ -1,0 +1,25 @@
+:root {
+  --color-bg: #F8FFFB;
+  --color-text: #000000;
+  --color-text-secondary: #799587;
+  --color-accent: #C1D1C9;
+  --color-accent-text: #ffffff;
+  --color-soft: #ededed;
+  --color-border: #13740c;
+  --color-section-bg: #799587;
+
+  --site-width: 1080px;
+  --page-padding: 32px;
+  --section-height: 900px;
+
+  /* typography */
+  --font-size-hero: 84px;
+  --font-size-section: 42px;
+  --font-size-body-lg: 22px;
+  --font-size-body: 16px;
+  --font-size-card-title: 15px;
+  --font-size-card-body: 12px;
+  --font-size-meta: 10px;
+  --font-size-nav: 16px;
+  --font-size-footer-cta: 28px;
+}

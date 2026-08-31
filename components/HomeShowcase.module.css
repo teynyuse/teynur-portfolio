@@ -1,0 +1,35 @@
+.wrapper {
+  background: var(--color-bg);
+  min-height: var(--section-height);
+
+}
+
+.quote {
+  background: var(--color-section-bg);
+  color: var(--color-accent-text);
+
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.quoteInner {
+  width: min(
+    calc(100% - (var(--page-padding) * 2)),
+    var(--site-width)
+  );
+
+  margin-inline: auto;
+}
+
+.quote p {
+  margin: 0 0 8px;
+  font-size: var(--font-size-body-lg);
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.quote strong {
+  font-size: var(--font-size-body-lg);
+  line-height: 1.3;
+  font-weight: 700;
+}

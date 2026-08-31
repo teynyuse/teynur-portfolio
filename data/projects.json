@@ -5,31 +5,35 @@
     "title": "Evolution Wall",
     "subtitle": "Interactive museum installation",
     "year": 2026,
+    "tag": [
+      "Interactive"
+    ],
     "description": "An interactive installation combining software, hardware and physical interaction.",
     "technologies": [
-      "React",
-      "TypeScript",
+      "UnrealEngine",
+      "Express.js",
       "Node.js",
-      "Raspberry Pi",
-      "ESP32",
-      "RFID"
+      "Blueprints"
     ],
     "image": "/images/projects/evolution-wall.jpg",
     "featured": true
   },
   {
     "id": 2,
-    "slug": "unreal-photo-experience",
-    "title": "Unreal Photo Experience",
-    "subtitle": "Interactive photo experience",
+    "slug": "Het Fossielenspoor",
+    "title": "Het Fossielenspoor",
+    "subtitle": "Fysical and digital museum experience",
     "year": 2026,
-    "description": "An interactive Unreal Engine experience for capturing photos and generating a QR-based mobile flow.",
-    "technologies": [
-      "Unreal Engine",
-      "Blueprints",
-      "Node.js"
+    "tag": [
+      "Internet Of Things"
     ],
-    "image": "/images/projects/unreal-photo.jpg",
+    "description": "A museum experience that combines physical and digital interaction to educate visitors about fossils.",
+    "technologies": [
+      "Raspberry Pi",
+      "ESP32",
+      "Vite"
+    ],
+    "image": "/images/projects/het-fossielenspoor.jpg",
     "featured": true
   },
   {
@@ -38,6 +42,9 @@
     "title": "Vree",
     "subtitle": "Social scheduling app",
     "year": 2026,
+    "tag": [
+      "Mobile"
+    ],
     "description": "A mobile app concept designed to make finding time with friends easier.",
     "technologies": [
       "Product Design",
@@ -46,5 +53,143 @@
     ],
     "image": "/images/projects/vree.jpg",
     "featured": true
+  },
+  {
+    "id": 4,
+    "slug": "quibo",
+    "title": "Quibo",
+    "subtitle": "Book exchange platform",
+    "year": 2024,
+    "description": "Quibo was my graduation project for the Graduate Degree in Programming. It is a platform where users can exchange books, read reviews, organise their personal bookshelf and chat with other book lovers. The project combines sustainability with a social reading experience.",
+    "tag": [
+      "Web Development"
+    ],
+    "technologies": [
+      "Next.js",
+      "Express.js",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "image": "/images/covers/project1.jpg",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "slug": "sweet-tooth",
+    "title": "Sweet Tooth",
+    "subtitle": "Bakery brand identity",
+    "year": 2024,
+    "description": "A complete brand identity created for Sweet Tooth, a bakery focused on cheesecakes and other desserts. The project included visual identity, packaging, logo design and a colour system designed to reflect the handcrafted and playful character of the brand.",
+    "tag": [
+      "Brand Identity"
+    ],
+    "technologies": [
+      "Adobe Illustrator",
+      "Adobe Photoshop"
+    ],
+    "image": "/images/covers/project2.jpg",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "slug": "studio-t",
+    "title": "Studio T",
+    "subtitle": "Digital agency website",
+    "year": 2022,
+    "description": "Studio T is a fictional digital agency created as a web design and development project. The website presents the agency, showcases its projects and provides visitors with a way to get in touch.",
+    "tag": [
+      "Web Development"
+    ],
+    "technologies": [
+      "HTML",
+      "CSS"
+    ],
+    "image": "/images/covers/project3.jpg",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "slug": "vandotrans",
+    "title": "Vandotrans",
+    "subtitle": "Logistics company website",
+    "year": 2024,
+    "description": "A WordPress website created for Vandotrans, a logistics company specialising in the transportation of goods and materials. The website provides an overview of the company's services and gives potential customers an easy way to get in touch.",
+    "tag": [
+      "Web Development"
+    ],
+    "technologies": [
+      "WordPress"
+    ],
+    "image": "/images/covers/project4.jpg",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "slug": "cereus-creative",
+    "title": "Cereus Creative",
+    "subtitle": "Personal portfolio website",
+    "year": 2024,
+    "description": "Cereus Creative was my previous personal portfolio website, created as a place to present my development and creative work. The website was built with Nuxt.js and Tailwind CSS with a focus on a simple and responsive browsing experience.",
+    "tag": [
+      "Web Development"
+    ],
+    "technologies": [
+      "Nuxt.js",
+      "Tailwind CSS"
+    ],
+    "image": "/images/covers/project5.jpg",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "slug": "safe-place",
+    "title": "Safe Place",
+    "subtitle": "Online support forum",
+    "year": 2024,
+    "description": "Safe Place is an online platform designed for young people experiencing bullying. It includes a community forum, anonymous accounts and an activities section, with a focus on creating an accessible and supportive digital environment.",
+    "tag": [
+      "Web Development"
+    ],
+    "technologies": [
+      "Laravel",
+      "PHP",
+      "Tailwind CSS"
+    ],
+    "image": "/images/covers/project6.jpg",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "slug": "twins-see",
+    "title": "Twins See",
+    "subtitle": "Optician brand identity",
+    "year": 2022,
+    "description": "A complete visual identity for Twins See, a fictional optician founded by twin sisters Martha and Carla. The branding combines a personal and approachable character with a professional visual system across the logo, icons, packaging, posters and business cards.",
+    "tag": [
+      "Brand Identity"
+    ],
+    "technologies": [
+      "Adobe Illustrator",
+      "Adobe Photoshop"
+    ],
+    "image": "/images/covers/project7.jpg",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "slug": "dija",
+    "title": "Dija",
+    "subtitle": "Beverage brand identity",
+    "year": 2022,
+    "description": "Dija is a fictional sparkling beverage brand built around freshness, energy and colourful fruit flavours. The visual identity uses playful patterns, vibrant packaging and a contemporary summer-inspired aesthetic to create a distinctive product experience.",
+    "tag": [
+      "Brand Identity"
+    ],
+    "technologies": [
+      "Adobe Illustrator",
+      "Adobe Photoshop"
+    ],
+    "image": "/images/covers/project8.jpg",
+    "featured": false
   }
 ]

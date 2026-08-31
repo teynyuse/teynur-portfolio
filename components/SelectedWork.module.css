@@ -1,0 +1,110 @@
+.section {
+  position: relative;
+  min-height: var(--section-height);
+
+  display: flex;
+  align-items: center;
+
+  background: var(--color-bg);
+  overflow: hidden;
+}
+.section::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  top: 50%;
+
+  bottom: 0;
+
+  background: var(--color-section-bg);
+
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 100%;
+
+  align-items: start;
+}
+
+.cardWrapper {
+  width: 100%;
+}
+
+.cardWrapper[data-position="1"] {
+  margin-top: 45px;
+}
+
+.cardWrapper[data-position="2"] {
+  margin-top: 90px;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cardWrapper[data-position="1"],
+  .cardWrapper[data-position="2"] {
+    margin-top: 0;
+  }
+
+  .section::after {
+    height: 65%;
+  }
+}
+
+.cardWrapper {
+  width: 100%;
+
+  opacity: 0;
+  transform: translateY(26px);
+
+  animation: selectedCardIn 0.7s ease forwards;
+}
+
+.cardWrapper[data-position="0"] {
+  animation-delay: 0.15s;
+}
+
+.cardWrapper[data-position="1"] {
+  margin-top: 45px;
+  animation-delay: 0.28s;
+}
+
+.cardWrapper[data-position="2"] {
+  margin-top: 90px;
+  animation-delay: 0.41s;
+}
+
+@keyframes selectedCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardWrapper {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
