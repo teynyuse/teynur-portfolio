@@ -29,7 +29,7 @@ export default function Footer() {
         <div className={styles.right}>
           <div className={styles.socials}>
             <a
-              href="https://github.com/"
+              href="https://github.com/teynyuse"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -43,7 +43,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/teynuryuseinov/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

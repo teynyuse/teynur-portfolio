@@ -50,7 +50,7 @@ export default function AboutPage() {
 
             <p className={styles.heroIntro}>
               I work across software, interaction design and physical
-              computing — combining technical development with a visual
+              computing, combining technical development with a visual
               background in design.
             </p>
           </div>

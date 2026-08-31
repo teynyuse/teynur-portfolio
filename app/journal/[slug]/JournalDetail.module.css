@@ -1,0 +1,550 @@
+.page {
+  width: 100%;
+  background: var(--color-bg);
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  max-width: var(--site-width);
+
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 30px;
+
+  font-size: 13px;
+  line-height: 1;
+
+  color: var(--color-text-secondary);
+
+  opacity: 0;
+
+  transform: translateY(10px);
+
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.hero h1 {
+  max-width: 980px;
+
+  margin: 0;
+
+  font-size: clamp(58px, 7vw, 104px);
+  line-height: 0.94;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+  color: var(--color-text-secondary);
+
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  animation: heroIn 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+
+  animation-delay: 0.1s;
+}
+
+.excerpt {
+  max-width: 720px;
+
+  margin: 36px 0 0;
+
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.4;
+
+  color: var(--color-text-secondary);
+
+  opacity: 0;
+
+  transform: translateY(18px);
+
+  animation: fadeUp 0.65s ease forwards;
+
+  animation-delay: 0.35s;
+}
+
+/* ========================================
+   COVER
+======================================== */
+
+.coverSection {
+  width: 100%;
+
+  border-top: 0.5px solid var(--color-border);
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.coverInner {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.cover {
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: var(--color-soft);
+}
+
+.cover img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   ARTICLE
+======================================== */
+
+.article {
+  width: min(
+    calc(100% - (var(--page-padding) * 2)),
+    var(--site-width)
+  );
+
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: 170px minmax(0, 720px);
+
+  justify-content: center;
+
+  gap: 70px;
+
+  padding-top: 120px;
+  padding-bottom: 140px;
+}
+
+/* ========================================
+   ARTICLE META
+======================================== */
+
+.articleMeta {
+  padding-top: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  font-size: 12px;
+
+  color: var(--color-text-secondary);
+
+  opacity: 0.6;
+}
+
+/* ========================================
+   READING COLUMN
+======================================== */
+
+.readingColumn {
+  width: 100%;
+  max-width: 720px;
+}
+
+.introduction {
+  margin: 0 0 100px;
+
+  font-size: clamp(27px, 2.5vw, 38px);
+  line-height: 1.35;
+
+  font-weight: 500;
+
+  letter-spacing: -0.015em;
+
+  color: var(--color-text);
+}
+
+/* ========================================
+   SECTIONS
+======================================== */
+
+.articleSection {
+  margin-bottom: 100px;
+}
+
+.sectionNumber {
+  margin-bottom: 14px;
+
+  font-size: 11px;
+
+  color: var(--color-text-secondary);
+
+  opacity: 0.55;
+}
+
+.articleSection h2 {
+  margin: 0 0 34px;
+
+  font-size: clamp(30px, 2.8vw, 42px);
+  line-height: 1.1;
+
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+
+  color: var(--color-text-secondary);
+}
+
+.articleSection p {
+  margin: 0 0 28px;
+
+  font-size: 19px;
+  line-height: 1.72;
+
+  font-weight: 400;
+
+  color: var(--color-text);
+}
+
+.articleSection p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   QUOTE
+======================================== */
+
+.articleSection blockquote {
+  margin: 70px 0;
+
+  padding: 40px 0 40px 38px;
+
+  border-left: 3px solid
+    var(--color-text-secondary);
+
+  font-size: clamp(28px, 3vw, 43px);
+  line-height: 1.25;
+
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+
+  color: var(--color-text-secondary);
+}
+
+/* ========================================
+   CLOSING
+======================================== */
+
+.closing {
+  margin: 40px 0 0;
+
+  padding-top: 60px;
+
+  border-top: 0.5px solid
+    var(--color-border);
+
+  font-size: clamp(25px, 2.2vw, 34px);
+  line-height: 1.4;
+
+  font-weight: 500;
+
+  color: var(--color-text-secondary);
+}
+
+/* ========================================
+   ARTICLE FOOTER
+======================================== */
+
+.articleFooter {
+  background: var(--color-section-bg);
+
+  color: var(--color-accent-text);
+
+  border-top: 0.5px solid var(--color-border);
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.articleFooterInner {
+  min-height: 430px;
+
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.backLink {
+  width: fit-content;
+
+  color: inherit;
+  text-decoration: none;
+
+  font-size: 14px;
+
+  opacity: 0.75;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nextArticle {
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  align-items: end;
+
+  column-gap: 30px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.nextArticle > span:first-child {
+  grid-column: 1 / -1;
+
+  margin-bottom: 12px;
+
+  font-size: 11px;
+
+  opacity: 0.6;
+}
+
+.nextArticle strong {
+  max-width: 600px;
+
+  font-size: clamp(30px, 3vw, 48px);
+  line-height: 1.08;
+
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+}
+
+.arrow {
+  font-size: 38px;
+
+  transition: transform 0.25s ease;
+}
+
+/* ========================================
+   HOVER
+======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+  .backLink:hover {
+    opacity: 1;
+
+    transform: translateX(-4px);
+  }
+
+  .nextArticle:hover .arrow {
+    transform: translateX(6px);
+  }
+}
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 90px;
+  }
+
+  .article {
+    grid-template-columns: 1fr;
+
+    max-width: 720px;
+
+    gap: 40px;
+
+    padding-top: 90px;
+    padding-bottom: 110px;
+  }
+
+  .articleMeta {
+    flex-direction: row;
+
+    gap: 16px;
+  }
+
+  .articleFooterInner {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+
+    min-height: auto;
+
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 90px;
+    padding-bottom: 75px;
+  }
+
+  .meta {
+    margin-bottom: 22px;
+
+    font-size: 11px;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 13vw, 66px);
+  }
+
+  .excerpt {
+    margin-top: 26px;
+
+    font-size: 19px;
+    line-height: 1.45;
+  }
+
+  .cover {
+    aspect-ratio: 4 / 3;
+  }
+
+  .article {
+    width: 100%;
+
+    padding-left: var(--page-padding);
+    padding-right: var(--page-padding);
+
+    padding-top: 75px;
+    padding-bottom: 90px;
+
+    gap: 32px;
+  }
+
+  .articleMeta {
+    font-size: 11px;
+  }
+
+  .introduction {
+    margin-bottom: 70px;
+
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .articleSection {
+    margin-bottom: 75px;
+  }
+
+  .articleSection h2 {
+    margin-bottom: 28px;
+
+    font-size: 30px;
+  }
+
+  .articleSection p {
+    margin-bottom: 24px;
+
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .articleSection blockquote {
+    margin: 55px 0;
+
+    padding: 25px 0 25px 24px;
+
+    font-size: 27px;
+  }
+
+  .closing {
+    padding-top: 45px;
+
+    font-size: 25px;
+  }
+
+  .articleFooterInner {
+    gap: 60px;
+
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .nextArticle strong {
+    font-size: 30px;
+  }
+
+  .arrow {
+    font-size: 28px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .meta,
+  .hero h1,
+  .excerpt {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none;
+  }
+
+  .backLink,
+  .arrow {
+    transition: none;
+  }
+}

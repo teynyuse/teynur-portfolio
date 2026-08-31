@@ -6,6 +6,46 @@
     "category": "Experience",
     "date": "2026-08-30",
     "excerpt": "What building my first physical interactive installation taught me.",
-    "image": "/images/journal/physical-installation.jpg"
+    "image": "/images/journal/physical-installation.jpg",
+    "seo": {
+      "title": "Building Something People Can Actually Touch",
+      "description": "Reflections on designing and building a physical interactive installation combining software, hardware and interaction design.",
+      "keywords": [
+        "interactive installation",
+        "creative technology",
+        "interaction design",
+        "Raspberry Pi",
+        "hardware",
+        "software development"
+      ]
+    },
+    "content": {
+      "intro": "For a long time, most of the things I built lived entirely on a screen. This project changed that.",
+      "sections": [
+        {
+          "heading": "When software becomes physical",
+          "paragraphs": [
+            "Building an interactive installation made me think differently about software. A button is no longer only a component on a screen. It can become an RFID tag, a physical object, a light or something a visitor has to discover.",
+            "That changes the way you design. You have to think about what happens before someone touches the interface, what feedback they receive and what happens when technology does not respond immediately."
+          ]
+        },
+        {
+          "heading": "The messy part matters",
+          "paragraphs": [
+            "Connecting software and hardware also means dealing with things that are less predictable than a normal web application. Cables move, sensors behave differently and physical objects introduce constraints that do not exist in a browser.",
+            "I learned that prototyping early is essential. Something that looks perfectly logical in a diagram can feel completely different once a real person starts using it."
+          ]
+        },
+        {
+          "heading": "What I took from it",
+          "paragraphs": [
+            "The most interesting part was seeing people interact with something I had built without thinking about the technology behind it.",
+            "That is probably the direction I enjoy most: creating experiences where code disappears into the interaction itself."
+          ]
+        }
+      ],
+      "quote": "The best moment is when the technology stops being the thing people notice.",
+      "closing": "It made me want to keep exploring the space between software, design and the physical world."
+    }
   }
 ]
