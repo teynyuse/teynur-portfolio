@@ -57,8 +57,16 @@ export default function ContactForm() {
       );
 
       if (!response.ok) {
+        const result = await response.json();
+
+        console.error(
+          "API RESPONSE:",
+          result
+        );
+
         throw new Error(
-          "Could not send message"
+          result.error ||
+            "Could not send message"
         );
       }
 

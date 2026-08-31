@@ -5,71 +5,132 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is missing");
 
-    const { name, email, subject, message } = body;
-
-    if (!name || !email || !subject || !message) {
       return NextResponse.json(
-        { error: "All fields are required." },
-        { status: 400 }
+        {
+          error: "RESEND_API_KEY is missing",
+        },
+        {
+          status: 500,
+        }
       );
     }
 
-    const { data, error } = await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>",
-      to: ["contact@teynuryuseinov.be"],
-      replyTo: email,
-      subject: `[Portfolio] ${subject}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2>New portfolio message</h2>
+    const body = await request.json();
 
-          <p>
-            <strong>Name:</strong><br />
-            ${escapeHtml(name)}
-          </p>
+    const {
+      name,
+      email,
+      subject,
+      message,
+    } = body;
 
-          <p>
-            <strong>Email:</strong><br />
-            ${escapeHtml(email)}
-          </p>
+    if (
+      !name ||
+      !email ||
+      !subject ||
+      !message
+    ) {
+      return NextResponse.json(
+        {
+          error: "All fields are required.",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
 
-          <p>
-            <strong>Subject:</strong><br />
-            ${escapeHtml(subject)}
-          </p>
+    const { data, error } =
+      await resend.emails.send({
+        from: "Portfolio <onboarding@resend.dev>",
 
-          <p>
-            <strong>Message:</strong>
-          </p>
+        to: [
+          "contact@teynuryuseinov.be",
+        ],
 
-          <p style="white-space: pre-wrap;">
-            ${escapeHtml(message)}
-          </p>
-        </div>
-      `,
-    });
+        replyTo: email,
+
+        subject: `[Portfolio] ${subject}`,
+
+        html: `
+          <div
+            style="
+              font-family: Arial, sans-serif;
+              max-width: 600px;
+              margin: 0 auto;
+              line-height: 1.6;
+            "
+          >
+            <h2>
+              New portfolio message
+            </h2>
+
+            <p>
+              <strong>Name</strong><br>
+              ${escapeHtml(name)}
+            </p>
+
+            <p>
+              <strong>Email</strong><br>
+              ${escapeHtml(email)}
+            </p>
+
+            <p>
+              <strong>Subject</strong><br>
+              ${escapeHtml(subject)}
+            </p>
+
+            <p>
+              <strong>Message</strong>
+            </p>
+
+            <p style="white-space: pre-wrap;">
+              ${escapeHtml(message)}
+            </p>
+          </div>
+        `,
+      });
 
     if (error) {
-      console.error("Resend error:", error);
+      console.error(
+        "RESEND ERROR:",
+        error
+      );
 
       return NextResponse.json(
-        { error: "Could not send message." },
-        { status: 500 }
+        {
+          error: error.message,
+          details: error,
+        },
+        {
+          status: 500,
+        }
       );
     }
 
     return NextResponse.json({
       success: true,
-      data,
+      id: data?.id,
     });
   } catch (error) {
-    console.error("Contact API error:", error);
+    console.error(
+      "CONTACT API ERROR:",
+      error
+    );
 
     return NextResponse.json(
-      { error: "Something went wrong." },
-      { status: 500 }
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "Unknown error",
+      },
+      {
+        status: 500,
+      }
     );
   }
 }
