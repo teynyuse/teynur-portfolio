@@ -5,7 +5,7 @@ import journals from "@/data/journals.json";
 import styles from "./JournalPage.module.css";
 
 export const metadata: Metadata = {
-  title: "Journal — Teynur Yuseinov",
+  title: "Journal - Teynur Yuseinov",
   description:
     "Notes, reflections and stories about software development, interaction design, creative technology and building digital and physical experiences.",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Belgium developer",
   ],
   openGraph: {
-    title: "Journal — Teynur Yuseinov",
+    title: "Journal - Teynur Yuseinov",
     description:
       "Notes and reflections about software, design, interactive experiences and creative technology.",
     type: "website",

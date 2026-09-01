@@ -30,7 +30,7 @@ export const metadata = {
   metadataBase: new URL("https://www.teynuryuseinov.be"),
 
   title: {
-    default: "Teynur Yuseinov — Developer, Designer & Maker",
+    default: "Teynur Yuseinov - Developer, Designer & Maker",
     template: "%s | Teynur Yuseinov",
   },
 

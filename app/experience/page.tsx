@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import styles from "./Experience.module.css";
 
 export const metadata: Metadata = {
-  title: "Experience — Developer, Designer & Creative Technologist",
+  title: "Experience - Developer, Designer & Creative Technologist",
   description:
     "Explore the professional experience, education and technical skills of Teynur Yuseinov, a developer and designer working across software, interaction design and creative technology.",
 
