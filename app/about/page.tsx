@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import styles from "./About.module.css";
 
 export const metadata: Metadata = {
-  title: "About — Developer, Designer & Creative Technologist",
+  title: "About - Developer, Designer & Creative Technologist",
   description:
     "Learn more about Teynur Yuseinov, a Belgium-based developer and designer working across software development, interaction design, physical computing and creative technology.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "portfolio Belgium",
   ],
   openGraph: {
-    title: "About — Teynur Yuseinov",
+    title: "About - Teynur Yuseinov",
     description:
       "Developer, designer and creative technologist working across software, interaction and physical experiences.",
     type: "profile",
