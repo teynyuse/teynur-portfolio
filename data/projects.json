@@ -17,7 +17,7 @@
       "Express.js",
       "Blueprints"
     ],
-    "image": "/images/projects/evolution-wall.jpg",
+    "image": "/images/covers/evolution-wall.png",
     "seo": {
       "title": "Evolution Wall – Interactive Museum Installation",
       "description": "Evolution Wall is an interactive museum installation combining software, physical interaction and digital experiences.",
@@ -67,7 +67,7 @@
       "ESP32",
       "RFID"
     ],
-    "image": "/images/projects/het-fossielenspoor.jpg",
+    "image": "/images/covers/fossiel.png",
     "seo": {
       "title": "Het Fossielenspoor – Interactive Fossil Museum Experience",
       "description": "Het Fossielenspoor is an interactive museum installation built with React, Raspberry Pi, RFID and ESP32 technology.",
@@ -109,7 +109,7 @@
       "Interaction Design"
     ],
     "technologies": [],
-    "image": "/images/projects/vree.jpg",
+    "image": "/images/covers/vree.png",
     "seo": {
       "title": "Vree – Social Scheduling App Concept",
       "description": "Vree is a social scheduling app concept designed to make finding a moment to meet with friends easier.",
