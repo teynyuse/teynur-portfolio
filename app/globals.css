@@ -2,26 +2,17 @@
 @import "../styles/variables.css";
 @import "../styles/layout.css";
 
+/* ========================================
+   RESET
+======================================== */
+
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-}
 
-body {
-  margin: 0;
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-kefa);
-}
-
-a {
-  color: inherit;
-}
-
-html {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -31,13 +22,178 @@ html::-webkit-scrollbar {
 }
 
 body {
+  position: relative;
+
+  min-height: 100vh;
+
+  margin: 0;
+
+  background: var(--color-bg);
+
+  color: var(--color-text);
+
+  font-family: var(--font-kefa);
+
   scrollbar-width: none;
   -ms-overflow-style: none;
+
+  overflow-x: hidden;
+
+  isolation: isolate;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
+
+a {
+  color: inherit;
+}
+
+/* ========================================
+   GLOBAL MOVING BACKGROUND
+======================================== */
+
+body::before,
+body::after {
+  content: "";
+
+  position: fixed;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  will-change: transform;
+}
+
+/* grote groene bal */
+
+body::before {
+  width: 65vw;
+  height: 65vw;
+
+  min-width: 700px;
+  min-height: 700px;
+
+  top: -20vw;
+  right: -20vw;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(121, 149, 135, 0.42) 0%,
+      rgba(121, 149, 135, 0.24) 42%,
+      rgba(121, 149, 135, 0) 74%
+    );
+
+  animation:
+    floatingBlobOne
+    24s
+    ease-in-out
+    infinite alternate;
+}
+
+body::after {
+  width: 60vw;
+  height: 60vw;
+
+  min-width: 650px;
+  min-height: 650px;
+
+  left: -22vw;
+  bottom: -20vw;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(225, 211, 155, 0.34) 0%,
+      rgba(225, 211, 155, 0.18) 46%,
+      rgba(225, 211, 155, 0) 74%
+    );
+
+  animation:
+    floatingBlobTwo
+    28s
+    ease-in-out
+    infinite alternate;
+}
+
+/* ========================================
+   MOVEMENT
+======================================== */
+
+@keyframes floatingBlobOne {
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  25% {
+    transform:
+      translate3d(-8vw, 10vh, 0)
+      scale(1.08);
+  }
+
+  50% {
+    transform:
+      translate3d(-15vw, 25vh, 0)
+      scale(0.96);
+  }
+
+  75% {
+    transform:
+      translate3d(-4vw, 38vh, 0)
+      scale(1.1);
+  }
+
+  100% {
+    transform:
+      translate3d(-12vw, 55vh, 0)
+      scale(1);
+  }
+}
+
+@keyframes floatingBlobTwo {
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  25% {
+    transform:
+      translate3d(12vw, -12vh, 0)
+      scale(1.08);
+  }
+
+  50% {
+    transform:
+      translate3d(24vw, -25vh, 0)
+      scale(0.94);
+  }
+
+  75% {
+    transform:
+      translate3d(10vw, -38vh, 0)
+      scale(1.12);
+  }
+
+  100% {
+    transform:
+      translate3d(28vw, -55vh, 0)
+      scale(1.02);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
 
 @media (max-width: 700px) {
   :root {
@@ -56,5 +212,63 @@ body::-webkit-scrollbar {
 
     padding-left: var(--page-padding);
     padding-right: var(--page-padding);
+  }
+
+  body::before,
+  body::after {
+    filter: blur(75px);
+  }
+
+  body::before {
+    width: 130vw;
+    height: 130vw;
+
+    min-width: 0;
+    min-height: 0;
+
+    top: -35vw;
+    right: -65vw;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(121, 149, 135, 0.18) 0%,
+        rgba(121, 149, 135, 0.09) 45%,
+        rgba(121, 149, 135, 0) 72%
+      );
+  }
+
+  body::after {
+    width: 120vw;
+    height: 120vw;
+
+    min-width: 0;
+    min-height: 0;
+
+    left: -60vw;
+    bottom: -25vw;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(224, 216, 174, 0.16) 0%,
+        rgba(224, 216, 174, 0.08) 45%,
+        rgba(224, 216, 174, 0) 72%
+      );
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body::before,
+  body::after {
+    animation: none;
   }
 }

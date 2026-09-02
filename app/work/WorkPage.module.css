@@ -2,7 +2,9 @@
   width: 100%;
 }
 
-/* intro */
+/* ========================================
+   INTRO
+======================================== */
 
 .intro {
   min-height: 420px;
@@ -27,7 +29,9 @@
   color: var(--color-text-secondary);
 }
 
-/* projects */
+/* ========================================
+   PROJECTS
+======================================== */
 
 .projectsSection {
   width: 100%;
@@ -39,77 +43,67 @@
 }
 
 .projectsInner {
-  padding-top: 64px;
+  padding-top: 70px;
   padding-bottom: 120px;
 }
 
-/* filters */
-
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-
-  margin-bottom: 38px;
-
-  font-size: var(--font-size-body);
-  font-weight: 400;
-
-  color: var(--color-accent-text);
-}
-
-.filters span {
-  opacity: 0.55;
-  cursor: default;
-}
-
-.activeFilter {
-  opacity: 1 !important;
-  font-weight: 700;
-}
-
-/* project grid */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 28px 20px;
-
-  width: 100%;
-}
-
-.grid > * {
-  min-width: 0;
-}
-
-/* responsive */
+/* ========================================
+   TABLET
+======================================== */
 
 @media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 650px) {
   .intro {
-    min-height: auto;
+    min-height: 360px;
 
     padding-top: 70px;
     padding-bottom: 70px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .projectsInner {
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+  .intro {
+    min-height: auto;
+
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  .lead {
+    max-width: 100%;
+
+    margin-top: 22px;
+
+    font-size: 18px;
+    line-height: 1.4;
   }
 
   .projectsInner {
     padding-top: 48px;
     padding-bottom: 80px;
   }
+}
 
-  .filters {
-    margin-bottom: 28px;
+@media (max-width: 390px) {
+  .intro {
+    padding-top: 42px;
+    padding-bottom: 60px;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .projectsInner {
+    padding-top: 42px;
+    padding-bottom: 70px;
   }
 }

@@ -2,20 +2,21 @@
 
 import { useMemo, useState } from "react";
 
-import projects from "@/data/projects.json";
 import ProjectCard from "@/components/ProjectCard";
-import Reveal from "@/components/Reveal";
+import projects from "@/data/projects.json";
 
-import styles from "@/app/work/WorkPage.module.css";
+import styles from "./WorkGrid.module.css";
 
-type Filter =
-  | "all"
-  | "Web Development"
-  | "Brand Identity"
-  | "Interactive";
+const filters = [
+  "all",
+  "web development",
+  "brand identity",
+  "interactive",
+];
 
 export default function WorkGrid() {
-  const [activeFilter, setActiveFilter] = useState<Filter>("all");
+  const [activeFilter, setActiveFilter] =
+    useState("all");
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "all") {
@@ -23,65 +24,46 @@ export default function WorkGrid() {
     }
 
     return projects.filter((project) =>
-      project.tag?.includes(activeFilter)
+      project.tag?.some(
+        (tag) =>
+          tag.toLowerCase() ===
+          activeFilter.toLowerCase()
+      )
     );
   }, [activeFilter]);
 
   return (
-    <>
-      <div className={styles.filters}>
-        <button
-          type="button"
-          onClick={() => setActiveFilter("all")}
-          className={activeFilter === "all" ? styles.activeFilter : ""}
-        >
-          all
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveFilter("Web Development")}
-          className={
-            activeFilter === "Web Development"
-              ? styles.activeFilter
-              : ""
-          }
-        >
-          web development
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveFilter("Brand Identity")}
-          className={
-            activeFilter === "Brand Identity"
-              ? styles.activeFilter
-              : ""
-          }
-        >
-          brand identity
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setActiveFilter("Interactive")}
-          className={
-            activeFilter === "Interactive"
-              ? styles.activeFilter
-              : ""
-          }
-        >
-          interactive
-        </button>
+    <div className={styles.wrapper}>
+      <div
+        className={styles.filters}
+        aria-label="Filter projects"
+      >
+        {filters.map((filter) => (
+          <button
+            key={filter}
+            type="button"
+            className={`${styles.filterButton} ${
+              activeFilter === filter
+                ? styles.activeFilter
+                : ""
+            }`}
+            onClick={() =>
+              setActiveFilter(filter)
+            }
+          >
+            {filter}
+          </button>
+        ))}
       </div>
 
       <div className={styles.grid}>
-        {filteredProjects.map((project, index) => (
-          <Reveal key={project.id} delay={(index % 3) * 100}>
-            <ProjectCard project={project} />
-          </Reveal>
+        {filteredProjects.map((project) => (
+          <ProjectCard
+            key={project.slug}
+            project={project}
+          />
         ))}
       </div>
-    </>
+    </div>
   );
 }

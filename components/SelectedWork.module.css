@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
 
-  background: var(--color-bg);
   overflow: hidden;
 }
 .section::after {
@@ -64,6 +63,11 @@
   .section::after {
     height: 65%;
   }
+
+  .cardWrapper[data-position="2"] {
+  margin-top: 0px;
+  animation-delay: 0.41s;
+}
 }
 
 .cardWrapper {
@@ -130,7 +134,8 @@
 
     width: 100%;
 
-    gap: 28px;
+    gap: 0px;
+
   }
 
   .grid > * {
@@ -139,4 +144,9 @@
     margin: 0 !important;
     transform: none !important;
   }
+
+  .cardWrapper[data-position="2"] {
+  margin-top: 45px;
+  animation-delay: 0.41s;
+}
 }

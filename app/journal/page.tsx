@@ -149,7 +149,7 @@ export default function JournalPage() {
         <div className={`siteContainer ${styles.bottomInner}`}>
           <p>
             A place for things that do not necessarily belong in
-            a case study — observations, lessons and notes from
+            a case study - observations, lessons and notes from
             the work behind the work.
           </p>
         </div>

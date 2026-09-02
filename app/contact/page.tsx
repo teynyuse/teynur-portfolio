@@ -3,11 +3,11 @@ import ContactForm from "./ContactForm";
 import styles from "./Contact.module.css";
 
 export const metadata: Metadata = {
-  title: "Contact — Teynur Yuseinov",
+  title: "Contact - Teynur Yuseinov",
   description:
     "Get in touch with Teynur Yuseinov for software development, interaction design, creative technology and digital projects.",
   openGraph: {
-    title: "Contact — Teynur Yuseinov",
+    title: "Contact - Teynur Yuseinov",
     description:
       "Get in touch about software, design, interactive experiences and creative technology.",
     type: "website",

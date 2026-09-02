@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Experience — Teynur Yuseinov",
+    title: "Experience - Teynur Yuseinov",
     description:
       "Professional experience, education and technical skills across software development, interaction design and creative technology.",
     type: "profile",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 const experience = [
   {
-    period: "2026 — present",
+    period: "2026 - present",
     company: "FPS Finance",
     role: "SQL Developer",
     location: "Brussels, Belgium",

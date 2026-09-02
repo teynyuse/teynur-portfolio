@@ -1,6 +1,5 @@
 .page {
   width: 100%;
-  background: var(--color-bg);
 }
 
 /* ========================================
@@ -387,7 +386,6 @@
 }
 
 .skillsIntro {
-  max-width: 820px;
 
   margin-bottom: 80px;
 }
