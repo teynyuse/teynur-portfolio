@@ -1,51 +1,87 @@
 [
   {
     "id": 1,
-    "slug": "building-something-people-can-touch",
-    "title": "Building something people can actually touch",
-    "category": "Experience",
-    "date": "2026-08-30",
-    "excerpt": "What building my first physical interactive installation taught me.",
-    "image": "/images/journal/physical-installation.jpg",
+    "slug": "a-full-time-job-a-bachelors-degree-and-somewhere-in-between-me",
+    "title": "A full-time job, a bachelor’s degree and somewhere in between, me",
+    "category": "Personal",
+    "date": "2026-09-02",
+    "excerpt": "How I combine a full-time job with a bachelor’s degree, learned to plan better, let go of perfectionism and make sure I do not completely lose myself along the way.",
+    "image": "/images/journal/fulltime-job-bachelor.jpg",
     "seo": {
-      "title": "Building Something People Can Actually Touch",
-      "description": "Reflections on designing and building a physical interactive installation combining software, hardware and interaction design.",
+      "title": "A full-time job, a bachelor’s degree and somewhere in between, me",
+      "description": "My experience combining a full-time job at FPS Finance with a bachelor’s degree in Interactive Media Development at Artevelde University of Applied Sciences.",
       "keywords": [
-        "interactive installation",
-        "creative technology",
-        "interaction design",
-        "Raspberry Pi",
-        "hardware",
-        "software development"
+        "working full time while studying",
+        "combining work and study",
+        "Interactive Media Development",
+        "Artevelde University of Applied Sciences",
+        "SQL Developer",
+        "FPS Finance",
+        "working student",
+        "bachelor degree while working"
       ]
     },
     "content": {
-      "intro": "For a long time, most of the things I built lived entirely on a screen. This project changed that.",
+      "intro": "In 2024, I completed my Graduate Degree in Programming at Artevelde University of Applied Sciences. I was happy, proud and convinced that I would quickly find a job and finally start doing what I had been dreaming about for years. But, as life often goes, not everything happened the way I had planned. I want to write more about that another time. For now, I want to talk about the job I eventually found, how it changed my life and how I learned that life is not always about what you plan for yourself, but also about what it plans for you.",
       "sections": [
         {
-          "heading": "When software becomes physical",
+          "heading": "My first real job",
           "paragraphs": [
-            "Building an interactive installation made me think differently about software. A button is no longer only a component on a screen. It can become an RFID tag, a physical object, a light or something a visitor has to discover.",
-            "That changes the way you design. You have to think about what happens before someone touches the interface, what feedback they receive and what happens when technology does not respond immediately."
+            "Since the summer of 2025, I have been working at FPS Finance. I started as an Application Tester and later moved into a SQL Developer role, which is even more closely connected to my degree and interests.",
+            "Working for the government is surprisingly interesting. You do not only learn a lot about technology, but also about how your own country works, how taxes are processed and how many systems exist behind things most people never really think about.",
+            "It was my first real “big boy job”. Everything was new: colleagues, working from home, meetings, organising myself and, of course, the bad coffee.",
+            "During the first few months, I was mainly trying to understand how everything worked. Who does what? How are the systems structured? Who do I need when something goes wrong? At the same time, another idea kept coming back into my head: I wanted to get my bachelor’s degree.",
+            "Not because anyone was forcing me to do it, but because I wanted to prove to myself that I could. A bachelor’s degree could also create more opportunities later on, but more than anything, I simply wanted to keep learning."
           ]
         },
         {
-          "heading": "The messy part matters",
+          "heading": "Work done, laptop closed… school open",
           "paragraphs": [
-            "Connecting software and hardware also means dealing with things that are less predictable than a normal web application. Cables move, sensors behave differently and physical objects introduce constraints that do not exist in a browser.",
-            "I learned that prototyping early is essential. Something that looks perfectly logical in a diagram can feel completely different once a real person starts using it."
+            "In September, I started the bachelor’s programme in Interactive Media Development at Artevelde University of Applied Sciences. The programme takes one and a half years, but because I work full time, I obviously could not spend every day at school.",
+            "My first semester was, honestly, chaos.",
+            "After a full working day, my second working day started: going through lessons, working on assignments, practising and trying to keep up with deadlines.",
+            "At first, I tried to do everything perfectly at the same time. Perform well at work. Perform well at school. Never miss a deadline. Keep up with friends. Get enough sleep.",
+            "That obviously did not work.",
+            "Slowly, I started planning better. I learned which assignments needed more time, when I had to work ahead and when “good enough” was actually just that: good enough."
           ]
         },
         {
-          "heading": "What I took from it",
+          "heading": "Making time for Teynur too",
           "paragraphs": [
-            "The most interesting part was seeing people interact with something I had built without thinking about the technology behind it.",
-            "That is probably the direction I enjoy most: creating experiences where code disappears into the interaction itself."
+            "Between work and school, I also had to keep making time for myself, my friends and my normal life.",
+            "Otherwise, I simply would not have been able to keep going.",
+            "At one point, it felt like my entire life had become a calendar. Work. Class. Project. Meeting. Deadline. Repeat.",
+            "Still, I realised that free time was not wasted time. It was exactly what helped me stay motivated enough to continue."
+          ]
+        },
+        {
+          "heading": "The second semester",
+          "paragraphs": [
+            "The second semester went a little better. Not because it suddenly became easier, but because I knew myself better.",
+            "I knew how much time I needed. I knew where my weaker points were and I understood better what was expected of me.",
+            "I had three resits, so I knew I would have to work harder than usual during the summer. At the same time, my goals at work continued and our project at FPS Finance also had to be completed.",
+            "It became another busy period.",
+            "Still, I never really saw it as a punishment or something I simply had to do. I actually enjoyed it.",
+            "I spent long days in the Fablab building projects, fixing problems and trying again. Work continued. School continued. My projects finally started working.",
+            "But somewhere along the way, I started putting myself aside again."
+          ]
+        },
+        {
+          "heading": "Not everything has to be 20 out of 20",
+          "paragraphs": [
+            "That is why I decided to approach things differently.",
+            "I did not need to get 20 out of 20 for everything. My goal became much simpler: understand what I was doing, pass my courses and move forward with some peace of mind.",
+            "That changed a lot.",
+            "Being less focused on perfection gave me more room to actually learn.",
+            "Today, I have passed everything from my first year. I achieved good results, learned a lot of new things and, more importantly, learned how to combine work, school and my own life in a healthier way.",
+            "I would not say I have suddenly found the perfect balance.",
+            "But I do know one thing now: you do not always need to have everything perfectly under control to move forward.",
+            "Sometimes you just have to keep adjusting, planning, trying and occasionally make a conscious decision to do absolutely nothing."
           ]
         }
       ],
-      "quote": "The best moment is when the technology stops being the thing people notice.",
-      "closing": "It made me want to keep exploring the space between software, design and the physical world."
+      "quote": "You do not always need to have everything perfectly under control to move forward.",
+      "closing": "And that might be the most important thing I learned this year."
     }
   }
 ]
