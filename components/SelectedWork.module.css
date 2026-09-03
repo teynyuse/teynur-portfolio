@@ -229,10 +229,12 @@
    SMALL MOBILE
 ========================= */
 
-@media (max-width: 390px) {
+@media (max-width: 700px) {
   .content {
-    padding-top: 64px;
-    padding-bottom: 76px;
+    padding:
+      75px
+      var(--page-padding)
+      85px;
   }
 
   .grid {

@@ -1,6 +1,5 @@
 .page {
   width: 100%;
-  background: var(--color-bg);
 }
 
 /* =========================
@@ -76,8 +75,6 @@
 
 .coverSection {
   width: 100%;
-
-  background: var(--color-bg);
 
 }
 
