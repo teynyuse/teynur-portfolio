@@ -1,5 +1,7 @@
 .section {
   position: relative;
+
+  width: 100%;
   min-height: var(--section-height);
 
   display: flex;
@@ -8,76 +10,137 @@
   overflow: hidden;
 }
 
+/* =========================
+   GREEN UPPER AREA
+========================= */
+
 .section::before {
   content: "";
 
   position: absolute;
-
-  left: 0;
-  right: 0;
-  top: 0;
-
-  height: 58%;
+  inset: 0 0 42%;
 
   background: var(--color-section-bg);
 
   z-index: 0;
 }
 
+/* =========================
+   CONTENT
+========================= */
+
 .content {
   position: relative;
   z-index: 1;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
 
   width: 100%;
+  max-width: var(--site-width);
+
+  margin: 0 auto;
+
+  padding:
+    90px
+    var(--page-padding)
+    120px;
+
+  box-sizing: border-box;
 }
 
-@media (max-width: 800px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+/* =========================
+   GRID
+========================= */
 
-  .section::before {
-    height: 35%;
-  }
+.grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+
+  align-items: start;
+
+  margin-top: 18px;
 }
 
-.grid > *:nth-child(1) {
-  animation-delay: 0.1s;
-}
+/* subtiele offset,
+   minder sterk dan work */
 
 .grid > *:nth-child(2) {
-  animation-delay: 0.22s;
+  margin-top: 24px;
 }
 
 .grid > *:nth-child(3) {
-  animation-delay: 0.34s;
+  margin-top: 48px;
 }
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .content {
+    padding-top: 80px;
+    padding-bottom: 105px;
+  }
+
+  .grid {
+    gap: 18px;
+  }
+
+  .grid > *:nth-child(2) {
+    margin-top: 18px;
+  }
+
+  .grid > *:nth-child(3) {
+    margin-top: 36px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
   .section {
     min-height: auto;
+  }
 
-    padding-top: 90px;
-    padding-bottom: 90px;
+  .section::before {
+    inset: 0 0 68%;
+  }
+
+  .content {
+    padding-top: 72px;
+    padding-bottom: 88px;
   }
 
   .grid {
     grid-template-columns: 1fr;
 
-    gap: 24px;
+    gap: 26px;
+
+    margin-top: 14px;
   }
 
-  .imageWrapper {
-    height: auto;
-    aspect-ratio: 16 / 10;
+  .grid > *,
+  .grid > *:nth-child(2),
+  .grid > *:nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 390px) {
+  .content {
+    padding-top: 64px;
+    padding-bottom: 76px;
   }
 
-  .card + .card {
-    border-left: 0.5px solid var(--color-border);
+  .grid {
+    gap: 22px;
   }
 }
