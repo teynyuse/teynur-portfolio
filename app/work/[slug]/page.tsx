@@ -90,12 +90,12 @@ export default async function ProjectPage({
 
 
       <section className={styles.coverSection}>
-        <div className={`siteContainer ${styles.coverInner}`}>
+        <div className={styles.coverInner}>
           <div className={styles.cover}>
             {project.image ? (
               <img
                 src={project.image}
-                alt={`${project.title} — ${project.subtitle}`}
+                alt={`${project.title} – ${project.subtitle}`}
               />
             ) : (
               <div

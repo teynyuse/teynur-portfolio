@@ -112,7 +112,7 @@ export default async function JournalDetailPage({
 
       {journal.image && (
         <section className={styles.coverSection}>
-          <div className={`siteContainer ${styles.coverInner}`}>
+          <div className={styles.coverInner}>
             <div className={styles.cover}>
               <img
                 src={journal.image}
