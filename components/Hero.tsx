@@ -1,11 +1,14 @@
 import { useTranslations } from "next-intl";
+
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   const t = useTranslations("home.hero");
 
   return (
-    <section className={`siteContainer ${styles.hero}`}>
+    <section
+      className={`siteContainer ${styles.hero}`}
+    >
       <div className={styles.content}>
         <h1 className={styles.title}>
           <span className={styles.line}>
@@ -23,7 +26,9 @@ export default function Hero() {
 
         <p className={styles.description}>
           {t("descriptionLine1")}
+
           <br />
+
           {t("descriptionLine2")}
         </p>
       </div>

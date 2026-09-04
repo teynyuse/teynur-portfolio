@@ -1,39 +1,120 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 
 import styles from "./About.module.css";
 
-export const metadata: Metadata = {
-  title: "About - Developer, Designer & Creative Technologist",
+type Props = {
+  params: Promise<{
+    locale: string;
+  }>;
+};
 
-  description:
-    "Learn more about Teynur Yuseinov, a Belgium-based developer and designer working across software development, interaction design, physical computing and creative technology.",
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { locale } = await params;
 
-  keywords: [
-    "Teynur Yuseinov",
-    "developer Belgium",
-    "designer Ghent",
-    "creative technologist",
-    "interaction designer",
-    "software developer",
-    "web developer",
-    "physical computing",
-    "portfolio Belgium",
-  ],
+  if (locale === "nl") {
+    return {
+      title:
+        "Over Teynur Yuseinov - Webontwikkelaar in Gent",
 
-  openGraph: {
-    title: "About - Teynur Yuseinov",
+      description:
+        "Maak kennis met Teynur Yuseinov, webontwikkelaar en ontwerper uit Gent, België. Hij werkt met Next.js, React, TypeScript, SQL, interactiedesign en creatieve technologie.",
+
+      keywords: [
+        "Teynur Yuseinov",
+        "webontwikkelaar Gent",
+        "web developer Gent",
+        "developer Gent",
+        "software developer Gent",
+        "frontend developer Gent",
+        "Next.js developer Gent",
+        "React developer Gent",
+        "creative developer Gent",
+        "interactiedesign Gent",
+        "webontwikkelaar België",
+      ],
+
+      alternates: {
+        canonical:
+          "https://www.teynuryuseinov.be/nl/about",
+
+        languages: {
+          en: "https://www.teynuryuseinov.be/en/about",
+          nl: "https://www.teynuryuseinov.be/nl/about",
+        },
+      },
+
+      openGraph: {
+        title:
+          "Over Teynur Yuseinov - Webontwikkelaar in Gent",
+
+        description:
+          "Teynur Yuseinov is een webontwikkelaar en creative developer uit Gent, België, actief in software, webdevelopment, interactiedesign en creatieve technologie.",
+
+        type: "profile",
+
+        url: "https://www.teynuryuseinov.be/nl/about",
+      },
+    };
+  }
+
+  return {
+    title:
+      "About Teynur Yuseinov - Web Developer in Ghent",
 
     description:
-      "Developer, designer and creative technologist working across software, interaction and physical experiences.",
+      "Meet Teynur Yuseinov, a web developer, software developer and designer based in Ghent, Belgium. He works with Next.js, React, TypeScript, SQL, interaction design and creative technology.",
 
-    type: "profile",
-  },
-};
+    keywords: [
+      "Teynur Yuseinov",
+      "web developer Ghent",
+      "web developer Belgium",
+      "developer Ghent",
+      "software developer Ghent",
+      "frontend developer Ghent",
+      "Next.js developer Ghent",
+      "React developer Ghent",
+      "creative developer Ghent",
+      "interaction designer Ghent",
+      "developer Belgium",
+    ],
+
+    alternates: {
+      canonical:
+        "https://www.teynuryuseinov.be/en/about",
+
+      languages: {
+        en: "https://www.teynuryuseinov.be/en/about",
+        nl: "https://www.teynuryuseinov.be/nl/about",
+      },
+    },
+
+    openGraph: {
+      title:
+        "About Teynur Yuseinov - Web Developer in Ghent",
+
+      description:
+        "Teynur Yuseinov is a web developer and creative developer based in Ghent, Belgium, working across software, web development, interaction design and creative technology.",
+
+      type: "profile",
+
+      url: "https://www.teynuryuseinov.be/en/about",
+    },
+  };
+}
 
 function Dots() {
   return (
-    <span className={styles.dots} aria-hidden="true">
+    <span
+      className={styles.dots}
+      aria-hidden="true"
+    >
       <span>.</span>
       <span>.</span>
       <span>.</span>
@@ -41,14 +122,22 @@ function Dots() {
   );
 }
 
-export default async function AboutPage() {
+export default async function AboutPage({
+  params,
+}: Props) {
+  const { locale } = await params;
+
+  setRequestLocale(locale);
+
   const t = await getTranslations("about");
 
   return (
     <main className={styles.page}>
       {/* HERO */}
 
-      <section className={`siteContainer ${styles.hero}`}>
+      <section
+        className={`siteContainer ${styles.hero}`}
+      >
         <div className={styles.heroGrid}>
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>
@@ -74,9 +163,12 @@ export default async function AboutPage() {
       {/* INTRO */}
 
       <section className={styles.introSection}>
-        <div className={`siteContainer ${styles.introInner}`}>
+        <div
+          className={`siteContainer ${styles.introInner}`}
+        >
           <div className={styles.sectionTitle}>
             <h2>{t("intro.title")}</h2>
+
             <Dots />
           </div>
 
@@ -88,7 +180,9 @@ export default async function AboutPage() {
 
       {/* STORY */}
 
-      <section className={`siteContainer ${styles.storySection}`}>
+      <section
+        className={`siteContainer ${styles.storySection}`}
+      >
         <div className={styles.storyLabel}>
           <span>01</span>
 
@@ -105,7 +199,9 @@ export default async function AboutPage() {
       {/* CURRENT */}
 
       <section className={styles.currentSection}>
-        <div className={`siteContainer ${styles.currentInner}`}>
+        <div
+          className={`siteContainer ${styles.currentInner}`}
+        >
           <div className={styles.storyLabel}>
             <span>02</span>
 
@@ -128,7 +224,9 @@ export default async function AboutPage() {
 
       {/* WORKING STYLE */}
 
-      <section className={`siteContainer ${styles.approachSection}`}>
+      <section
+        className={`siteContainer ${styles.approachSection}`}
+      >
         <div className={styles.sectionTitle}>
           <h2>{t("approach.title")}</h2>
 
@@ -139,7 +237,9 @@ export default async function AboutPage() {
           <article>
             <span>01</span>
 
-            <h3>{t("approach.understand.title")}</h3>
+            <h3>
+              {t("approach.understand.title")}
+            </h3>
 
             <p>
               {t("approach.understand.text")}
@@ -149,7 +249,9 @@ export default async function AboutPage() {
           <article>
             <span>02</span>
 
-            <h3>{t("approach.make.title")}</h3>
+            <h3>
+              {t("approach.make.title")}
+            </h3>
 
             <p>
               {t("approach.make.text")}
@@ -159,7 +261,9 @@ export default async function AboutPage() {
           <article>
             <span>03</span>
 
-            <h3>{t("approach.refine.title")}</h3>
+            <h3>
+              {t("approach.refine.title")}
+            </h3>
 
             <p>
               {t("approach.refine.text")}
@@ -171,7 +275,9 @@ export default async function AboutPage() {
       {/* FOCUS */}
 
       <section className={styles.focusSection}>
-        <div className={`siteContainer ${styles.focusInner}`}>
+        <div
+          className={`siteContainer ${styles.focusInner}`}
+        >
           <div
             className={`${styles.sectionTitle} ${styles.lightTitle}`}
           >
@@ -182,7 +288,9 @@ export default async function AboutPage() {
 
           <div className={styles.focusGrid}>
             <div>
-              <span>{t("focus.software.title")}</span>
+              <span>
+                {t("focus.software.title")}
+              </span>
 
               <p>
                 {t("focus.software.text")}
@@ -190,7 +298,9 @@ export default async function AboutPage() {
             </div>
 
             <div>
-              <span>{t("focus.interaction.title")}</span>
+              <span>
+                {t("focus.interaction.title")}
+              </span>
 
               <p>
                 {t("focus.interaction.text")}
@@ -198,7 +308,9 @@ export default async function AboutPage() {
             </div>
 
             <div>
-              <span>{t("focus.physical.title")}</span>
+              <span>
+                {t("focus.physical.title")}
+              </span>
 
               <p>
                 {t("focus.physical.text")}
@@ -206,7 +318,9 @@ export default async function AboutPage() {
             </div>
 
             <div>
-              <span>{t("focus.visual.title")}</span>
+              <span>
+                {t("focus.visual.title")}
+              </span>
 
               <p>
                 {t("focus.visual.text")}

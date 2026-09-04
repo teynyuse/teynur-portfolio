@@ -3,61 +3,100 @@ import type { MetadataRoute } from "next";
 import projects from "@/data/projects.json";
 import journals from "@/data/journals.json";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://teynuryuseinov.be";
+const baseUrl = "https://www.teynuryuseinov.be";
 
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/work`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/experience`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/journal`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.6,
-    },
+const locales = ["en", "nl"] as const;
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const staticRoutes = [
+    "",
+    "/work",
+    "/experience",
+    "/about",
+    "/journal",
+    "/contact",
   ];
 
-  const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${baseUrl}/work/${project.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  const staticPages: MetadataRoute.Sitemap = locales.flatMap(
+    (locale) =>
+      staticRoutes.map((route) => ({
+        url: `${baseUrl}/${locale}${route}`,
 
-  const journalPages: MetadataRoute.Sitemap = journals.map((journal) => ({
-    url: `${baseUrl}/journal/${journal.slug}`,
-    lastModified: new Date(journal.date),
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+        lastModified: new Date(),
+
+        changeFrequency:
+          route === "/journal"
+            ? "weekly"
+            : route === "/contact"
+              ? "yearly"
+              : "monthly",
+
+        priority:
+          route === ""
+            ? 1
+            : route === "/work"
+              ? 0.9
+              : route === "/contact"
+                ? 0.6
+                : 0.8,
+
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en${route}`,
+            nl: `${baseUrl}/nl${route}`,
+          },
+        },
+      }))
+  );
+
+  const projectPages: MetadataRoute.Sitemap =
+    locales.flatMap((locale) =>
+      projects.map((project) => ({
+        url:
+          `${baseUrl}/${locale}/work/${project.slug}`,
+
+        lastModified: new Date(),
+
+        changeFrequency: "monthly",
+
+        priority: 0.8,
+
+        alternates: {
+          languages: {
+            en:
+              `${baseUrl}/en/work/${project.slug}`,
+
+            nl:
+              `${baseUrl}/nl/work/${project.slug}`,
+          },
+        },
+      }))
+    );
+
+  const journalPages: MetadataRoute.Sitemap =
+    locales.flatMap((locale) =>
+      journals.map((journal) => ({
+        url:
+          `${baseUrl}/${locale}/journal/${journal.slug}`,
+
+        lastModified:
+          new Date(journal.date),
+
+        changeFrequency: "monthly",
+
+        priority: 0.7,
+
+        alternates: {
+          languages: {
+            en:
+              `${baseUrl}/en/journal/${journal.slug}`,
+
+            nl:
+              `${baseUrl}/nl/journal/${journal.slug}`,
+          },
+        },
+      }))
+    );
 
   return [
     ...staticPages,

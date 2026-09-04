@@ -32,8 +32,8 @@
       "line1": "developer.",
       "line2": "designer.",
       "line3": "maker.",
-      "descriptionLine1": "I build interactive experiences across software,",
-      "descriptionLine2": "hardware and design – turning ideas into things people can see, touch and use."
+      "descriptionLine1": "I'm Teynur Yuseinov, a web developer and creative developer based in Ghent, Belgium.",
+      "descriptionLine2": "I build websites, software and interactive experiences across digital and physical technology."
     },
 
     "homeShowcase": {
@@ -71,8 +71,7 @@
     "hero": {
       "eyebrow": "selected projects",
       "title": "work",
-      "description": "A selection of digital products, interactive experiences and visual identities – built across software, design and physical interaction."
-    },
+      "description": "A selection of web development, software and interactive projects by Teynur Yuseinov, a web developer and creative developer based in Ghent, Belgium."},
 
     "filters": {
       "all": "all",
@@ -106,11 +105,11 @@
   },
   "experience": {
     "hero": {
-      "line1": "from design",
-      "line2": "to development",
-      "line3": "and beyond.",
-      "description": "My background started in graphic design and gradually moved into software development, interaction design and creative technology. Today I like working where those disciplines meet."
-    },
+  "line1": "from design",
+  "line2": "to development",
+  "line3": "and beyond.",
+  "description": "I'm Teynur Yuseinov, a web and software developer based in Ghent, Belgium. My background started in graphic design and evolved into web development, software, SQL, interaction design and creative technology."
+},
 
     "sections": {
       "experience": "experience",
@@ -155,7 +154,7 @@
     "education": {
       "bachelor": {
         "period": "2025 — present",
-        "programme": "Bachelor Applied Computer Science",
+        "programme": "Bachelor of Graphic and Digital Media - Interactive Media Development",
         "description": "Continuing my studies while working, with a focus on software development, interactive applications, IoT and creative technology."
       },
 
@@ -188,26 +187,26 @@
       "line1": "developer.",
       "line2": "designer.",
       "line3": "maker.",
-      "intro": "I work across software, interaction design and physical computing, combining technical development with a visual background in design.",
-      "portraitAlt": "Portrait of Teynur Yuseinov"
+      "intro": "I'm Teynur Yuseinov, a web developer and creative developer based in Ghent, Belgium. I work across web development, software, interaction design and physical computing.",
+      "portraitAlt": "Portrait of Teynur Yuseinov, web developer and designer based in Ghent, Belgium"
     },
 
     "intro": {
       "title": "who I am",
-      "text": "I started with graphic design and gradually moved into programming, software development and creative technology. That mix still defines how I work today: I care about how something functions, how it looks and how people experience it."
+      "text": "I'm a web developer, software developer and designer with a background in graphic design. I build websites, digital products and interactive experiences, combining technical development with strong attention to visual design and how people actually use what I create."
     },
 
     "story": {
       "title": "background",
-      "paragraph1": "My first background was visual. I worked with typography, layout, branding and print production before moving deeper into digital design and development.",
-      "paragraph2": "Programming gave me another way to create. Instead of only designing what something should look like, I could build how it behaves, how data moves through it and how people interact with it."
+      "paragraph1": "My path started in graphic design, working with typography, layout, branding and print production. Over time I moved deeper into digital design, programming and web development, while keeping that visual way of thinking.",
+      "paragraph2": "Programming gave me another way to create. Instead of only designing how something should look, I could build how it behaves, how data moves through it and how people interact with it. Today that combination of design and development is central to the work I do."
     },
 
     "current": {
       "title": "today",
-      "lead": "Today my work sits somewhere between software development, database work, interaction design and creative technology.",
-      "paragraph1": "Professionally, I work as an SQL Developer while continuing to build interactive digital and physical projects alongside my studies.",
-      "paragraph2": "I particularly enjoy projects where software connects to the physical world — interfaces, installations, sensors, embedded systems and experiences people can actually touch."
+      "lead": "Today I work across web development, software development, database work, interaction design and creative technology from Ghent, Belgium.",
+      "paragraph1": "Professionally, I work as an SQL Developer while continuing my bachelor's degree and building web, digital and interactive projects alongside my studies.",
+      "paragraph2": "I particularly enjoy projects where software goes beyond a traditional screen — from modern websites and digital interfaces to installations, sensors, embedded systems and physical experiences people can actually interact with."
     },
 
     "approach": {
@@ -215,17 +214,17 @@
 
       "understand": {
         "title": "understand",
-        "text": "I start by understanding the problem, the context and what the experience actually needs to achieve."
+        "text": "I start by understanding the problem, the people using the product and what the experience actually needs to achieve."
       },
 
       "make": {
         "title": "make",
-        "text": "I like turning ideas into working prototypes early instead of keeping everything theoretical for too long."
+        "text": "I turn ideas into working prototypes early, whether that means building a web interface, writing application logic or connecting software to hardware."
       },
 
       "refine": {
         "title": "refine",
-        "text": "Once something works, I refine the interaction, visual details and technical structure until the experience feels coherent."
+        "text": "Once something works, I refine the interaction, visual details, performance and technical structure until the final experience feels coherent."
       }
     },
 
@@ -233,23 +232,23 @@
       "title": "what I work with",
 
       "software": {
-        "title": "software",
-        "text": "TypeScript, React, Next.js, Node.js, SQL, APIs and backend development."
+        "title": "web & software",
+        "text": "TypeScript, React, Next.js, Node.js, SQL, APIs, backend development and modern web applications."
       },
 
       "interaction": {
         "title": "interaction",
-        "text": "UI design, interaction design, prototyping and digital product experiences."
+        "text": "UI design, interaction design, prototyping and digital product experiences focused on usability and clear interaction."
       },
 
       "physical": {
-        "title": "physical",
-        "text": "Raspberry Pi, ESP32, RFID, sensors, LEDs and interactive installations."
+        "title": "physical computing",
+        "text": "Raspberry Pi, ESP32, RFID, sensors, LEDs and interactive installations that connect software to the physical world."
       },
 
       "visual": {
-        "title": "visual",
-        "text": "Graphic design, brand identity, typography, layout and visual systems."
+        "title": "visual design",
+        "text": "Graphic design, brand identity, typography, layout and visual systems informed by my background in design."
       }
     }
   },

@@ -37,26 +37,57 @@ export async function generateMetadata({
     return {};
   }
 
+  const projectUrl =
+    `https://www.teynuryuseinov.be/${currentLocale}/work/${project.slug}`;
+
+  const imageUrl = project.image
+    ? project.image.startsWith("http")
+      ? project.image
+      : `https://www.teynuryuseinov.be${project.image}`
+    : undefined;
+
   return {
-    title: project.seo.title,
+    title:
+      project.seo.title[currentLocale],
 
-    description: project.seo.description,
+    description:
+      project.seo.description[currentLocale],
 
-    keywords: project.seo.keywords,
+    keywords:
+      project.seo.keywords[currentLocale],
+
+    alternates: {
+      canonical: projectUrl,
+
+      languages: {
+        en:
+          `https://www.teynuryuseinov.be/en/work/${project.slug}`,
+
+        nl:
+          `https://www.teynuryuseinov.be/nl/work/${project.slug}`,
+      },
+    },
 
     openGraph: {
-      title: project.seo.title,
+      title:
+        project.seo.title[currentLocale],
 
-      description: project.seo.description,
+      description:
+        project.seo.description[currentLocale],
+
+      url: projectUrl,
 
       type: "article",
 
-      images: project.image
+      siteName: "Teynur Yuseinov",
+
+      images: imageUrl
         ? [
             {
-              url: project.image,
+              url: imageUrl,
 
-              alt: `${project.title} — ${project.subtitle[currentLocale]}`,
+              alt:
+                `${project.title} — ${project.subtitle[currentLocale]}`,
             },
           ]
         : [],
@@ -65,12 +96,14 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
 
-      title: project.seo.title,
+      title:
+        project.seo.title[currentLocale],
 
-      description: project.seo.description,
+      description:
+        project.seo.description[currentLocale],
 
-      images: project.image
-        ? [project.image]
+      images: imageUrl
+        ? [imageUrl]
         : [],
     },
   };
@@ -101,8 +134,106 @@ export default async function ProjectPage({
     notFound();
   }
 
+  const projectUrl =
+    `https://www.teynuryuseinov.be/${currentLocale}/work/${project.slug}`;
+
+  const imageUrl = project.image
+    ? project.image.startsWith("http")
+      ? project.image
+      : `https://www.teynuryuseinov.be${project.image}`
+    : undefined;
+
+  const projectSchema = {
+    "@context": "https://schema.org",
+
+    "@type": "CreativeWork",
+
+    "@id":
+      `${projectUrl}#project`,
+
+    name:
+      project.title,
+
+    headline:
+      project.subtitle[currentLocale],
+
+    description:
+      project.overview[currentLocale],
+
+    url:
+      projectUrl,
+
+    inLanguage:
+      currentLocale === "nl"
+        ? "nl-BE"
+        : "en-BE",
+
+    image:
+      imageUrl,
+
+    dateCreated:
+      String(project.year),
+
+    creator: {
+      "@type": "Person",
+
+      "@id":
+        "https://www.teynuryuseinov.be/#person",
+
+      name:
+        "Teynur Yuseinov",
+
+      url:
+        "https://www.teynuryuseinov.be",
+    },
+
+    author: {
+      "@type": "Person",
+
+      "@id":
+        "https://www.teynuryuseinov.be/#person",
+
+      name:
+        "Teynur Yuseinov",
+    },
+
+    keywords: [
+      ...project.tag,
+      ...project.technologies,
+    ],
+
+    about:
+      project.technologies.map(
+        (technology) => ({
+          "@type": "Thing",
+
+          name: technology,
+        })
+      ),
+
+    mainEntityOfPage: {
+      "@type": "WebPage",
+
+      "@id":
+        projectUrl,
+    },
+  };
+
   return (
     <main className={styles.page}>
+      {/* ========================================
+          STRUCTURED DATA
+      ======================================== */}
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            projectSchema
+          ).replace(/</g, "\\u003c"),
+        }}
+      />
+
       {/* ========================================
           HERO
       ======================================== */}
@@ -112,10 +243,18 @@ export default async function ProjectPage({
       >
         <div className={styles.heading}>
           <div>
-            <h1>{project.title}</h1>
+            <h1>
+              {project.title}
+            </h1>
 
-            <p className={styles.subtitle}>
-              {project.subtitle[currentLocale]}
+            <p
+              className={styles.subtitle}
+            >
+              {
+                project.subtitle[
+                  currentLocale
+                ]
+              }
             </p>
           </div>
 
@@ -129,9 +268,15 @@ export default async function ProjectPage({
           COVER
       ======================================== */}
 
-      <section className={styles.coverSection}>
-        <div className={styles.coverInner}>
-          <div className={styles.cover}>
+      <section
+        className={styles.coverSection}
+      >
+        <div
+          className={styles.coverInner}
+        >
+          <div
+            className={styles.cover}
+          >
             {project.image ? (
               <img
                 src={project.image}
@@ -139,7 +284,9 @@ export default async function ProjectPage({
               />
             ) : (
               <div
-                className={styles.placeholder}
+                className={
+                  styles.placeholder
+                }
                 aria-hidden="true"
               />
             )}
@@ -154,48 +301,90 @@ export default async function ProjectPage({
       <section
         className={`siteContainer ${styles.overviewSection}`}
       >
-        <div className={styles.projectInfo}>
-          <div className={styles.infoItem}>
-            <span>{t("client")}</span>
-
-            <p>{project.details.client}</p>
-          </div>
-
-          <div className={styles.infoItem}>
-            <span>{t("role")}</span>
+        <div
+          className={styles.projectInfo}
+        >
+          <div
+            className={styles.infoItem}
+          >
+            <span>
+              {t("client")}
+            </span>
 
             <p>
-              {project.details.role[currentLocale]}
+              {project.details.client}
             </p>
           </div>
 
-          <div className={styles.infoItem}>
-            <span>{t("type")}</span>
+          <div
+            className={styles.infoItem}
+          >
+            <span>
+              {t("role")}
+            </span>
 
             <p>
-              {project.details.type[currentLocale]}
+              {
+                project.details.role[
+                  currentLocale
+                ]
+              }
             </p>
           </div>
 
-          <div className={styles.infoItem}>
-            <span>{t("year")}</span>
+          <div
+            className={styles.infoItem}
+          >
+            <span>
+              {t("type")}
+            </span>
 
-            <p>{project.year}</p>
+            <p>
+              {
+                project.details.type[
+                  currentLocale
+                ]
+              }
+            </p>
+          </div>
+
+          <div
+            className={styles.infoItem}
+          >
+            <span>
+              {t("year")}
+            </span>
+
+            <p>
+              {project.year}
+            </p>
           </div>
 
           {project.details.status && (
-            <div className={styles.infoItem}>
-              <span>{t("status")}</span>
+            <div
+              className={styles.infoItem}
+            >
+              <span>
+                {t("status")}
+              </span>
 
               <p>
-                {project.details.status[currentLocale]}
+                {
+                  project.details.status[
+                    currentLocale
+                  ]
+                }
               </p>
             </div>
           )}
 
           {project.tag.length > 0 && (
-            <div className={styles.infoItem}>
-              <span>{t("category")}</span>
+            <div
+              className={styles.infoItem}
+            >
+              <span>
+                {t("category")}
+              </span>
 
               <p>
                 {project.tag.join(" / ")}
@@ -204,9 +393,15 @@ export default async function ProjectPage({
           )}
         </div>
 
-        <div className={styles.overview}>
+        <div
+          className={styles.overview}
+        >
           <p>
-            {project.overview[currentLocale]}
+            {
+              project.overview[
+                currentLocale
+              ]
+            }
           </p>
         </div>
       </section>
@@ -215,22 +410,33 @@ export default async function ProjectPage({
           TECHNOLOGIES
       ======================================== */}
 
-      {project.technologies.length > 0 && (
+      {project.technologies.length >
+        0 && (
         <section
           className={`siteContainer ${styles.technologiesSection}`}
         >
-          <div className={styles.sectionLabel}>
-            <span>01</span>
+          <div
+            className={styles.sectionLabel}
+          >
+            <span>
+              01
+            </span>
 
             <h2>
               {t("technologies")}
             </h2>
           </div>
 
-          <div className={styles.technologyList}>
+          <div
+            className={
+              styles.technologyList
+            }
+          >
             {project.technologies.map(
               (technology) => (
-                <span key={technology}>
+                <span
+                  key={technology}
+                >
                   {technology}
                 </span>
               )
@@ -243,13 +449,18 @@ export default async function ProjectPage({
           ABOUT
       ======================================== */}
 
-      <section className={styles.contentSection}>
+      <section
+        className={styles.contentSection}
+      >
         <div
           className={`siteContainer ${styles.contentInner}`}
         >
-          <div className={styles.sectionLabel}>
+          <div
+            className={styles.sectionLabel}
+          >
             <span>
-              {project.technologies.length > 0
+              {project.technologies.length >
+              0
                 ? "02"
                 : "01"}
             </span>
@@ -259,9 +470,15 @@ export default async function ProjectPage({
             </h2>
           </div>
 
-          <div className={styles.largeText}>
+          <div
+            className={styles.largeText}
+          >
             <p>
-              {project.content.intro[currentLocale]}
+              {
+                project.content.intro[
+                  currentLocale
+                ]
+              }
             </p>
           </div>
         </div>
@@ -276,13 +493,21 @@ export default async function ProjectPage({
         <section
           className={`siteContainer ${styles.twoColumnSection}`}
         >
-          {project.content.challenge && (
+          {project.content
+            .challenge && (
             <article
-              className={styles.contentBlock}
+              className={
+                styles.contentBlock
+              }
             >
-              <div className={styles.sectionLabel}>
+              <div
+                className={
+                  styles.sectionLabel
+                }
+              >
                 <span>
-                  {project.technologies.length > 0
+                  {project.technologies
+                    .length > 0
                     ? "03"
                     : "02"}
                 </span>
@@ -294,7 +519,8 @@ export default async function ProjectPage({
 
               <p>
                 {
-                  project.content.challenge[
+                  project.content
+                    .challenge[
                     currentLocale
                   ]
                 }
@@ -302,13 +528,21 @@ export default async function ProjectPage({
             </article>
           )}
 
-          {project.content.approach && (
+          {project.content
+            .approach && (
             <article
-              className={styles.contentBlock}
+              className={
+                styles.contentBlock
+              }
             >
-              <div className={styles.sectionLabel}>
+              <div
+                className={
+                  styles.sectionLabel
+                }
+              >
                 <span>
-                  {project.technologies.length > 0
+                  {project.technologies
+                    .length > 0
                     ? "04"
                     : "03"}
                 </span>
@@ -320,7 +554,8 @@ export default async function ProjectPage({
 
               <p>
                 {
-                  project.content.approach[
+                  project.content
+                    .approach[
                     currentLocale
                   ]
                 }
@@ -335,13 +570,22 @@ export default async function ProjectPage({
       ======================================== */}
 
       {project.content.result && (
-        <section className={styles.resultSection}>
+        <section
+          className={
+            styles.resultSection
+          }
+        >
           <div
             className={`siteContainer ${styles.resultInner}`}
           >
-            <div className={styles.sectionLabel}>
+            <div
+              className={
+                styles.sectionLabel
+              }
+            >
               <span>
-                {project.technologies.length > 0
+                {project.technologies
+                  .length > 0
                   ? "05"
                   : "04"}
               </span>
@@ -351,10 +595,13 @@ export default async function ProjectPage({
               </h2>
             </div>
 
-            <div className={styles.largeText}>
+            <div
+              className={styles.largeText}
+            >
               <p>
                 {
-                  project.content.result[
+                  project.content
+                    .result[
                     currentLocale
                   ]
                 }
@@ -369,13 +616,22 @@ export default async function ProjectPage({
       ======================================== */}
 
       {project.gallery.length > 0 && (
-        <section className={styles.gallerySection}>
+        <section
+          className={
+            styles.gallerySection
+          }
+        >
           <div
             className={`siteContainer ${styles.galleryInner}`}
           >
-            <div className={styles.sectionLabel}>
+            <div
+              className={
+                styles.sectionLabel
+              }
+            >
               <span>
-                {project.technologies.length > 0
+                {project.technologies
+                  .length > 0
                   ? "06"
                   : "05"}
               </span>
@@ -385,7 +641,9 @@ export default async function ProjectPage({
               </h2>
             </div>
 
-            <div className={styles.gallery}>
+            <div
+              className={styles.gallery}
+            >
               {project.gallery.map(
                 (image, index) => (
                   <figure

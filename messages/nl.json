@@ -28,11 +28,11 @@
 
   "home": {
     "hero": {
-      "line1": "developer.",
-      "line2": "designer.",
+      "line1": "ontwikkelaar.",
+      "line2": "ontwerper.",
       "line3": "maker.",
-      "descriptionLine1": "Ik bouw interactieve ervaringen met software,",
-      "descriptionLine2": "hardware en design – en zet ideeën om in dingen die mensen kunnen zien, aanraken en gebruiken."
+      "descriptionLine1": "Ik ben Teynur Yuseinov, webontwikkelaar en softwareontwikkelaar uit Gent, België.",
+      "descriptionLine2": "Ik bouw websites, software en interactieve ervaringen met digitale en fysieke technologie."
     },
 
     "homeShowcase": {
@@ -68,7 +68,7 @@
     "hero": {
       "eyebrow": "geselecteerde projecten",
       "title": "werk",
-      "description": "Een selectie van digitale producten, interactieve ervaringen en visuele identiteiten – gebouwd met software, design en fysieke interactie."
+      "description": "Een selectie van web-, software- en interactieve projecten van Teynur Yuseinov, webontwikkelaar en creatief technoloog uit Gent, België."
     },
 
     "filters": {
@@ -104,11 +104,11 @@
 
   "experience": {
     "hero": {
-      "line1": "van design",
-      "line2": "naar development",
-      "line3": "en verder.",
-      "description": "Mijn achtergrond begon in grafisch ontwerp en verschoof geleidelijk naar softwareontwikkeling, interactiedesign en creatieve technologie. Vandaag werk ik het liefst waar die disciplines samenkomen."
-    },
+  "line1": "van design",
+  "line2": "naar development",
+  "line3": "en verder.",
+  "description": "Ik ben Teynur Yuseinov, web- en softwareontwikkelaar uit Gent, België. Mijn achtergrond begon in grafisch ontwerp en groeide verder naar webontwikkeling, software, SQL, interactiedesign en creatieve technologie."
+},
 
     "sections": {
       "experience": "ervaring",
@@ -123,7 +123,7 @@
     "jobs": {
       "sqlDeveloper": {
         "period": "2026 - heden",
-        "role": "SQL Developer",
+        "role": "SQL-ontwikkelaar",
         "location": "Brussel, België",
         "description": "Ik werk aan SQL-gedreven data-analyse, database-updates en migratiegerelateerde taken binnen een grote IT-omgeving van de overheid. Mijn werk omvat het schrijven en valideren van SQL-scripts, het analyseren van DB2-data, het testen van databasewijzigingen en het ondersteunen van applicatie- en datamigraties."
       },
@@ -137,7 +137,7 @@
 
       "webDeveloperIntern": {
         "period": "2024",
-        "role": "Web Developer stagiair",
+        "role": "Stagiair webontwikkeling",
         "location": "België",
         "description": "Ik werkte in een developmentomgeving waar ik praktische ervaring opdeed met het bouwen en onderhouden van digitale producten en het omzetten van ontwerpen naar werkende webinterfaces."
       },
@@ -153,7 +153,7 @@
     "education": {
       "bachelor": {
         "period": "2025 — heden",
-        "programme": "Bachelor Toegepaste Informatica",
+        "programme": "Bachelor in de grafische en digitale media",
         "description": "Ik zet mijn studies voort terwijl ik werk, met een focus op softwareontwikkeling, interactieve toepassingen, IoT en creatieve technologie."
       },
 
@@ -182,74 +182,74 @@
   },
 
   "about": {
-    "hero": {
-      "line1": "developer.",
-      "line2": "designer.",
-      "line3": "maker.",
-      "intro": "Ik werk met software, interactiedesign en physical computing, waarbij ik technische ontwikkeling combineer met mijn visuele achtergrond in design.",
-      "portraitAlt": "Portret van Teynur Yuseinov"
+  "hero": {
+    "line1": "ontwikkelaar.",
+    "line2": "ontwerper.",
+    "line3": "maker.",
+    "intro": "Ik ben Teynur Yuseinov, web- en softwareontwikkelaar uit Gent, België. Ik werk aan webontwikkeling, software, interactiedesign en physical computing.",
+    "portraitAlt": "Portret van Teynur Yuseinov, webontwikkelaar en designer uit Gent, België"
+  },
+
+  "intro": {
+    "title": "wie ik ben",
+    "text": "Ik ben webontwikkelaar, software developer en designer met een achtergrond in grafisch ontwerp. Ik bouw websites, digitale producten en interactieve ervaringen, waarbij ik technische ontwikkeling combineer met aandacht voor visueel design en hoe mensen mijn werk daadwerkelijk gebruiken."
+  },
+
+  "story": {
+    "title": "achtergrond",
+    "paragraph1": "Mijn traject begon in grafisch ontwerp, met typografie, lay-out, branding en printproductie. Daarna verdiepte ik mij steeds verder in digitaal design, programmeren en webdevelopment, terwijl die visuele manier van denken altijd is gebleven.",
+    "paragraph2": "Programmeren gaf mij een andere manier om dingen te creëren. In plaats van alleen te ontwerpen hoe iets eruit moet zien, kon ik ook bouwen hoe het werkt, hoe data erdoor stroomt en hoe mensen ermee interageren. Vandaag staat die combinatie van design en development centraal in mijn werk."
+  },
+
+  "current": {
+    "title": "vandaag",
+    "lead": "Vandaag werk ik vanuit Gent, België op het snijpunt van webdevelopment, softwareontwikkeling, databasewerk, interactiedesign en creatieve technologie.",
+    "paragraph1": "Professioneel werk ik als SQL Developer, terwijl ik mijn bacheloropleiding verderzet en daarnaast websites, digitale producten en interactieve projecten blijf bouwen.",
+    "paragraph2": "Ik werk vooral graag aan projecten waarbij software verder gaat dan een traditioneel scherm — van moderne websites en digitale interfaces tot installaties, sensoren, embedded systems en fysieke ervaringen waarmee mensen echt kunnen interageren."
+  },
+
+  "approach": {
+    "title": "hoe ik werk",
+
+    "understand": {
+      "title": "begrijpen",
+      "text": "Ik begin met het begrijpen van het probleem, de mensen die het product gebruiken en wat de ervaring uiteindelijk moet bereiken."
     },
 
-    "intro": {
-      "title": "wie ik ben",
-      "text": "Ik begon met grafisch ontwerp en groeide geleidelijk door naar programmeren, softwareontwikkeling en creatieve technologie. Die combinatie bepaalt nog altijd hoe ik werk: ik vind het belangrijk hoe iets functioneert, hoe het eruitziet en hoe mensen het ervaren."
+    "make": {
+      "title": "maken",
+      "text": "Ik zet ideeën graag snel om in werkende prototypes, of dat nu een webinterface, applicatielogica of een verbinding tussen software en hardware is."
     },
 
-    "story": {
-      "title": "achtergrond",
-      "paragraph1": "Mijn eerste achtergrond was visueel. Ik werkte met typografie, lay-out, branding en printproductie voordat ik mij verder verdiepte in digitaal design en development.",
-      "paragraph2": "Programmeren gaf mij een andere manier om dingen te creëren. In plaats van alleen te ontwerpen hoe iets eruit moet zien, kon ik ook bouwen hoe het werkt, hoe data erdoor stroomt en hoe mensen ermee interageren."
-    },
-
-    "current": {
-      "title": "vandaag",
-      "lead": "Vandaag ligt mijn werk ergens tussen softwareontwikkeling, databasewerk, interactiedesign en creatieve technologie.",
-      "paragraph1": "Professioneel werk ik als SQL Developer, terwijl ik naast mijn studies interactieve digitale en fysieke projecten blijf bouwen.",
-      "paragraph2": "Ik werk vooral graag aan projecten waarbij software verbonden wordt met de fysieke wereld — interfaces, installaties, sensoren, embedded systems en ervaringen die mensen daadwerkelijk kunnen aanraken."
-    },
-
-    "approach": {
-      "title": "hoe ik werk",
-
-      "understand": {
-        "title": "begrijpen",
-        "text": "Ik begin met het begrijpen van het probleem, de context en wat de ervaring uiteindelijk moet bereiken."
-      },
-
-      "make": {
-        "title": "maken",
-        "text": "Ik zet ideeën graag snel om in werkende prototypes in plaats van alles te lang theoretisch te houden."
-      },
-
-      "refine": {
-        "title": "verfijnen",
-        "text": "Wanneer iets werkt, verfijn ik de interactie, visuele details en technische structuur totdat het geheel coherent aanvoelt."
-      }
-    },
-
-    "focus": {
-      "title": "waar ik mee werk",
-
-      "software": {
-        "title": "software",
-        "text": "TypeScript, React, Next.js, Node.js, SQL, API's en backendontwikkeling."
-      },
-
-      "interaction": {
-        "title": "interactie",
-        "text": "UI-design, interactiedesign, prototyping en digitale productervaringen."
-      },
-
-      "physical": {
-        "title": "fysiek",
-        "text": "Raspberry Pi, ESP32, RFID, sensoren, LEDs en interactieve installaties."
-      },
-
-      "visual": {
-        "title": "visueel",
-        "text": "Grafisch ontwerp, visuele identiteit, typografie, lay-out en visuele systemen."
-      }
+    "refine": {
+      "title": "verfijnen",
+      "text": "Wanneer iets werkt, verfijn ik de interactie, visuele details, performance en technische structuur totdat het geheel coherent aanvoelt."
     }
+  },
+
+  "focus": {
+    "title": "waar ik mee werk",
+
+    "software": {
+      "title": "web & software",
+      "text": "TypeScript, React, Next.js, Node.js, SQL, API's, backendontwikkeling en moderne webapplicaties."
+    },
+
+    "interaction": {
+      "title": "interactie",
+      "text": "UI-design, interactiedesign, prototyping en digitale productervaringen met aandacht voor gebruiksvriendelijkheid en duidelijke interactie."
+    },
+
+    "physical": {
+      "title": "physical computing",
+      "text": "Raspberry Pi, ESP32, RFID, sensoren, LEDs en interactieve installaties die software verbinden met de fysieke wereld."
+    },
+
+    "visual": {
+      "title": "visueel design",
+      "text": "Grafisch ontwerp, visuele identiteit, typografie, lay-out en visuele systemen vanuit mijn achtergrond in design."
+    }
+  }
   },
 
   "journal": {

@@ -22,16 +22,33 @@
     ],
     "image": "/images/covers/evolution-wall.png",
     "seo": {
-      "title": "Evolution Wall – Interactive Museum Installation",
-      "description": "Evolution Wall is an interactive museum installation combining software, physical interaction and digital experiences.",
-      "keywords": [
-        "interactive installation",
-        "museum technology",
-        "Unreal Engine",
-        "creative technology",
-        "interaction design",
-        "portfolio"
-      ]
+      "title": {
+        "en": "Evolution Wall – Interactive Museum Installation",
+        "nl": "Evolution Wall – Interactieve museuminstallatie"
+      },
+      "description": {
+        "en": "Evolution Wall is an interactive museum installation combining software, physical interaction and digital experiences.",
+        "nl": "Evolution Wall is een interactieve museuminstallatie van Teynur Yuseinov waarin software, fysieke interactie en digitale ervaringen samenkomen."
+      },
+      "keywords": {
+        "en": [
+          "interactive installation",
+          "museum technology",
+          "Unreal Engine",
+          "creative technology",
+          "interaction design",
+          "portfolio",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "interactieve installatie",
+          "museumtechnologie",
+          "Unreal Engine",
+          "creatieve technologie",
+          "interactiedesign",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "An interactive installation that connects digital content with physical interaction to create an accessible museum experience.",
@@ -99,17 +116,36 @@
     ],
     "image": "/images/covers/fossiel.png",
     "seo": {
-      "title": "Het Fossielenspoor – Interactive Fossil Museum Experience",
-      "description": "Het Fossielenspoor is an interactive museum installation built with React, Raspberry Pi, RFID and ESP32 technology.",
-      "keywords": [
-        "Raspberry Pi project",
-        "RFID installation",
-        "interactive museum",
-        "React",
-        "ESP32",
-        "IoT",
-        "creative technology"
-      ]
+      "title": {
+        "en": "Het Fossielenspoor – Interactive Fossil Museum Experience",
+        "nl": "Het Fossielenspoor – Interactieve museumervaring"
+      },
+      "description": {
+        "en": "Het Fossielenspoor is an interactive museum installation built with React, Raspberry Pi, RFID and ESP32 technology.",
+        "nl": "Het Fossielenspoor is een interactieve museuminstallatie van Teynur Yuseinov, gebouwd met React, Raspberry Pi, RFID en ESP32."
+      },
+      "keywords": {
+        "en": [
+          "Raspberry Pi project",
+          "RFID installation",
+          "interactive museum",
+          "React",
+          "ESP32",
+          "IoT",
+          "creative technology",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "Raspberry Pi project",
+          "RFID installatie",
+          "interactief museum",
+          "React",
+          "ESP32",
+          "IoT",
+          "creatieve technologie",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "A museum experience in which visitors discover fossils through RFID-enabled physical objects, light, sound and an interactive touchscreen.",
@@ -168,15 +204,32 @@
     "technologies": [],
     "image": "/images/covers/vree.png",
     "seo": {
-      "title": "Vree – Social Scheduling App Concept",
-      "description": "Vree is a social scheduling app concept designed to make finding a moment to meet with friends easier.",
-      "keywords": [
-        "mobile app design",
-        "social scheduling",
-        "product design",
-        "interaction design",
-        "calendar app"
-      ]
+      "title": {
+        "en": "Vree – Social Scheduling App Concept",
+        "nl": "Vree – Concept voor een sociale planningsapp"
+      },
+      "description": {
+        "en": "Vree is a social scheduling app concept designed to make finding a moment to meet with friends easier.",
+        "nl": "Vree is een concept van Teynur Yuseinov voor een sociale planningsapp die het makkelijker maakt om met vrienden een gezamenlijk vrij moment te vinden."
+      },
+      "keywords": {
+        "en": [
+          "mobile app design",
+          "social scheduling",
+          "product design",
+          "interaction design",
+          "calendar app",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "mobiele app",
+          "sociale planning",
+          "productdesign",
+          "interactiedesign",
+          "agenda app",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "A mobile app concept focused on making it easier for friends to discover when they are available at the same time.",
@@ -238,15 +291,32 @@
     ],
     "image": "/images/covers/project1.jpg",
     "seo": {
-      "title": "Quibo – Book Exchange Web Platform",
-      "description": "Quibo is a full-stack book exchange platform built with Next.js, Express.js and PostgreSQL.",
-      "keywords": [
-        "Next.js project",
-        "Express.js",
-        "PostgreSQL",
-        "book exchange platform",
-        "full stack development"
-      ]
+      "title": {
+        "en": "Quibo – Book Exchange Web Platform",
+        "nl": "Quibo – Full-stack platform voor boekenruil"
+      },
+      "description": {
+        "en": "Quibo is a full-stack book exchange platform built with Next.js, Express.js and PostgreSQL.",
+        "nl": "Quibo is een full-stack platform voor boekenruil, ontwikkeld door Teynur Yuseinov met Next.js, Express.js en PostgreSQL."
+      },
+      "keywords": {
+        "en": [
+          "Next.js project",
+          "Express.js",
+          "PostgreSQL",
+          "book exchange platform",
+          "full stack development",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "Next.js project",
+          "Express.js",
+          "PostgreSQL",
+          "boekenruil platform",
+          "full-stack ontwikkeling",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "A full-stack platform that allows readers to exchange books, organise their collection and connect with other book lovers.",
@@ -307,15 +377,32 @@
     ],
     "image": "/images/covers/project2.jpg",
     "seo": {
-      "title": "Sweet Tooth – Bakery Brand Identity Design",
-      "description": "Sweet Tooth is a bakery branding project featuring logo design, packaging and a complete visual identity.",
-      "keywords": [
-        "brand identity",
-        "bakery branding",
-        "graphic design",
-        "packaging design",
-        "logo design"
-      ]
+      "title": {
+        "en": "Sweet Tooth – Bakery Brand Identity Design",
+        "nl": "Sweet Tooth – Visuele identiteit voor een bakkerij"
+      },
+      "description": {
+        "en": "Sweet Tooth is a bakery branding project featuring logo design, packaging and a complete visual identity.",
+        "nl": "Sweet Tooth is een brandingproject van Teynur Yuseinov met logo-ontwerp, verpakkingsdesign en een volledige visuele identiteit voor een bakkerij."
+      },
+      "keywords": {
+        "en": [
+          "brand identity",
+          "bakery branding",
+          "graphic design",
+          "packaging design",
+          "logo design",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "visuele identiteit",
+          "bakkerij branding",
+          "grafisch ontwerp",
+          "verpakkingsdesign",
+          "logo-ontwerp",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "A warm and playful visual identity created for a bakery specialising in cheesecakes and handmade desserts.",
@@ -375,14 +462,31 @@
     ],
     "image": "/images/covers/project3.jpg",
     "seo": {
-      "title": "Studio T – Digital Agency Website",
-      "description": "Studio T is a fictional digital agency website designed and developed using HTML and CSS.",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "web design",
-        "digital agency website"
-      ]
+      "title": {
+        "en": "Studio T – Digital Agency Website",
+        "nl": "Studio T – Website voor een digitaal bureau"
+      },
+      "description": {
+        "en": "Studio T is a fictional digital agency website designed and developed using HTML and CSS.",
+        "nl": "Studio T is een fictieve website voor een digitaal bureau, ontworpen en ontwikkeld door Teynur Yuseinov met HTML en CSS."
+      },
+      "keywords": {
+        "en": [
+          "HTML",
+          "CSS",
+          "web design",
+          "digital agency website",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "HTML",
+          "CSS",
+          "webdesign",
+          "website digitaal bureau",
+          "webontwikkeling",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "A fictional digital agency website created to explore fundamental web design, layout and frontend development.",
@@ -441,14 +545,30 @@
     ],
     "image": "/images/covers/project4.jpg",
     "seo": {
-      "title": "Vandotrans – Logistics Company Website",
-      "description": "A WordPress business website created for logistics company Vandotrans.",
-      "keywords": [
-        "WordPress",
-        "business website",
-        "logistics website",
-        "web development"
-      ]
+      "title": {
+        "en": "Vandotrans – Logistics Company Website",
+        "nl": "Vandotrans – Website voor een logistiek bedrijf"
+      },
+      "description": {
+        "en": "A WordPress business website created for logistics company Vandotrans.",
+        "nl": "Een WordPress-bedrijfswebsite voor logistiek bedrijf Vandotrans, ontworpen en ontwikkeld door Teynur Yuseinov."
+      },
+      "keywords": {
+        "en": [
+          "WordPress",
+          "business website",
+          "logistics website",
+          "web development",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "WordPress",
+          "bedrijfswebsite",
+          "logistieke website",
+          "webontwikkeling",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "A straightforward business website presenting the services and contact information of a logistics company.",
@@ -509,14 +629,31 @@
     ],
     "image": "/images/covers/project5.jpg",
     "seo": {
-      "title": "Cereus Creative – Portfolio Website",
-      "description": "Cereus Creative was a personal portfolio website built using Nuxt.js and Tailwind CSS.",
-      "keywords": [
-        "Nuxt.js",
-        "Tailwind CSS",
-        "portfolio website",
-        "frontend development"
-      ]
+      "title": {
+        "en": "Cereus Creative – Portfolio Website",
+        "nl": "Cereus Creative – Portfolio website"
+      },
+      "description": {
+        "en": "Cereus Creative was a personal portfolio website built using Nuxt.js and Tailwind CSS.",
+        "nl": "Cereus Creative was het vorige persoonlijke portfolio van Teynur Yuseinov, gebouwd met Nuxt.js en Tailwind CSS."
+      },
+      "keywords": {
+        "en": [
+          "Nuxt.js",
+          "Tailwind CSS",
+          "portfolio website",
+          "frontend development",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "Nuxt.js",
+          "Tailwind CSS",
+          "portfolio website",
+          "frontendontwikkeling",
+          "webontwikkeling",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "My previous personal portfolio, created to combine my graphic design and development work in a single digital identity.",
@@ -577,15 +714,32 @@
     ],
     "image": "/images/covers/project6.jpg",
     "seo": {
-      "title": "Safe Place – Laravel Community Platform",
-      "description": "Safe Place is an online community platform built with Laravel, PHP and Tailwind CSS.",
-      "keywords": [
-        "Laravel",
-        "PHP",
-        "Tailwind CSS",
-        "community platform",
-        "web application"
-      ]
+      "title": {
+        "en": "Safe Place – Laravel Community Platform",
+        "nl": "Safe Place – Communityplatform met Laravel"
+      },
+      "description": {
+        "en": "Safe Place is an online community platform built with Laravel, PHP and Tailwind CSS.",
+        "nl": "Safe Place is een online communityplatform van Teynur Yuseinov, gebouwd met Laravel, PHP en Tailwind CSS."
+      },
+      "keywords": {
+        "en": [
+          "Laravel",
+          "PHP",
+          "Tailwind CSS",
+          "community platform",
+          "web application",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "Laravel",
+          "PHP",
+          "Tailwind CSS",
+          "communityplatform",
+          "webapplicatie",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "An online platform designed to provide young people with an accessible place for community support and information.",
@@ -646,14 +800,31 @@
     ],
     "image": "/images/covers/project7.jpg",
     "seo": {
-      "title": "Twins See – Optician Brand Identity",
-      "description": "Twins See is an optician branding project including logo design, visual communication and packaging.",
-      "keywords": [
-        "optician branding",
-        "brand identity",
-        "graphic design",
-        "logo design"
-      ]
+      "title": {
+        "en": "Twins See – Optician Brand Identity",
+        "nl": "Twins See – Visuele identiteit voor een opticien"
+      },
+      "description": {
+        "en": "Twins See is an optician branding project including logo design, visual communication and packaging.",
+        "nl": "Twins See is een brandingproject van Teynur Yuseinov met logo-ontwerp, visuele communicatie en verpakkingsdesign voor een fictieve opticien."
+      },
+      "keywords": {
+        "en": [
+          "optician branding",
+          "brand identity",
+          "graphic design",
+          "logo design",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "opticien branding",
+          "visuele identiteit",
+          "grafisch ontwerp",
+          "logo-ontwerp",
+          "verpakkingsdesign",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "A visual identity built around the fictional story of twin sisters creating a modern and approachable optician brand.",
@@ -727,14 +898,30 @@
     ],
     "image": "/images/covers/project8.jpg",
     "seo": {
-      "title": "Dija – Beverage Branding and Packaging Design",
-      "description": "Dija is a colourful beverage brand identity and packaging design project.",
-      "keywords": [
-        "beverage branding",
-        "packaging design",
-        "brand identity",
-        "graphic design"
-      ]
+      "title": {
+        "en": "Dija – Beverage Branding and Packaging Design",
+        "nl": "Dija – Branding en verpakkingsdesign voor een drankmerk"
+      },
+      "description": {
+        "en": "Dija is a colourful beverage brand identity and packaging design project.",
+        "nl": "Dija is een kleurrijk branding- en verpakkingsproject van Teynur Yuseinov voor een fictief bruisend drankmerk."
+      },
+      "keywords": {
+        "en": [
+          "beverage branding",
+          "packaging design",
+          "brand identity",
+          "graphic design",
+          "Teynur Yuseinov"
+        ],
+        "nl": [
+          "drank branding",
+          "verpakkingsdesign",
+          "visuele identiteit",
+          "grafisch ontwerp",
+          "Teynur Yuseinov"
+        ]
+      }
     },
     "overview": {
       "en": "A colourful sparkling beverage identity built around freshness, fruit flavours and a playful summer aesthetic.",

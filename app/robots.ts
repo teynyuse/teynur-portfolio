@@ -2,10 +2,21 @@ import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    sitemap: "https://teynuryuseinov.be/sitemap.xml",
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+      },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+      },
+    ],
+
+    sitemap:
+      "https://www.teynuryuseinov.be/sitemap.xml",
+
+    host:
+      "https://www.teynuryuseinov.be",
   };
 }

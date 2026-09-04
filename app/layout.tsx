@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+
 import "./globals.css";
 
 const kefa = localFont({
@@ -25,15 +26,18 @@ const kefa = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.teynuryuseinov.be"),
+  metadataBase: new URL(
+    "https://www.teynuryuseinov.be",
+  ),
 
   title: {
-    default: "Teynur Yuseinov - Developer, Designer & Maker",
+    default:
+      "Teynur Yuseinov - Developer, Designer & Maker",
     template: "%s | Teynur Yuseinov",
   },
 
   description:
-    "Portfolio of Teynur Yuseinov, a developer and designer creating interactive digital and physical experiences across software, design and creative technology.",
+    "Portfolio of Teynur Yuseinov, a web developer and creative developer based in Ghent, Belgium, working across software, design and interactive technology.",
 
   authors: [
     {

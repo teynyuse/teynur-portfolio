@@ -1,41 +1,131 @@
 /* eslint-disable @next/next/no-img-element */
 
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 
 import styles from "./Experience.module.css";
 
-export const metadata: Metadata = {
-  title: "Experience - Developer, Designer & Creative Technologist",
+type Props = {
+  params: Promise<{
+    locale: string;
+  }>;
+};
 
-  description:
-    "Explore the professional experience, education and technical skills of Teynur Yuseinov, a developer and designer working across software, interaction design and creative technology.",
+/* =========================
+   METADATA
+========================= */
 
-  keywords: [
-    "Teynur Yuseinov",
-    "developer Belgium",
-    "frontend developer",
-    "full stack developer",
-    "interaction designer",
-    "creative technologist",
-    "software developer",
-    "web developer Ghent",
-    "portfolio Belgium",
-    "React developer",
-    "Next.js developer",
-    "Raspberry Pi",
-    "Unreal Engine",
-  ],
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { locale } = await params;
 
-  openGraph: {
-    title: "Experience - Teynur Yuseinov",
+  if (locale === "nl") {
+    return {
+      title:
+        "Ervaring - Web- & Softwareontwikkelaar in Gent",
+
+      description:
+        "Bekijk de professionele ervaring, opleiding en technische vaardigheden van Teynur Yuseinov, web- en softwareontwikkelaar uit Gent, België. Ervaring met SQL, React, Next.js, databases, webontwikkeling en interactieve technologie.",
+
+      keywords: [
+        "Teynur Yuseinov",
+        "webontwikkelaar Gent",
+        "softwareontwikkelaar Gent",
+        "SQL developer België",
+        "SQL ontwikkelaar",
+        "React developer Gent",
+        "Next.js developer Gent",
+        "frontendontwikkeling",
+        "webontwikkeling Gent",
+        "DB2",
+        "TypeScript",
+        "Node.js",
+        "interactiedesign",
+        "creatieve technologie",
+      ],
+
+      alternates: {
+        canonical:
+          "https://www.teynuryuseinov.be/nl/experience",
+
+        languages: {
+          en:
+            "https://www.teynuryuseinov.be/en/experience",
+
+          nl:
+            "https://www.teynuryuseinov.be/nl/experience",
+        },
+      },
+
+      openGraph: {
+        title:
+          "Ervaring - Teynur Yuseinov",
+
+        description:
+          "Professionele ervaring, opleiding en technische vaardigheden van Teynur Yuseinov op het gebied van webontwikkeling, software, SQL, databases en interactieve technologie.",
+
+        url:
+          "https://www.teynuryuseinov.be/nl/experience",
+
+        type: "profile",
+      },
+    };
+  }
+
+  return {
+    title:
+      "Experience - Web & Software Developer in Ghent",
 
     description:
-      "Professional experience, education and technical skills across software development, interaction design and creative technology.",
+      "Explore the professional experience, education and technical skills of Teynur Yuseinov, a web and software developer based in Ghent, Belgium. Experience with SQL, React, Next.js, databases, web development and interactive technology.",
 
-    type: "profile",
-  },
-};
+    keywords: [
+      "Teynur Yuseinov",
+      "web developer Ghent",
+      "software developer Ghent",
+      "SQL developer Belgium",
+      "React developer Ghent",
+      "Next.js developer Ghent",
+      "frontend developer Ghent",
+      "web development Ghent",
+      "DB2",
+      "TypeScript",
+      "Node.js",
+      "interaction design",
+      "creative technology",
+    ],
+
+    alternates: {
+      canonical:
+        "https://www.teynuryuseinov.be/en/experience",
+
+      languages: {
+        en:
+          "https://www.teynuryuseinov.be/en/experience",
+
+        nl:
+          "https://www.teynuryuseinov.be/nl/experience",
+      },
+    },
+
+    openGraph: {
+      title:
+        "Experience - Teynur Yuseinov",
+
+      description:
+        "Professional experience, education and technical skills across web development, software, SQL, databases and interactive technology.",
+
+      url:
+        "https://www.teynuryuseinov.be/en/experience",
+
+      type: "profile",
+    },
+  };
+}
 
 /* =========================
    DATA
@@ -105,12 +195,14 @@ const experience = [
 const education = [
   {
     key: "bachelor",
-    school: "Artevelde University of Applied Sciences",
+    school:
+      "Artevelde University of Applied Sciences",
   },
 
   {
     key: "graduate",
-    school: "Artevelde University of Applied Sciences",
+    school:
+      "Artevelde University of Applied Sciences",
   },
 
   {
@@ -220,109 +312,83 @@ function Dots() {
    PAGE
 ========================= */
 
-export default async function ExperiencePage() {
-  const t = await getTranslations("experience");
+export default async function ExperiencePage({
+  params,
+}: Props) {
+  const { locale } = await params;
 
-  const structuredData = {
-    "@context": "https://schema.org",
+  setRequestLocale(locale);
 
-    "@type": "Person",
-
-    name: "Teynur Yuseinov",
-
-    url: "https://www.teynuryuseinov.be",
-
-    jobTitle:
-      "Developer, Designer & Creative Technologist",
-
-    address: {
-      "@type": "PostalAddress",
-
-      addressLocality: "Ghent",
-
-      addressCountry: "BE",
-    },
-
-    knowsAbout: [
-      "Software Development",
-      "Web Development",
-      "Interaction Design",
-      "Creative Technology",
-      "React",
-      "Next.js",
-      "Node.js",
-      "Internet of Things",
-      "Unreal Engine",
-      "Graphic Design",
-    ],
-
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-
-      name: "Artevelde University of Applied Sciences",
-    },
-  };
+  const t = await getTranslations(
+    "experience"
+  );
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            structuredData
-          ),
-        }}
-      />
+    <main className={styles.page}>
+      {/* =========================
+          HERO
+      ========================= */}
 
-      <main className={styles.page}>
-
-        {/* =========================
-            HERO
-        ========================= */}
-
-        <section
-          className={`siteContainer ${styles.hero}`}
+      <section
+        className={`siteContainer ${styles.hero}`}
+      >
+        <div
+          className={styles.heroContent}
         >
-          <div className={styles.heroContent}>
-            <h1>
-              {t("hero.line1")}
-              <br />
+          <h1>
+            {t("hero.line1")}
+            <br />
 
-              {t("hero.line2")}
-              <br />
+            {t("hero.line2")}
+            <br />
 
-              {t("hero.line3")}
-            </h1>
+            {t("hero.line3")}
+          </h1>
 
-            <p className={styles.intro}>
-              {t("hero.description")}
-            </p>
-          </div>
-        </section>
+          <p className={styles.intro}>
+            {t("hero.description")}
+          </p>
+        </div>
+      </section>
 
-        {/* =========================
-            EXPERIENCE
-        ========================= */}
+      {/* =========================
+          EXPERIENCE
+      ========================= */}
 
-        <section className={styles.experienceSection}>
+      <section
+        className={
+          styles.experienceSection
+        }
+      >
+        <div
+          className={`siteContainer ${styles.sectionInner}`}
+        >
           <div
-            className={`siteContainer ${styles.sectionInner}`}
+            className={styles.sectionTitle}
           >
-            <div className={styles.sectionTitle}>
-              <h2>
-                {t("sections.experience")}
-              </h2>
+            <h2>
+              {t(
+                "sections.experience"
+              )}
+            </h2>
 
-              <Dots />
-            </div>
+            <Dots />
+          </div>
 
-            <div className={styles.timeline}>
-              {experience.map((item) => (
+          <div className={styles.timeline}>
+            {experience.map(
+              (item) => (
                 <article
-                  className={styles.timelineItem}
+                  className={
+                    styles.timelineItem
+                  }
                   key={`${item.company}-${item.key}`}
                 >
-                  <div className={styles.period}>
+                  <div
+                    className={
+                      styles.period
+                    }
+                  >
                     <span>
                       {t(
                         `jobs.${item.key}.period`
@@ -330,24 +396,42 @@ export default async function ExperiencePage() {
                     </span>
 
                     {item.current && (
-                      <span className={styles.current}>
-                        {t("labels.current")}
+                      <span
+                        className={
+                          styles.current
+                        }
+                      >
+                        {t(
+                          "labels.current"
+                        )}
                       </span>
                     )}
                   </div>
 
                   <div
-                    className={styles.experienceHeading}
+                    className={
+                      styles.experienceHeading
+                    }
                   >
-                    <h3>{item.company}</h3>
+                    <h3>
+                      {item.company}
+                    </h3>
 
-                    <p className={styles.role}>
+                    <p
+                      className={
+                        styles.role
+                      }
+                    >
                       {t(
                         `jobs.${item.key}.role`
                       )}
                     </p>
 
-                    <p className={styles.location}>
+                    <p
+                      className={
+                        styles.location
+                      }
+                    >
                       {t(
                         `jobs.${item.key}.location`
                       )}
@@ -365,44 +449,70 @@ export default async function ExperiencePage() {
                       )}
                     </p>
 
-                    <div className={styles.tags}>
+                    <div
+                      className={
+                        styles.tags
+                      }
+                    >
                       {item.technologies.map(
-                        (technology) => (
-                          <span key={technology}>
-                            {technology}
+                        (
+                          technology
+                        ) => (
+                          <span
+                            key={
+                              technology
+                            }
+                          >
+                            {
+                              technology
+                            }
                           </span>
                         )
                       )}
                     </div>
                   </div>
                 </article>
-              ))}
-            </div>
+              )
+            )}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* =========================
-            EDUCATION
-        ========================= */}
+      {/* =========================
+          EDUCATION
+      ========================= */}
 
-        <section className={styles.educationSection}>
+      <section
+        className={
+          styles.educationSection
+        }
+      >
+        <div
+          className={`siteContainer ${styles.sectionInner}`}
+        >
           <div
-            className={`siteContainer ${styles.sectionInner}`}
+            className={`${styles.sectionTitle} ${styles.sectionTitleLight}`}
           >
-            <div
-              className={`${styles.sectionTitle} ${styles.sectionTitleLight}`}
-            >
-              <h2>
-                {t("sections.education")}
-              </h2>
+            <h2>
+              {t(
+                "sections.education"
+              )}
+            </h2>
 
-              <Dots />
-            </div>
+            <Dots />
+          </div>
 
-            <div className={styles.educationGrid}>
-              {education.map((item) => (
+          <div
+            className={
+              styles.educationGrid
+            }
+          >
+            {education.map(
+              (item) => (
                 <article
-                  className={styles.educationCard}
+                  className={
+                    styles.educationCard
+                  }
                   key={`${item.school}-${item.key}`}
                 >
                   <p
@@ -415,9 +525,15 @@ export default async function ExperiencePage() {
                     )}
                   </p>
 
-                  <h3>{item.school}</h3>
+                  <h3>
+                    {item.school}
+                  </h3>
 
-                  <p className={styles.programme}>
+                  <p
+                    className={
+                      styles.programme
+                    }
+                  >
                     {t(
                       `education.${item.key}.programme`
                     )}
@@ -433,37 +549,51 @@ export default async function ExperiencePage() {
                     )}
                   </p>
                 </article>
-              ))}
-            </div>
+              )
+            )}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* =========================
-            TOOLBOX
-        ========================= */}
+      {/* =========================
+          TOOLBOX
+      ========================= */}
 
-        <section className={styles.skillsSection}>
+      <section
+        className={styles.skillsSection}
+      >
+        <div
+          className={`siteContainer ${styles.sectionInner}`}
+        >
           <div
-            className={`siteContainer ${styles.sectionInner}`}
+            className={styles.sectionTitle}
           >
-            <div className={styles.sectionTitle}>
-              <h2>
-                {t("sections.toolbox")}
-              </h2>
+            <h2>
+              {t(
+                "sections.toolbox"
+              )}
+            </h2>
 
-              <Dots />
-            </div>
+            <Dots />
+          </div>
 
-            <div className={styles.skillsIntro}>
-              <p>
-                {t("toolbox.intro")}
-              </p>
-            </div>
+          <div
+            className={styles.skillsIntro}
+          >
+            <p>
+              {t("toolbox.intro")}
+            </p>
+          </div>
 
-            <div className={styles.skillsGrid}>
-              {skillGroups.map((group) => (
+          <div
+            className={styles.skillsGrid}
+          >
+            {skillGroups.map(
+              (group) => (
                 <article
-                  className={styles.skillGroup}
+                  className={
+                    styles.skillGroup
+                  }
                   key={group.key}
                 >
                   <h3>
@@ -473,19 +603,20 @@ export default async function ExperiencePage() {
                   </h3>
 
                   <ul>
-                    {group.skills.map((skill) => (
-                      <li key={skill}>
-                        {skill}
-                      </li>
-                    ))}
+                    {group.skills.map(
+                      (skill) => (
+                        <li key={skill}>
+                          {skill}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </article>
-              ))}
-            </div>
+              )
+            )}
           </div>
-        </section>
-
-      </main>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }
