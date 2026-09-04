@@ -7,7 +7,7 @@ import CopyEmail from "@/components/CopyEmail";
 import styles from "./Contact.module.css";
 
 export const metadata: Metadata = {
-  title: "Contact - Teynur Yuseinov",
+  title: "Contact",
 
   description:
     "Get in touch with Teynur Yuseinov for software development, interaction design, creative technology and digital projects.",
