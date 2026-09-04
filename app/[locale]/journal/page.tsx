@@ -1,13 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
+
 import type { Metadata } from "next";
-import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
+
+import { Link } from "@/i18n/navigation";
 import journals from "@/data/journals.json";
+
 import styles from "./JournalPage.module.css";
 
 export const metadata: Metadata = {
   title: "Journal - Teynur Yuseinov",
+
   description:
     "Notes, reflections and stories about software development, interaction design, creative technology and building digital and physical experiences.",
+
   keywords: [
     "Teynur Yuseinov",
     "developer journal",
@@ -18,17 +24,23 @@ export const metadata: Metadata = {
     "portfolio journal",
     "Belgium developer",
   ],
+
   openGraph: {
     title: "Journal - Teynur Yuseinov",
+
     description:
       "Notes and reflections about software, design, interactive experiences and creative technology.",
+
     type: "website",
   },
 };
 
 function Dots() {
   return (
-    <span className={styles.dots} aria-hidden="true">
+    <span
+      className={styles.dots}
+      aria-hidden="true"
+    >
       <span>.</span>
       <span>.</span>
       <span>.</span>
@@ -36,7 +48,10 @@ function Dots() {
   );
 }
 
-export default function JournalPage() {
+export default async function JournalPage() {
+  const t = await getTranslations("journal");
+  const locale = await getLocale();
+
   const sortedJournals = [...journals].sort(
     (a, b) =>
       new Date(b.date).getTime() -
@@ -48,30 +63,39 @@ export default function JournalPage() {
   return (
     <main className={styles.page}>
       {/* HERO */}
-      <section className={`siteContainer ${styles.hero}`}>
-        <div className={styles.heroContent}>
 
+      <section
+        className={`siteContainer ${styles.hero}`}
+      >
+        <div className={styles.heroContent}>
           <h1 className={styles.title}>
-            thoughts from
+            {t("hero.line1")}
             <br />
-            the things
+
+            {t("hero.line2")}
             <br />
-            I make.
+
+            {t("hero.line3")}
           </h1>
 
           <p className={styles.intro}>
-            Notes about software, design, creative technology and
-            what I learn while building things.
+            {t("hero.description")}
           </p>
         </div>
       </section>
 
       {/* FEATURED */}
+
       {featured && (
         <section className={styles.featuredSection}>
-          <div className={`siteContainer ${styles.featuredInner}`}>
+          <div
+            className={`siteContainer ${styles.featuredInner}`}
+          >
             <div className={styles.sectionTitle}>
-              <h2>latest entry</h2>
+              <h2>
+                {t("sections.latest")}
+              </h2>
+
               <Dots />
             </div>
 
@@ -86,22 +110,36 @@ export default function JournalPage() {
                     alt={featured.title}
                   />
                 ) : (
-                  <div className={styles.imagePlaceholder} />
+                  <div
+                    className={
+                      styles.imagePlaceholder
+                    }
+                  />
                 )}
               </div>
 
               <div className={styles.featuredContent}>
                 <div className={styles.meta}>
-                  <span>{featured.category}</span>
-                  <span>{formatDate(featured.date)}</span>
+                  <span>
+                    {featured.category}
+                  </span>
+
+                  <span>
+                    {formatDate(
+                      featured.date,
+                      locale
+                    )}
+                  </span>
                 </div>
 
                 <h3>{featured.title}</h3>
 
-                <p>{featured.excerpt}</p>
+                <p>
+                  {featured.excerpt}
+                </p>
 
                 <span className={styles.readMore}>
-                  read entry →
+                  {t("card.readEntry")} →
                 </span>
               </div>
             </Link>
@@ -110,9 +148,15 @@ export default function JournalPage() {
       )}
 
       {/* ARCHIVE */}
-      <section className={`siteContainer ${styles.archiveSection}`}>
+
+      <section
+        className={`siteContainer ${styles.archiveSection}`}
+      >
         <div className={styles.sectionTitle}>
-          <h2>all entries</h2>
+          <h2>
+            {t("sections.all")}
+          </h2>
+
           <Dots />
         </div>
 
@@ -124,33 +168,52 @@ export default function JournalPage() {
               className={styles.archiveItem}
             >
               <span className={styles.number}>
-                {String(index + 1).padStart(2, "0")}
+                {String(index + 1).padStart(
+                  2,
+                  "0"
+                )}
               </span>
 
               <div className={styles.archiveMain}>
                 <div className={styles.archiveMeta}>
-                  <span>{journal.category}</span>
-                  <span>{formatDate(journal.date)}</span>
+                  <span>
+                    {journal.category}
+                  </span>
+
+                  <span>
+                    {formatDate(
+                      journal.date,
+                      locale
+                    )}
+                  </span>
                 </div>
 
                 <h3>{journal.title}</h3>
 
-                <p>{journal.excerpt}</p>
+                <p>
+                  {journal.excerpt}
+                </p>
               </div>
 
-              <span className={styles.arrow}>↗</span>
+              <span
+                className={styles.arrow}
+                aria-hidden="true"
+              >
+                ↗
+              </span>
             </Link>
           ))}
         </div>
       </section>
 
       {/* BOTTOM TEXT */}
+
       <section className={styles.bottomSection}>
-        <div className={`siteContainer ${styles.bottomInner}`}>
+        <div
+          className={`siteContainer ${styles.bottomInner}`}
+        >
           <p>
-            A place for things that do not necessarily belong in
-            a case study - observations, lessons and notes from
-            the work behind the work.
+            {t("bottom.text")}
           </p>
         </div>
       </section>
@@ -158,10 +221,16 @@ export default function JournalPage() {
   );
 }
 
-function formatDate(date: string) {
-  return new Intl.DateTimeFormat("en-GB", {
-    year: "numeric",
-    month: "short",
-    day: "2-digit",
-  }).format(new Date(date));
+function formatDate(
+  date: string,
+  locale: string
+) {
+  return new Intl.DateTimeFormat(
+    locale === "nl" ? "nl-BE" : "en-GB",
+    {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+    }
+  ).format(new Date(date));
 }

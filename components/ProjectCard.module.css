@@ -6,7 +6,7 @@
 
   overflow: hidden;
 
-  border: 0.5px solid rgba(121, 149, 135, 0.5);
+  border: 0.5px solid var(--color-border);
   border-radius: 18px;
 
   background: var(--color-soft);
@@ -14,9 +14,9 @@
   transform: translateZ(0);
 
   transition:
-    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.35s ease,
-    box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.55s ease,
+    box-shadow 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =========================
@@ -33,7 +33,7 @@
 
   overflow: hidden;
 
-  color: #fff;
+  color: var(--tag-text);
   text-decoration: none;
 }
 
@@ -47,8 +47,8 @@
   transform: scale(1.001);
 
   transition:
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.55s ease;
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.65s ease;
 }
 
 /* =========================
@@ -66,14 +66,15 @@
   background:
     linear-gradient(
       to bottom,
-      rgba(20, 28, 24, 0.10) 0%,
-      rgba(20, 28, 24, 0.02) 30%,
-      rgba(20, 28, 24, 0.08) 48%,
-      rgba(20, 28, 24, 0.30) 68%,
-      rgba(14, 20, 17, 0.88) 100%
+      var(--overlay-top) 0%,
+      var(--overlay-middle) 30%,
+      var(--overlay-middle) 48%,
+      var(--color-brand-medium) 68%,
+      var(--overlay-bottom) 100%
     );
 
-  transition: background 0.45s ease;
+  transition:
+    opacity 0.45s ease;
 }
 
 /* =========================
@@ -116,14 +117,10 @@
 
   padding: 5px 10px;
 
-  border: 0.5px solid rgba(121, 149, 135, 0.85);
+  border: 0.5px solid var(--tag-border);
   border-radius: 999px;
 
-  /*
-    zelfde sage groen als website
-    maar transparant
-  */
-  background: rgba(121, 149, 135, 0.58);
+  background: var(--tag-bg);
 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -133,12 +130,12 @@
 
   font-weight: 400;
 
-  color: #fff;
+  color: var(--tag-text);
 
   transition:
-    background 0.35s ease,
-    border-color 0.35s ease,
-    transform 0.35s ease;
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =========================
@@ -155,7 +152,9 @@
 
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--tag-text);
+
+  opacity: 0.92;
 }
 
 /* =========================
@@ -193,11 +192,12 @@
 
   font-weight: 700;
 
-  color: #fff;
+  color: var(--tag-text);
 
   text-wrap: balance;
 
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .text p {
@@ -210,11 +210,13 @@
 
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--tag-text);
+
+  opacity: 0.78;
 
   transition:
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    color 0.35s ease;
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.4s ease;
 }
 
 /* =========================
@@ -223,6 +225,7 @@
 
 .viewProject {
   width: 100%;
+
   min-height: 41px;
 
   display: flex;
@@ -231,28 +234,25 @@
 
   padding: 0 14px;
 
-  border: 0.5px solid rgba(121, 149, 135, 0.9);
+  border: 0.5px solid var(--button-border);
   border-radius: 999px;
 
-  /*
-    geen wit glas meer:
-    jouw sage green
-  */
-  background: rgba(121, 149, 135, 0.42);
+  background: var(--color-brand-medium);
 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
   font-size: 10px;
   line-height: 1;
+  font-weight: 600;
 
-  color: #fff;
+  color: var(--tag-text);
 
   transition:
-    background 0.4s ease,
+    background-color 0.4s ease,
     border-color 0.4s ease,
     color 0.4s ease,
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .viewProject span {
@@ -260,7 +260,10 @@
 
   font-size: 12px;
 
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  color: inherit;
+
+  transition:
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =========================
@@ -269,58 +272,49 @@
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    transform:
-      translateY(-8px)
-      scale(1.008);
+    transform: translateY(-5px);
 
-    border-color: rgba(121, 149, 135, 0.9);
+    border-color: var(--color-border-strong);
 
-    box-shadow:
-      0 20px 50px rgba(25, 40, 33, 0.12);
+    box-shadow: var(--shadow-card);
   }
 
   .card:hover .image {
-    transform: scale(1.045);
+    transform: scale(1.03);
 
     filter:
-      saturate(1.03)
-      contrast(1.015);
+      saturate(1.02)
+      contrast(1.01);
   }
 
   .card:hover .overlay {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(20, 28, 24, 0.08) 0%,
-        rgba(20, 28, 24, 0.01) 30%,
-        rgba(20, 28, 24, 0.06) 48%,
-        rgba(20, 28, 24, 0.27) 68%,
-        rgba(14, 20, 17, 0.84) 100%
-      );
+    opacity: 0.96;
   }
 
   .card:hover .tag {
-    background: rgba(121, 149, 135, 0.78);
+    background: var(--tag-bg-hover);
 
-    border-color: rgba(121, 149, 135, 1);
+    border-color: var(--color-border-strong);
 
     transform: translateY(-1px);
   }
 
   .card:hover .text h3 {
-    transform: translateY(-3px);
+    transform: translateY(-1px);
   }
 
   .card:hover .text p {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 
-    color: rgba(255, 255, 255, 0.9);
+    opacity: 0.9;
   }
 
   .card:hover .viewProject {
-    background: rgba(121, 149, 135, 0.92);
+    background: var(--button-bg-hover);
 
-    border-color: rgba(121, 149, 135, 1);
+    border-color: var(--button-bg-hover);
+
+    color: var(--button-text-hover);
 
     transform: translateY(-2px);
   }

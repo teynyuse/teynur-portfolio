@@ -38,6 +38,11 @@
 
   margin: 0 auto;
 
+  padding:
+    90px
+    var(--page-padding)
+    120px;
+
   box-sizing: border-box;
 }
 
@@ -82,6 +87,100 @@
 }
 
 /* =========================
+   VIEW ALL WORK
+========================= */
+
+.allWorkRow {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 34px;
+}
+
+.allWorkLink {
+  min-width: 180px;
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding: 0 16px;
+
+  border: 0.5px solid var(--color-accent-text);
+  border-radius: 999px;
+
+  background: var(--color-accent-text);
+
+  color: var(--color-section-bg);
+  text-decoration: none;
+
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+
+  box-sizing: border-box;
+
+  box-shadow: var(--shadow-soft);
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.allWorkLink span {
+  display: inline-block;
+
+  font-size: 13px;
+  line-height: 1;
+
+  color: inherit;
+
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .allWorkLink:hover {
+    background: var(--color-brand-dark);
+    border-color: var(--color-brand-dark);
+
+    color: var(--color-accent-text);
+
+    transform: translateY(-3px);
+  }
+
+  .allWorkLink:hover span {
+    transform: translate(2px, -2px);
+  }
+}
+
+/* =========================
+   HOVER
+========================= */
+
+@media (hover: hover) and (pointer: fine) {
+  .allWorkLink:hover {
+    background-color: var(--button-bg-hover);
+    border-color: var(--button-bg-hover);
+
+    color: var(--button-text-hover);
+
+    transform: translateY(-3px);
+  }
+
+  .allWorkLink:hover span {
+    transform: translate(2px, -2px);
+  }
+}
+
+/* =========================
    TABLET
 ========================= */
 
@@ -105,91 +204,6 @@
 }
 
 /* =========================
-   VIEW ALL WORK
-========================= */
-
-.allWorkRow {
-  width: 100%;
-
-  display: flex;
-  justify-content: flex-end;
-
-  margin-top: 28px;
-}
-
-.allWorkLink {
-  min-width: 176px;
-  height: 44px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 24px;
-
-  padding: 0 16px;
-
-  border: 1px solid #3f5f51;
-  border-radius: 999px;
-
-  background: transparent;
-
-  color: #3f5f51;
-  text-decoration: none;
-
-  font-size: 11px;
-  line-height: 1;
-  font-weight: 700;
-
-  box-sizing: border-box;
-
-  transition:
-    background-color 0.4s ease,
-    color 0.4s ease,
-    border-color 0.4s ease,
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.allWorkLink span {
-  display: inline-block;
-
-  font-size: 13px;
-  line-height: 1;
-
-  color: inherit;
-
-  transition:
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .allWorkLink:hover {
-    background-color: #3f5f51;
-    border-color: #3f5f51;
-
-    color: #ffffff;
-
-    transform: translateY(-3px);
-  }
-
-  .allWorkLink:hover span {
-    transform: translate(2px, -2px);
-  }
-}
-
-@media (max-width: 700px) {
-  .allWorkRow {
-    margin-top: 24px;
-  }
-
-  .allWorkLink {
-    width: 100%;
-    min-width: 0;
-    height: 44px;
-  }
-}
-
-/* =========================
    MOBILE
 ========================= */
 
@@ -203,14 +217,20 @@
   }
 
   .content {
-    padding-top: 72px;
-    padding-bottom: 88px;
+    width: 100%;
+
+    padding:
+      75px
+      var(--page-padding)
+      85px;
+
+    box-sizing: border-box;
   }
 
   .grid {
     grid-template-columns: 1fr;
 
-    gap: 26px;
+    gap: 22px;
 
     margin-top: 14px;
   }
@@ -223,21 +243,15 @@
 
     margin-top: 0;
   }
-}
 
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 700px) {
-  .content {
-    padding:
-      75px
-      var(--page-padding)
-      85px;
+  .allWorkRow {
+    margin-top: 24px;
   }
 
-  .grid {
-    gap: 22px;
+  .allWorkLink {
+    width: 100%;
+    min-width: 0;
+
+    height: 44px;
   }
 }

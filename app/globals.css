@@ -71,7 +71,9 @@ body::after {
   will-change: transform;
 }
 
-/* grote groene bal */
+/* ========================================
+   GREEN / PRIMARY BLOB
+======================================== */
 
 body::before {
   width: 65vw;
@@ -86,17 +88,22 @@ body::before {
   background:
     radial-gradient(
       circle,
-      rgba(121, 149, 135, 0.42) 0%,
-      rgba(121, 149, 135, 0.24) 42%,
-      rgba(121, 149, 135, 0) 74%
+      var(--gradient-one-inner) 0%,
+      var(--gradient-one-middle) 42%,
+      var(--gradient-one-transparent) 74%
     );
 
   animation:
     floatingBlobOne
     24s
     ease-in-out
-    infinite alternate;
+    infinite
+    alternate;
 }
+
+/* ========================================
+   SECONDARY / WARM BLOB
+======================================== */
 
 body::after {
   width: 60vw;
@@ -111,16 +118,17 @@ body::after {
   background:
     radial-gradient(
       circle,
-      rgba(225, 211, 155, 0.34) 0%,
-      rgba(225, 211, 155, 0.18) 46%,
-      rgba(225, 211, 155, 0) 74%
+      var(--gradient-two-inner) 0%,
+      var(--gradient-two-middle) 46%,
+      var(--gradient-two-transparent) 74%
     );
 
   animation:
     floatingBlobTwo
     28s
     ease-in-out
-    infinite alternate;
+    infinite
+    alternate;
 }
 
 /* ========================================
@@ -219,6 +227,8 @@ body::after {
     filter: blur(75px);
   }
 
+  /* primary brand blob */
+
   body::before {
     width: 130vw;
     height: 130vw;
@@ -232,11 +242,13 @@ body::after {
     background:
       radial-gradient(
         circle,
-        rgba(121, 149, 135, 0.18) 0%,
-        rgba(121, 149, 135, 0.09) 45%,
-        rgba(121, 149, 135, 0) 72%
+        rgba(var(--gradient-color-one), 0.18) 0%,
+        rgba(var(--gradient-color-one), 0.09) 45%,
+        rgba(var(--gradient-color-one), 0) 72%
       );
   }
+
+  /* secondary warm blob */
 
   body::after {
     width: 120vw;
@@ -251,9 +263,9 @@ body::after {
     background:
       radial-gradient(
         circle,
-        rgba(224, 216, 174, 0.16) 0%,
-        rgba(224, 216, 174, 0.08) 45%,
-        rgba(224, 216, 174, 0) 72%
+        rgba(var(--gradient-color-two), 0.16) 0%,
+        rgba(var(--gradient-color-two), 0.08) 45%,
+        rgba(var(--gradient-color-two), 0) 72%
       );
   }
 }

@@ -18,9 +18,13 @@
   content: "";
 
   position: absolute;
+
   inset: 0 0 42%;
 
   background: var(--color-section-bg);
+
+  border-top: 0.5px solid var(--color-border);
+  border-bottom: 0.5px solid var(--color-border);
 
   z-index: 0;
 }
@@ -63,8 +67,9 @@
   margin-top: 18px;
 }
 
-/* subtiele offset,
-   minder sterk dan work */
+/* =========================
+   EDITORIAL OFFSET
+========================= */
 
 .grid > *:nth-child(2) {
   margin-top: 24px;
@@ -111,8 +116,14 @@
   }
 
   .content {
-    padding-top: 72px;
-    padding-bottom: 88px;
+    width: 100%;
+
+    padding:
+      72px
+      var(--page-padding)
+      88px;
+
+    box-sizing: border-box;
   }
 
   .grid {
@@ -136,8 +147,10 @@
 
 @media (max-width: 390px) {
   .content {
-    padding-top: 64px;
-    padding-bottom: 76px;
+    padding:
+      64px
+      var(--page-padding)
+      76px;
   }
 
   .grid {

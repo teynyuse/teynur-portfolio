@@ -1,166 +1,70 @@
 .footer {
   width: 100%;
+
   background: var(--color-accent);
 
   color: var(--color-text-secondary);
 
+  border-top: 0.5px solid var(--color-border);
 }
 
+/* ========================================
+   MAIN
+======================================== */
+
 .main {
-  min-height: 300px;
+  min-height: 360px;
 
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 
-  padding-top: 48px;
-  padding-bottom: 48px;
+  gap: 80px;
+
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
+
+/* ========================================
+   LEFT
+======================================== */
 
 .left {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+
+  gap: 52px;
 }
 
-.logo {
-  display: inline-flex;
-  width: fit-content;
-}
-
-.logo img {
-  display: block;
-  width: 40px;
-  height: auto;
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.links a {
-  width: fit-content;
-
-  color: inherit;
-  text-decoration: none;
-
-  font-size: 15px;
-  line-height: 1.1;
-  font-weight: 700;
-}
-
-.right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 20px;
-
-  text-align: right;
-}
-
-.socials {
-  display: flex;
-  gap: 10px;
-}
-
-.socials a {
-  color: inherit;
-  text-decoration: none;
-
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.cta {
-  margin: 0;
-
-  font-size: 28px;
-  line-height: 1.05;
-  font-weight: 300;
-
-  font-size: var(--font-size-footer-cta);
-}
-
-.bottom {
-  width: 100%;
-  background: var(--color-bg);
-
-}
-
-.bottomInner {
-  min-height: 48px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  gap: 24px;
-}
-
-.bottomInner small,
-.bottomInner a {
-  font-size: 11px;
-  font-weight: 300;
-}
-
-.bottomInner a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (max-width: 800px) {
-  .main {
-    min-height: auto;
-
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 60px;
-
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  .right {
-    width: 100%;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .cta {
-    font-size: 24px;
-  }
-
-  .bottomInner {
-    align-items: flex-start;
-    flex-direction: column;
-
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-}
+/* ========================================
+   LOGO
+======================================== */
 
 .logoLink {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0;
 
   width: fit-content;
 
-  color: inherit;
+  color: var(--color-text-secondary);
   text-decoration: none;
 }
 
 .logo {
-  font-size: 40px;
+  font-size: 42px;
   line-height: 1;
+
   font-weight: 800;
+
+  color: inherit;
+
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.4s ease;
 }
 
 .logoDots {
-  height: 28px;
+  height: 29px;
 
   display: flex;
   flex-direction: column;
@@ -168,9 +72,15 @@
 
   font-size: 40px;
   line-height: 0.25;
+
   font-weight: 800;
 
-  transform: translateY(-0.4rem);
+  color: inherit;
+
+  transform: translateY(-0.42rem);
+
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .logoDots span {
@@ -180,75 +90,436 @@
   line-height: 6px;
 }
 
-@media (max-width: 700px) {
-  .footer {
-    width: 100%;
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.links a {
+  width: fit-content;
+
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  font-size: 15px;
+  line-height: 1.1;
+
+  font-weight: 700;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========================================
+   RIGHT
+======================================== */
+
+.right {
+  max-width: 520px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 22px;
+
+  text-align: right;
+}
+
+/* ========================================
+   CTA
+======================================== */
+
+.cta {
+  margin: 0;
+
+  font-size: var(--font-size-footer-cta);
+  line-height: 1.08;
+
+  font-weight: 300;
+
+  color: var(--color-text-secondary);
+}
+
+/* ========================================
+   EMAIL
+======================================== */
+
+.email {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--color-text-secondary);
+  text-decoration: none;
+
+  font-size: 13px;
+  line-height: 1;
+
+  font-weight: 600;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.email svg {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+
+  color: currentColor;
+}
+
+/* ========================================
+   SOCIALS
+======================================== */
+
+.socials {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.socials a {
+  width: 42px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0.5px solid var(--button-border);
+  border-radius: 50%;
+
+  background: var(--button-bg);
+
+  color: var(--button-text);
+  text-decoration: none;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.socials svg {
+  width: 18px;
+  height: 18px;
+
+  color: currentColor;
+}
+
+/* ========================================
+   BOTTOM
+======================================== */
+
+.bottom {
+  width: 100%;
+
+  background: var(--color-bg);
+
+  color: var(--color-text-secondary);
+
+  border-top: 0.5px solid var(--color-border);
+}
+
+.bottomInner {
+  min-height: 54px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.bottomInner small,
+.bottomInner a,
+.bottomInner span {
+  font-size: 11px;
+  line-height: 1.2;
+
+  font-weight: 300;
+
+  color: var(--color-text-secondary);
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+}
+
+.bottomInner a {
+  text-decoration: none;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========================================
+   HOVER
+======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+  .logoLink:hover .logo {
+    opacity: 0.75;
+
+    transform: translateX(2px);
   }
 
+  .logoLink:hover .logoDots {
+    transform:
+      translateY(-0.42rem)
+      translateX(2px);
+  }
+
+  .links a:hover {
+    opacity: 0.65;
+
+    transform: translateX(4px);
+  }
+
+  .email:hover {
+    opacity: 0.68;
+
+    transform: translateX(3px);
+  }
+
+  .socials a:hover {
+    background: var(--button-bg-hover);
+
+    border-color: var(--button-bg-hover);
+
+    color: var(--button-text-hover);
+
+    transform: translateY(-3px);
+  }
+
+  .bottomInner a:hover {
+    opacity: 0.6;
+
+    transform: translateX(2px);
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 800px) {
   .main {
     min-height: auto;
 
-    display: flex;
     flex-direction: column;
-
     align-items: flex-start;
 
     gap: 70px;
 
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .left {
     width: 100%;
   }
 
-  .logoLink {
-    margin-bottom: 48px;
-  }
-
-  .links {
-    display: flex;
-    flex-direction: column;
-
-    gap: 5px;
-  }
-
   .right {
     width: 100%;
-
-    display: flex;
-    flex-direction: column;
+    max-width: none;
 
     align-items: flex-start;
 
-    gap: 30px;
-  }
-
-  .socials {
-    justify-content: flex-start;
+    text-align: left;
   }
 
   .cta {
-    margin: 0;
+    font-size: 26px;
+  }
 
-    text-align: left;
+  .bottomInner {
+    align-items: flex-start;
+    flex-direction: column;
 
+    gap: 14px;
+
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .bottomLinks {
+    flex-wrap: wrap;
+
+    gap: 10px 20px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+  .main {
+    gap: 72px;
+
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .left {
+    gap: 46px;
+  }
+
+  .logo {
+    font-size: 40px;
+  }
+
+  .links {
+    gap: 6px;
+  }
+
+  .right {
+    gap: 24px;
+  }
+
+  .cta {
     font-size: 28px;
     line-height: 1.1;
   }
 
-  .bottom {
-    padding-top: 25px;
-    padding-bottom: 25px;
+  .email {
+    font-size: 12px;
+  }
+
+  .socials {
+    gap: 9px;
+  }
+
+  .socials a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .socials svg {
+    width: 19px;
+    height: 19px;
   }
 
   .bottomInner {
-    display: flex;
-    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 
+  .bottomLinks {
+    flex-direction: column;
     align-items: flex-start;
 
-    gap: 20px;
+    gap: 8px;
   }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .logo,
+  .logoDots,
+  .links a,
+  .email,
+  .socials a,
+  .bottomInner a {
+    transition: none;
+  }
+
+  .logoLink:hover .logo,
+  .logoLink:hover .logoDots,
+  .links a:hover,
+  .email:hover,
+  .socials a:hover,
+  .bottomInner a:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   COPY EMAIL
+======================================== */
+
+.emailCopy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  min-height: 40px;
+
+  padding: 0 14px;
+
+  border: 0.5px solid var(--button-border);
+  border-radius: 999px;
+
+  background: var(--button-bg);
+
+  color: var(--button-text);
+
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.emailCopy svg {
+  width: 16px;
+  height: 16px;
+
+  flex-shrink: 0;
+
+  color: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .emailCopy:hover {
+    background: var(--button-bg-hover);
+    border-color: var(--button-bg-hover);
+
+    color: var(--button-text-hover);
+
+    transform: translateY(-2px);
+  }
+}
+
+.emailCopyDark {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
+.emailCopyDark:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #171717;
 }

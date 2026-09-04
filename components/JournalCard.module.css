@@ -3,7 +3,7 @@
 
   overflow: hidden;
 
-  border: 0.5px solid rgba(121, 149, 135, 0.48);
+  border: 0.5px solid var(--color-border);
   border-radius: 18px;
 
   background: var(--color-bg);
@@ -12,7 +12,8 @@
 
   transition:
     transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.55s ease;
+    border-color 0.55s ease,
+    box-shadow 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 
   will-change: transform;
 }
@@ -36,6 +37,7 @@
   position: relative;
 
   width: 100%;
+
   aspect-ratio: 16 / 10;
 
   overflow: hidden;
@@ -51,25 +53,25 @@
   transform: scale(1.001);
 
   transition:
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.55s ease;
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.65s ease;
 }
 
 .imageOverlay {
   position: absolute;
   inset: 0;
 
+  z-index: 1;
+
   pointer-events: none;
 
   background:
     linear-gradient(
       to bottom,
-      rgba(20, 28, 24, 0.04) 0%,
-      rgba(20, 28, 24, 0.02) 55%,
-      rgba(20, 28, 24, 0.28) 100%
+      var(--overlay-top) 0%,
+      var(--overlay-middle) 55%,
+      var(--overlay-bottom) 100%
     );
-
-  z-index: 1;
 }
 
 /* =========================
@@ -91,10 +93,10 @@
 
   padding: 5px 10px;
 
-  border: 0.5px solid rgba(121, 149, 135, 0.88);
+  border: 0.5px solid var(--tag-border);
   border-radius: 999px;
 
-  background: rgba(121, 149, 135, 0.62);
+  background: var(--tag-bg);
 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -102,11 +104,14 @@
   font-size: 10px;
   line-height: 1;
 
-  color: #fff;
+  font-weight: 500;
+
+  color: var(--tag-text);
 
   transition:
-    background 0.35s ease,
-    transform 0.35s ease;
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =========================
@@ -129,7 +134,7 @@
 .date {
   margin: 0 0 14px;
 
-  font-size: 10px;
+  font-size: var(--font-size-meta);
   line-height: 1.2;
 
   color: var(--color-text-secondary);
@@ -155,7 +160,8 @@
 
   text-wrap: balance;
 
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =========================
@@ -176,6 +182,7 @@
 /* =========================
    READ MORE
 ========================= */
+
 .readMore {
   width: 100%;
   min-height: 42px;
@@ -185,54 +192,41 @@
   justify-content: space-between;
 
   margin-top: 24px;
+
   padding: 0 15px;
 
-  border: 0.5px solid rgba(121, 149, 135, 0.95);
+  border: 0.5px solid var(--button-border);
   border-radius: 999px;
 
-  background: rgba(121, 149, 135, 0.32);
+  background: var(--button-bg);
 
   font-size: 11px;
   line-height: 1;
+
   font-weight: 700;
 
-  color: #3f5f51;
+  color: var(--button-text);
 
   opacity: 1;
 
   transition:
-    background 0.35s ease,
-    color 0.35s ease,
-    border-color 0.35s ease,
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .readMore span {
   display: inline-block;
 
   font-size: 13px;
+
   font-weight: 700;
 
-  color: #3f5f51;
+  color: inherit;
 
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .card:hover .readMore {
-    background: #799587;
-    border-color: #799587;
-
-    color: #ffffff;
-
-    transform: translateY(-2px);
-  }
-
-  .card:hover .readMore span {
-    color: #ffffff;
-
-    transform: translate(2px, -2px);
-  }
+  transition:
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =========================
@@ -243,34 +237,37 @@
   .card:hover {
     transform: translateY(-5px);
 
-    border-color: rgba(121, 149, 135, 0.8);
+    border-color: var(--color-border-strong);
 
+    box-shadow: var(--shadow-soft);
   }
 
   .card:hover .image {
-    transform: scale(1.04);
+    transform: scale(1.03);
 
     filter:
-      saturate(1.03)
-      contrast(1.015);
+      saturate(1.02)
+      contrast(1.01);
   }
 
   .card:hover .category {
-    background: rgba(121, 149, 135, 0.86);
+    background: var(--tag-bg-hover);
+
+    border-color: var(--color-border-strong);
 
     transform: translateY(-1px);
   }
 
   .card:hover h3 {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
 
   .card:hover .readMore {
-    background: rgba(121, 149, 135, 0.92);
+    background: var(--button-bg-hover);
 
-    border-color: rgba(121, 149, 135, 1);
+    border-color: var(--button-bg-hover);
 
-    color: #fff;
+    color: var(--button-text-hover);
 
     transform: translateY(-2px);
   }

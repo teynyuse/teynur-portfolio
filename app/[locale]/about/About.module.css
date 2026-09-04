@@ -67,7 +67,11 @@
 
   transform: translateY(32px);
 
-  animation: titleIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation:
+    titleIn
+    0.75s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
 }
 
 .heroTitle span:nth-child(1) {
@@ -116,9 +120,15 @@
   border: 0.5px solid var(--color-border);
 
   opacity: 0;
+
   transform: translateY(24px);
 
-  animation: portraitIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation:
+    portraitIn
+    0.8s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+
   animation-delay: 0.28s;
 }
 
@@ -133,13 +143,14 @@
   filter: saturate(0.85);
 
   transition:
-    transform 0.5s ease,
-    filter 0.5s ease;
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .portrait:hover img {
     transform: scale(1.025);
+
     filter: saturate(1);
   }
 }
@@ -213,13 +224,14 @@
 }
 
 .largeText {
-
   margin: 0;
 
   font-size: clamp(34px, 3.5vw, 54px);
   line-height: 1.2;
 
   letter-spacing: -0.02em;
+
+  color: inherit;
 }
 
 /* =========================
@@ -247,6 +259,8 @@
 .storyLabel span {
   font-size: 13px;
 
+  color: var(--color-text-secondary);
+
   opacity: 0.55;
 }
 
@@ -257,6 +271,8 @@
   line-height: 1;
 
   font-weight: 700;
+
+  color: var(--color-text);
 }
 
 .storyContent {
@@ -273,6 +289,8 @@
 
   font-size: clamp(20px, 1.7vw, 25px);
   line-height: 1.55;
+
+  color: var(--color-text);
 }
 
 /* =========================
@@ -309,6 +327,8 @@
   line-height: 1.2;
 
   letter-spacing: -0.015em;
+
+  color: inherit;
 }
 
 .currentText {
@@ -323,6 +343,8 @@
 
   font-size: 19px;
   line-height: 1.55;
+
+  color: inherit;
 }
 
 /* =========================
@@ -337,7 +359,7 @@
 .approachGrid {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   border-top: 0.5px solid var(--color-border);
   border-left: 0.5px solid var(--color-border);
@@ -351,12 +373,20 @@
 
   padding: 28px;
 
+  background: transparent;
+
   border-right: 0.5px solid var(--color-border);
   border-bottom: 0.5px solid var(--color-border);
+
+  transition:
+    background 0.45s ease,
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .approachGrid article > span {
   font-size: 12px;
+
+  color: var(--color-text-secondary);
 
   opacity: 0.55;
 }
@@ -368,6 +398,8 @@
   line-height: 1;
 
   font-weight: 700;
+
+  color: var(--color-text);
 }
 
 .approachGrid p {
@@ -377,6 +409,16 @@
 
   font-size: 15px;
   line-height: 1.45;
+
+  color: var(--color-text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .approachGrid article:hover {
+    background: var(--color-brand-soft);
+
+    transform: translateY(-3px);
+  }
 }
 
 /* =========================
@@ -403,10 +445,10 @@
 
 .focusGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  border-top: 0.5px solid currentColor;
-  border-left: 0.5px solid currentColor;
+  border-top: 0.5px solid var(--color-accent-text);
+  border-left: 0.5px solid var(--color-accent-text);
 }
 
 .focusGrid > div {
@@ -414,8 +456,12 @@
 
   padding: 28px;
 
-  border-right: 0.5px solid currentColor;
-  border-bottom: 0.5px solid currentColor;
+  border-right: 0.5px solid var(--color-accent-text);
+  border-bottom: 0.5px solid var(--color-accent-text);
+
+  transition:
+    background 0.45s ease,
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .focusGrid span {
@@ -424,6 +470,8 @@
   margin-bottom: 45px;
 
   font-size: 13px;
+
+  color: var(--color-accent-text);
 
   opacity: 0.65;
 }
@@ -435,6 +483,16 @@
 
   font-size: 20px;
   line-height: 1.4;
+
+  color: var(--color-accent-text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .focusGrid > div:hover {
+    background: var(--color-brand-medium);
+
+    transform: translateY(-3px);
+  }
 }
 
 /* =========================
@@ -444,11 +502,13 @@
 @keyframes titleIn {
   from {
     opacity: 0;
+
     transform: translateY(32px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -456,11 +516,13 @@
 @keyframes fadeUp {
   from {
     opacity: 0;
+
     transform: translateY(15px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -468,11 +530,13 @@
 @keyframes portraitIn {
   from {
     opacity: 0;
+
     transform: translateY(24px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -483,7 +547,7 @@
 
 @media (max-width: 900px) {
   .hero {
-    min-height: 400;
+    min-height: 400px;
 
     padding-top: 140px;
     padding-bottom: 80px;
@@ -526,11 +590,11 @@
 
 @media (max-width: 600px) {
   .hero {
+    min-height: 400px;
+
     padding-top: 40px;
     padding-bottom: 65px;
-    min-height: 400px;
   }
-
 
   .heroTitle {
     font-size: clamp(50px, 16vw, 72px);
@@ -580,11 +644,20 @@
   .heroIntro,
   .portrait {
     opacity: 1;
+
     transform: none;
+
     animation: none;
   }
 
-  .portrait img {
+  .portrait img,
+  .approachGrid article,
+  .focusGrid > div {
     transition: none;
+  }
+
+  .approachGrid article:hover,
+  .focusGrid > div:hover {
+    transform: none;
   }
 }

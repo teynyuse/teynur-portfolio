@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import {
+  getTranslations,
+} from "next-intl/server";
 
+import { Link } from "@/i18n/navigation";
 import journals from "@/data/journals.json";
+
 import styles from "./JournalDetail.module.css";
 
 type Props = {
   params: Promise<{
+    locale: string;
     slug: string;
   }>;
 };
@@ -30,12 +35,16 @@ export async function generateMetadata({
 
   return {
     title: journal.seo.title,
+
     description: journal.seo.description,
+
     keywords: journal.seo.keywords,
 
     openGraph: {
       title: journal.seo.title,
+
       description: journal.seo.description,
+
       type: "article",
 
       publishedTime: journal.date,
@@ -52,7 +61,9 @@ export async function generateMetadata({
 
     twitter: {
       card: "summary_large_image",
+
       title: journal.seo.title,
+
       description: journal.seo.description,
 
       images: journal.image
@@ -69,7 +80,12 @@ export async function generateMetadata({
 export default async function JournalDetailPage({
   params,
 }: Props) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+
+  const t = await getTranslations({
+    locale,
+    namespace: "journal.detail",
+  });
 
   const journal = journals.find(
     (journal) => journal.slug === slug
@@ -86,22 +102,35 @@ export default async function JournalDetailPage({
   const nextJournal =
     journals[(currentIndex + 1) % journals.length];
 
+  const readingMinutes =
+    estimateReadingTime(journal);
+
   return (
     <main className={styles.page}>
+
       {/* HERO */}
 
-      <header className={`siteContainer ${styles.hero}`}>
+      <header
+        className={`siteContainer ${styles.hero}`}
+      >
         <div className={styles.meta}>
-          <span>{journal.category}</span>
+          <span>
+            {journal.category}
+          </span>
 
           <span>·</span>
 
           <time dateTime={journal.date}>
-            {formatDate(journal.date)}
+            {formatDate(
+              journal.date,
+              locale
+            )}
           </time>
         </div>
 
-        <h1>{journal.title}</h1>
+        <h1>
+          {journal.title}
+        </h1>
 
         <p className={styles.excerpt}>
           {journal.excerpt}
@@ -127,10 +156,14 @@ export default async function JournalDetailPage({
 
       <article className={styles.article}>
         <div className={styles.articleMeta}>
-          <span>journal</span>
+          <span>
+            {t("label")}
+          </span>
 
           <span>
-            {estimateReadingTime(journal)}
+            {t("readingTime", {
+              minutes: readingMinutes,
+            })}
           </span>
         </div>
 
@@ -145,14 +178,26 @@ export default async function JournalDetailPage({
                 className={styles.articleSection}
                 key={`${section.heading}-${index}`}
               >
-                <div className={styles.sectionNumber}>
-                  {String(index + 1).padStart(2, "0")}
+                <div
+                  className={
+                    styles.sectionNumber
+                  }
+                >
+                  {String(index + 1).padStart(
+                    2,
+                    "0"
+                  )}
                 </div>
 
-                <h2>{section.heading}</h2>
+                <h2>
+                  {section.heading}
+                </h2>
 
                 {section.paragraphs.map(
-                  (paragraph, paragraphIndex) => (
+                  (
+                    paragraph,
+                    paragraphIndex
+                  ) => (
                     <p key={paragraphIndex}>
                       {paragraph}
                     </p>
@@ -180,27 +225,35 @@ export default async function JournalDetailPage({
       {/* ARTICLE FOOTER */}
 
       <section className={styles.articleFooter}>
-        <div className={`siteContainer ${styles.articleFooterInner}`}>
+        <div
+          className={`siteContainer ${styles.articleFooterInner}`}
+        >
           <Link
             href="/journal"
             className={styles.backLink}
           >
-            ← all journal entries
+            ← {t("back")}
           </Link>
 
           {nextJournal &&
-            nextJournal.slug !== journal.slug && (
+            nextJournal.slug !==
+              journal.slug && (
               <Link
                 href={`/journal/${nextJournal.slug}`}
                 className={styles.nextArticle}
               >
-                <span>next entry</span>
+                <span>
+                  {t("nextArticle")}
+                </span>
 
                 <strong>
                   {nextJournal.title}
                 </strong>
 
-                <span className={styles.arrow}>
+                <span
+                  className={styles.arrow}
+                  aria-hidden="true"
+                >
                   →
                 </span>
               </Link>
@@ -211,13 +264,29 @@ export default async function JournalDetailPage({
   );
 }
 
-function formatDate(date: string) {
-  return new Intl.DateTimeFormat("en-GB", {
-    year: "numeric",
-    month: "long",
-    day: "2-digit",
-  }).format(new Date(date));
+/* =========================
+   DATE
+========================= */
+
+function formatDate(
+  date: string,
+  locale: string
+) {
+  return new Intl.DateTimeFormat(
+    locale === "nl"
+      ? "nl-BE"
+      : "en-GB",
+    {
+      year: "numeric",
+      month: "long",
+      day: "2-digit",
+    }
+  ).format(new Date(date));
 }
+
+/* =========================
+   READING TIME
+========================= */
 
 function estimateReadingTime(
   journal: (typeof journals)[number]
@@ -227,17 +296,16 @@ function estimateReadingTime(
     journal.content.quote ?? "",
     journal.content.closing ?? "",
     ...journal.content.sections.flatMap(
-      (section) => section.paragraphs
+      (section) =>
+        section.paragraphs
     ),
   ]
     .join(" ")
     .trim()
     .split(/\s+/).length;
 
-  const minutes = Math.max(
+  return Math.max(
     1,
     Math.ceil(words / 220)
   );
-
-  return `${minutes} min read`;
 }

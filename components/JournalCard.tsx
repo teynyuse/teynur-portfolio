@@ -1,18 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+import { Link } from "@/i18n/navigation";
 import type { Journal } from "@/types/journal";
+
 import styles from "./JournalCard.module.css";
 
 type JournalCardProps = {
   journal: Journal;
 };
 
-export default function JournalCard({ journal }: JournalCardProps) {
+export default function JournalCard({
+  journal,
+}: JournalCardProps) {
+  const t = useTranslations("journalSection");
+
   return (
     <article className={styles.card}>
-      <Link href={`/journal/${journal.slug}`} className={styles.link}>
+      <Link
+        href={`/journal/${journal.slug}`}
+        className={styles.link}
+      >
         <div className={styles.imageWrapper}>
           {journal.image && (
             <Image
@@ -43,7 +53,8 @@ export default function JournalCard({ journal }: JournalCardProps) {
           </p>
 
           <span className={styles.readMore}>
-            read article
+            {t("readArticle")}
+
             <span aria-hidden="true">↗</span>
           </span>
         </div>

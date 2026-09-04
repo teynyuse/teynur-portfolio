@@ -2,33 +2,64 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import {
+  useLocale,
+  useTranslations,
+} from "next-intl";
+
+import {
+  Link,
+  usePathname,
+  useRouter,
+} from "@/i18n/navigation";
+
 import styles from "./Navigation.module.css";
 
 const navigation = [
-  { label: "work", href: "/work" },
-  { label: "experience", href: "/experience" },
-  { label: "about", href: "/about" },
-  { label: "journal", href: "/journal" },
-  { label: "contact", href: "/contact" },
-];
+  { key: "work", href: "/work" },
+  { key: "experience", href: "/experience" },
+  { key: "about", href: "/about" },
+  { key: "journal", href: "/journal" },
+  { key: "contact", href: "/contact" },
+] as const;
 
 export default function Navigation() {
+  const locale = useLocale();
+  const t = useTranslations("nav");
+
   const pathname = usePathname();
+  const router = useRouter();
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const homeActive = pathname === "/";
 
   const isActive = (href: string) =>
-    pathname === href || pathname.startsWith(`${href}/`);
+    pathname === href ||
+    pathname.startsWith(`${href}/`);
+
+  function changeLanguage(
+    newLocale: "en" | "nl",
+  ) {
+    if (locale === newLocale) {
+      return;
+    }
+
+    router.replace(pathname, {
+      locale: newLocale,
+    });
+
+    setMenuOpen(false);
+  }
 
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    document.body.style.overflow = menuOpen
+      ? "hidden"
+      : "";
 
     return () => {
       document.body.style.overflow = "";
@@ -47,7 +78,10 @@ export default function Navigation() {
         >
           <span className={styles.logo}>t</span>
 
-          <span className={styles.logoDots} aria-hidden="true">
+          <span
+            className={styles.logoDots}
+            aria-hidden="true"
+          >
             <span>.</span>
             <span>.</span>
             <span>.</span>
@@ -66,9 +100,14 @@ export default function Navigation() {
                   active ? styles.active : ""
                 }`}
               >
-                <span>{item.label}</span>
+                <span>
+                  {t(item.key)}
+                </span>
 
-                <span className={styles.dots} aria-hidden="true">
+                <span
+                  className={styles.dots}
+                  aria-hidden="true"
+                >
                   <span>.</span>
                   <span>.</span>
                   <span>.</span>
@@ -78,28 +117,63 @@ export default function Navigation() {
           })}
         </div>
 
+        {/* =========================
+            DESKTOP LANGUAGE
+        ========================= */}
+
         <div className={styles.desktopLanguage}>
           <button
             type="button"
-            className={styles.languageActive}
+            onClick={() =>
+              changeLanguage("en")
+            }
+            className={
+              locale === "en"
+                ? styles.languageActive
+                : ""
+            }
+            aria-pressed={locale === "en"}
           >
             en
           </button>
 
           <span>/</span>
 
-          <button type="button">
+          <button
+            type="button"
+            onClick={() =>
+              changeLanguage("nl")
+            }
+            className={
+              locale === "nl"
+                ? styles.languageActive
+                : ""
+            }
+            aria-pressed={locale === "nl"}
+          >
             nl
           </button>
         </div>
 
+        {/* =========================
+            MOBILE BUTTON
+        ========================= */}
+
         <button
           type="button"
           className={`${styles.menuButton} ${
-            menuOpen ? styles.menuButtonOpen : ""
+            menuOpen
+              ? styles.menuButtonOpen
+              : ""
           }`}
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          onClick={() =>
+            setMenuOpen((open) => !open)
+          }
+          aria-label={
+            menuOpen
+              ? t("closeMenu")
+              : t("openMenu")
+          }
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
         >
@@ -108,74 +182,131 @@ export default function Navigation() {
         </button>
       </nav>
 
+      {/* =========================
+          MOBILE MENU
+      ========================= */}
+
       <div
         id="mobile-navigation"
         className={`${styles.mobileMenu} ${
-          menuOpen ? styles.mobileMenuOpen : ""
+          menuOpen
+            ? styles.mobileMenuOpen
+            : ""
         }`}
         aria-hidden={!menuOpen}
       >
-        <div className={`siteContainer ${styles.mobileMenuInner}`}>
+        <div
+          className={`siteContainer ${styles.mobileMenuInner}`}
+        >
           <div className={styles.mobileLinks}>
-            {navigation.map((item, index) => {
-              const active = isActive(item.href);
+            {navigation.map(
+              (item, index) => {
+                const active = isActive(
+                  item.href,
+                );
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`${styles.mobileLink} ${
-                    active ? styles.mobileActive : ""
-                  }`}
-                  style={{
-                    transitionDelay: menuOpen
-                      ? `${100 + index * 55}ms`
-                      : "0ms",
-                  }}
-                >
-                  <span className={styles.mobileIndex}>
-                    0{index + 1}
-                  </span>
-
-                  <span className={styles.mobileLabel}>
-                    {item.label}
-                  </span>
-
-                  <span
-                    className={styles.mobileDots}
-                    aria-hidden="true"
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`${styles.mobileLink} ${
+                      active
+                        ? styles.mobileActive
+                        : ""
+                    }`}
+                    style={{
+                      transitionDelay:
+                        menuOpen
+                          ? `${
+                              100 +
+                              index * 55
+                            }ms`
+                          : "0ms",
+                    }}
                   >
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                  </span>
-                </Link>
-              );
-            })}
+                    <span
+                      className={
+                        styles.mobileIndex
+                      }
+                    >
+                      0{index + 1}
+                    </span>
+
+                    <span
+                      className={
+                        styles.mobileLabel
+                      }
+                    >
+                      {t(item.key)}
+                    </span>
+
+                    <span
+                      className={
+                        styles.mobileDots
+                      }
+                      aria-hidden="true"
+                    >
+                      <span>.</span>
+                      <span>.</span>
+                      <span>.</span>
+                    </span>
+                  </Link>
+                );
+              },
+            )}
           </div>
 
           <div className={styles.mobileMenuBottom}>
-            <div className={styles.mobileLanguage}>
+            {/* =========================
+                MOBILE LANGUAGE
+            ========================= */}
+
+            <div
+              className={styles.mobileLanguage}
+            >
               <button
                 type="button"
-                className={styles.languageActive}
+                onClick={() =>
+                  changeLanguage("en")
+                }
+                className={
+                  locale === "en"
+                    ? styles.languageActive
+                    : ""
+                }
+                aria-pressed={
+                  locale === "en"
+                }
               >
                 en
               </button>
 
               <span>/</span>
 
-              <button type="button">
+              <button
+                type="button"
+                onClick={() =>
+                  changeLanguage("nl")
+                }
+                className={
+                  locale === "nl"
+                    ? styles.languageActive
+                    : ""
+                }
+                aria-pressed={
+                  locale === "nl"
+                }
+              >
                 nl
               </button>
             </div>
 
             <p>
-              developer.
+              {t("role1")}
               <br />
-              designer.
+              {t("role2")}
               <br />
-              maker.
+              {t("role3")}
             </p>
           </div>
         </div>

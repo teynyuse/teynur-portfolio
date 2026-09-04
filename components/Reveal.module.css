@@ -2,22 +2,28 @@
   height: 100%;
 
   opacity: 0;
-  transform: translateY(24px);
+
+  transform: translateY(20px);
 
   transition:
-    opacity 0.65s ease,
-    transform 0.65s ease;
+    opacity 0.7s ease,
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: opacity, transform;
 }
 
 .visible {
   opacity: 1;
+
   transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
+
     transform: none;
+
     transition: none;
   }
 }

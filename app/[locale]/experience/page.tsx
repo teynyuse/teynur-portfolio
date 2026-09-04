@@ -1,8 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
+
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
 import styles from "./Experience.module.css";
 
 export const metadata: Metadata = {
   title: "Experience - Developer, Designer & Creative Technologist",
+
   description:
     "Explore the professional experience, education and technical skills of Teynur Yuseinov, a developer and designer working across software, interaction design and creative technology.",
 
@@ -24,8 +29,10 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Experience - Teynur Yuseinov",
+
     description:
       "Professional experience, education and technical skills across software development, interaction design and creative technology.",
+
     type: "profile",
   },
 };
@@ -36,12 +43,9 @@ export const metadata: Metadata = {
 
 const experience = [
   {
-    period: "2026 - present",
+    key: "sqlDeveloper",
     company: "FPS Finance",
-    role: "SQL Developer",
-    location: "Brussels, Belgium",
-    description:
-      "Working on SQL-driven data analysis, database updates and migration-related tasks within a large government IT environment. My work includes writing and validating SQL scripts, analysing DB2 data, testing database changes and supporting application and data migration processes.",
+
     technologies: [
       "SQL",
       "DB2",
@@ -51,15 +55,14 @@ const experience = [
       "Jira",
       "Confluence",
     ],
+
     current: true,
   },
+
   {
-    period: "2025 — 2026",
+    key: "applicationTester",
     company: "FPS Finance",
-    role: "Application Tester",
-    location: "Brussels, Belgium",
-    description:
-      "Started at FPS Finance as an application tester, validating financial applications through functional testing, test scenarios, API testing and database checks before moving into a more SQL-focused development role.",
+
     technologies: [
       "Functional Testing",
       "SoapUI",
@@ -68,65 +71,58 @@ const experience = [
       "Jira",
       "Confluence",
     ],
+
     current: false,
   },
+
   {
-    period: "2024",
+    key: "webDeveloperIntern",
     company: "Techbirds / Techjane",
-    role: "Web Developer Intern",
-    location: "Belgium",
-    description:
-      "Worked in a development environment where I gained practical experience building and maintaining digital products and translating designs into working web interfaces.",
+
     technologies: [
       "Web Development",
       "Frontend",
       "Backend",
     ],
+
     current: false,
   },
+
   {
-    period: "2022",
+    key: "graphicIntern",
     company: "3Plus NV",
-    role: "Graphic Designer & Print Production Intern",
-    location: "Belgium",
-    description:
-      "Worked with graphic production, print preparation and visual design. This experience gave me a strong foundation in typography, layout, colour and production-oriented design.",
+
     technologies: [
       "Graphic Design",
       "Print",
       "Adobe Creative Cloud",
     ],
+
     current: false,
   },
-];
+] as const;
 
 const education = [
   {
-    period: "2025 — present",
+    key: "bachelor",
     school: "Artevelde University of Applied Sciences",
-    programme: "Bachelor Applied Computer Science",
-    description:
-      "Continuing my studies while working, with a focus on software development, interactive applications, IoT and creative technology.",
   },
+
   {
-    period: "2022 — 2024",
+    key: "graduate",
     school: "Artevelde University of Applied Sciences",
-    programme: "Graduate Degree in Programming",
-    description:
-      "A practice-oriented programming programme covering frontend and backend development, databases, APIs and full-stack application development.",
   },
+
   {
-    period: "2015 — 2021",
+    key: "secondary",
     school: "VISO Mariakerke",
-    programme: "Graphic Design & Print Production",
-    description:
-      "Built my visual foundation in graphic design, typography, prepress, print production and digital communication.",
   },
-];
+] as const;
 
 const skillGroups = [
   {
-    title: "development",
+    key: "development",
+
     skills: [
       "JavaScript",
       "TypeScript",
@@ -136,8 +132,10 @@ const skillGroups = [
       "Node.js",
     ],
   },
+
   {
-    title: "frameworks",
+    key: "frameworks",
+
     skills: [
       "React",
       "Next.js",
@@ -147,8 +145,10 @@ const skillGroups = [
       "Tailwind CSS",
     ],
   },
+
   {
-    title: "creative technology",
+    key: "creativeTechnology",
+
     skills: [
       "Raspberry Pi",
       "ESP32",
@@ -158,8 +158,10 @@ const skillGroups = [
       "Blueprints",
     ],
   },
+
   {
-    title: "data & backend",
+    key: "dataBackend",
+
     skills: [
       "PostgreSQL",
       "DB2",
@@ -169,8 +171,10 @@ const skillGroups = [
       "SQL",
     ],
   },
+
   {
-    title: "design",
+    key: "design",
+
     skills: [
       "Interaction Design",
       "UI Design",
@@ -180,8 +184,10 @@ const skillGroups = [
       "Adobe Creative Cloud",
     ],
   },
+
   {
-    title: "tools",
+    key: "tools",
+
     skills: [
       "Git",
       "GitHub",
@@ -191,7 +197,7 @@ const skillGroups = [
       "WordPress",
     ],
   },
-];
+] as const;
 
 /* =========================
    DOTS
@@ -199,7 +205,10 @@ const skillGroups = [
 
 function Dots() {
   return (
-    <span className={styles.dots} aria-hidden="true">
+    <span
+      className={styles.dots}
+      aria-hidden="true"
+    >
       <span>.</span>
       <span>.</span>
       <span>.</span>
@@ -211,18 +220,29 @@ function Dots() {
    PAGE
 ========================= */
 
-export default function ExperiencePage() {
+export default async function ExperiencePage() {
+  const t = await getTranslations("experience");
+
   const structuredData = {
     "@context": "https://schema.org",
+
     "@type": "Person",
+
     name: "Teynur Yuseinov",
+
     url: "https://www.teynuryuseinov.be",
-    jobTitle: "Developer, Designer & Creative Technologist",
+
+    jobTitle:
+      "Developer, Designer & Creative Technologist",
+
     address: {
       "@type": "PostalAddress",
+
       addressLocality: "Ghent",
+
       addressCountry: "BE",
     },
+
     knowsAbout: [
       "Software Development",
       "Web Development",
@@ -235,8 +255,10 @@ export default function ExperiencePage() {
       "Unreal Engine",
       "Graphic Design",
     ],
+
     alumniOf: {
       "@type": "CollegeOrUniversity",
+
       name: "Artevelde University of Applied Sciences",
     },
   };
@@ -246,31 +268,34 @@ export default function ExperiencePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
+          __html: JSON.stringify(
+            structuredData
+          ),
         }}
       />
 
       <main className={styles.page}>
+
         {/* =========================
             HERO
         ========================= */}
 
-        <section className={`siteContainer ${styles.hero}`}>
+        <section
+          className={`siteContainer ${styles.hero}`}
+        >
           <div className={styles.heroContent}>
-
             <h1>
-              from design
+              {t("hero.line1")}
               <br />
-              to development
+
+              {t("hero.line2")}
               <br />
-              and beyond.
+
+              {t("hero.line3")}
             </h1>
 
             <p className={styles.intro}>
-              My background started in graphic design and gradually
-              moved into software development, interaction design and
-              creative technology. Today I like working where those
-              disciplines meet.
+              {t("hero.description")}
             </p>
           </div>
         </section>
@@ -280,9 +305,14 @@ export default function ExperiencePage() {
         ========================= */}
 
         <section className={styles.experienceSection}>
-          <div className={`siteContainer ${styles.sectionInner}`}>
+          <div
+            className={`siteContainer ${styles.sectionInner}`}
+          >
             <div className={styles.sectionTitle}>
-              <h2>experience</h2>
+              <h2>
+                {t("sections.experience")}
+              </h2>
+
               <Dots />
             </div>
 
@@ -290,39 +320,59 @@ export default function ExperiencePage() {
               {experience.map((item) => (
                 <article
                   className={styles.timelineItem}
-                  key={`${item.company}-${item.period}`}
+                  key={`${item.company}-${item.key}`}
                 >
                   <div className={styles.period}>
-                    <span>{item.period}</span>
+                    <span>
+                      {t(
+                        `jobs.${item.key}.period`
+                      )}
+                    </span>
 
                     {item.current && (
                       <span className={styles.current}>
-                        current
+                        {t("labels.current")}
                       </span>
                     )}
                   </div>
 
-                  <div className={styles.experienceHeading}>
+                  <div
+                    className={styles.experienceHeading}
+                  >
                     <h3>{item.company}</h3>
 
                     <p className={styles.role}>
-                      {item.role}
+                      {t(
+                        `jobs.${item.key}.role`
+                      )}
                     </p>
 
                     <p className={styles.location}>
-                      {item.location}
+                      {t(
+                        `jobs.${item.key}.location`
+                      )}
                     </p>
                   </div>
 
-                  <div className={styles.experienceDescription}>
-                    <p>{item.description}</p>
+                  <div
+                    className={
+                      styles.experienceDescription
+                    }
+                  >
+                    <p>
+                      {t(
+                        `jobs.${item.key}.description`
+                      )}
+                    </p>
 
                     <div className={styles.tags}>
-                      {item.technologies.map((technology) => (
-                        <span key={technology}>
-                          {technology}
-                        </span>
-                      ))}
+                      {item.technologies.map(
+                        (technology) => (
+                          <span key={technology}>
+                            {technology}
+                          </span>
+                        )
+                      )}
                     </div>
                   </div>
                 </article>
@@ -336,11 +386,16 @@ export default function ExperiencePage() {
         ========================= */}
 
         <section className={styles.educationSection}>
-          <div className={`siteContainer ${styles.sectionInner}`}>
+          <div
+            className={`siteContainer ${styles.sectionInner}`}
+          >
             <div
               className={`${styles.sectionTitle} ${styles.sectionTitleLight}`}
             >
-              <h2>education</h2>
+              <h2>
+                {t("sections.education")}
+              </h2>
+
               <Dots />
             </div>
 
@@ -348,20 +403,34 @@ export default function ExperiencePage() {
               {education.map((item) => (
                 <article
                   className={styles.educationCard}
-                  key={`${item.school}-${item.period}`}
+                  key={`${item.school}-${item.key}`}
                 >
-                  <p className={styles.educationPeriod}>
-                    {item.period}
+                  <p
+                    className={
+                      styles.educationPeriod
+                    }
+                  >
+                    {t(
+                      `education.${item.key}.period`
+                    )}
                   </p>
 
                   <h3>{item.school}</h3>
 
                   <p className={styles.programme}>
-                    {item.programme}
+                    {t(
+                      `education.${item.key}.programme`
+                    )}
                   </p>
 
-                  <p className={styles.educationDescription}>
-                    {item.description}
+                  <p
+                    className={
+                      styles.educationDescription
+                    }
+                  >
+                    {t(
+                      `education.${item.key}.description`
+                    )}
                   </p>
                 </article>
               ))}
@@ -374,18 +443,20 @@ export default function ExperiencePage() {
         ========================= */}
 
         <section className={styles.skillsSection}>
-          <div className={`siteContainer ${styles.sectionInner}`}>
+          <div
+            className={`siteContainer ${styles.sectionInner}`}
+          >
             <div className={styles.sectionTitle}>
-              <h2>toolbox</h2>
+              <h2>
+                {t("sections.toolbox")}
+              </h2>
+
               <Dots />
             </div>
 
             <div className={styles.skillsIntro}>
               <p>
-                I work across software, design and physical
-                computing. The tools change depending on the
-                project - the goal stays the same: making something
-                that works and feels considered.
+                {t("toolbox.intro")}
               </p>
             </div>
 
@@ -393,13 +464,19 @@ export default function ExperiencePage() {
               {skillGroups.map((group) => (
                 <article
                   className={styles.skillGroup}
-                  key={group.title}
+                  key={group.key}
                 >
-                  <h3>{group.title}</h3>
+                  <h3>
+                    {t(
+                      `toolbox.${group.key}`
+                    )}
+                  </h3>
 
                   <ul>
                     {group.skills.map((skill) => (
-                      <li key={skill}>{skill}</li>
+                      <li key={skill}>
+                        {skill}
+                      </li>
                     ))}
                   </ul>
                 </article>
@@ -407,6 +484,7 @@ export default function ExperiencePage() {
             </div>
           </div>
         </section>
+
       </main>
     </>
   );

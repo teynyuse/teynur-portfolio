@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
 import styles from "./About.module.css";
 
 export const metadata: Metadata = {
   title: "About - Developer, Designer & Creative Technologist",
+
   description:
     "Learn more about Teynur Yuseinov, a Belgium-based developer and designer working across software development, interaction design, physical computing and creative technology.",
+
   keywords: [
     "Teynur Yuseinov",
     "developer Belgium",
@@ -16,10 +20,13 @@ export const metadata: Metadata = {
     "physical computing",
     "portfolio Belgium",
   ],
+
   openGraph: {
     title: "About - Teynur Yuseinov",
+
     description:
       "Developer, designer and creative technologist working across software, interaction and physical experiences.",
+
     type: "profile",
   },
 };
@@ -34,183 +41,175 @@ function Dots() {
   );
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const t = await getTranslations("about");
+
   return (
     <main className={styles.page}>
       {/* HERO */}
+
       <section className={`siteContainer ${styles.hero}`}>
         <div className={styles.heroGrid}>
           <div className={styles.heroContent}>
-
             <h1 className={styles.heroTitle}>
-              <span>developer.</span>
-              <span>designer.</span>
-              <span>maker.</span>
+              <span>{t("hero.line1")}</span>
+              <span>{t("hero.line2")}</span>
+              <span>{t("hero.line3")}</span>
             </h1>
 
             <p className={styles.heroIntro}>
-              I work across software, interaction design and physical
-              computing, combining technical development with a visual
-              background in design.
+              {t("hero.intro")}
             </p>
           </div>
 
           <div className={styles.portrait}>
             <img
               src="/images/profile.jpg"
-              alt="Portrait of Teynur Yuseinov"
+              alt={t("hero.portraitAlt")}
             />
           </div>
         </div>
       </section>
 
       {/* INTRO */}
+
       <section className={styles.introSection}>
         <div className={`siteContainer ${styles.introInner}`}>
           <div className={styles.sectionTitle}>
-            <h2>who I am</h2>
+            <h2>{t("intro.title")}</h2>
             <Dots />
           </div>
 
           <p className={styles.largeText}>
-            I started with graphic design and gradually moved into
-            programming, software development and creative technology.
-            That mix still defines how I work today: I care about how
-            something functions, how it looks and how people experience it.
+            {t("intro.text")}
           </p>
         </div>
       </section>
 
       {/* STORY */}
+
       <section className={`siteContainer ${styles.storySection}`}>
         <div className={styles.storyLabel}>
           <span>01</span>
-          <h2>background</h2>
+
+          <h2>{t("story.title")}</h2>
         </div>
 
         <div className={styles.storyContent}>
-          <p>
-            My first background was visual. I worked with typography,
-            layout, branding and print production before moving deeper into
-            digital design and development.
-          </p>
+          <p>{t("story.paragraph1")}</p>
 
-          <p>
-            Programming gave me another way to create. Instead of only
-            designing what something should look like, I could build how it
-            behaves, how data moves through it and how people interact with it.
-          </p>
+          <p>{t("story.paragraph2")}</p>
         </div>
       </section>
 
       {/* CURRENT */}
+
       <section className={styles.currentSection}>
         <div className={`siteContainer ${styles.currentInner}`}>
           <div className={styles.storyLabel}>
             <span>02</span>
-            <h2>today</h2>
+
+            <h2>{t("current.title")}</h2>
           </div>
 
           <div className={styles.currentGrid}>
             <div className={styles.currentLead}>
-              <p>
-                Today my work sits somewhere between software development,
-                database work, interaction design and creative technology.
-              </p>
+              <p>{t("current.lead")}</p>
             </div>
 
             <div className={styles.currentText}>
-              <p>
-                Professionally, I work as an SQL Developer while continuing
-                to build interactive digital and physical projects alongside
-                my studies.
-              </p>
+              <p>{t("current.paragraph1")}</p>
 
-              <p>
-                I particularly enjoy projects where software connects to the
-                physical world — interfaces, installations, sensors, embedded
-                systems and experiences people can actually touch.
-              </p>
+              <p>{t("current.paragraph2")}</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* WORKING STYLE */}
+
       <section className={`siteContainer ${styles.approachSection}`}>
         <div className={styles.sectionTitle}>
-          <h2>how I work</h2>
+          <h2>{t("approach.title")}</h2>
+
           <Dots />
         </div>
 
         <div className={styles.approachGrid}>
           <article>
             <span>01</span>
-            <h3>understand</h3>
+
+            <h3>{t("approach.understand.title")}</h3>
+
             <p>
-              I start by understanding the problem, the context and what the
-              experience actually needs to achieve.
+              {t("approach.understand.text")}
             </p>
           </article>
 
           <article>
             <span>02</span>
-            <h3>make</h3>
+
+            <h3>{t("approach.make.title")}</h3>
+
             <p>
-              I like turning ideas into working prototypes early instead of
-              keeping everything theoretical for too long.
+              {t("approach.make.text")}
             </p>
           </article>
 
           <article>
             <span>03</span>
-            <h3>refine</h3>
+
+            <h3>{t("approach.refine.title")}</h3>
+
             <p>
-              Once something works, I refine the interaction, visual details
-              and technical structure until the experience feels coherent.
+              {t("approach.refine.text")}
             </p>
           </article>
         </div>
       </section>
 
       {/* FOCUS */}
+
       <section className={styles.focusSection}>
         <div className={`siteContainer ${styles.focusInner}`}>
-          <div className={`${styles.sectionTitle} ${styles.lightTitle}`}>
-            <h2>what I work with</h2>
+          <div
+            className={`${styles.sectionTitle} ${styles.lightTitle}`}
+          >
+            <h2>{t("focus.title")}</h2>
+
             <Dots />
           </div>
 
           <div className={styles.focusGrid}>
             <div>
-              <span>software</span>
+              <span>{t("focus.software.title")}</span>
+
               <p>
-                TypeScript, React, Next.js, Node.js, SQL, APIs and backend
-                development.
+                {t("focus.software.text")}
               </p>
             </div>
 
             <div>
-              <span>interaction</span>
+              <span>{t("focus.interaction.title")}</span>
+
               <p>
-                UI design, interaction design, prototyping and digital product
-                experiences.
+                {t("focus.interaction.text")}
               </p>
             </div>
 
             <div>
-              <span>physical</span>
+              <span>{t("focus.physical.title")}</span>
+
               <p>
-                Raspberry Pi, ESP32, RFID, sensors, LEDs and interactive
-                installations.
+                {t("focus.physical.text")}
               </p>
             </div>
 
             <div>
-              <span>visual</span>
+              <span>{t("focus.visual.title")}</span>
+
               <p>
-                Graphic design, brand identity, typography, layout and visual
-                systems.
+                {t("focus.visual.text")}
               </p>
             </div>
           </div>

@@ -1,0 +1,365 @@
+{
+  "nav": {
+    "work": "work",
+    "experience": "experience",
+    "about": "about",
+    "journal": "journal",
+    "contact": "contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "role1": "developer.",
+    "role2": "designer.",
+    "role3": "maker."
+  },
+
+  "projectTags": {
+  "Interactive": "Interactive",
+  "Creative Technology": "Creative Technology",
+  "Internet of Things": "Internet of Things",
+  "Web Development": "Web Development",
+  "Product Design": "Product Design",
+  "Mobile": "Mobile",
+  "Interaction Design": "Interaction Design",
+  "Brand Identity": "Brand Identity",
+  "Graphic Design": "Graphic Design",
+  "Portfolio": "Portfolio",
+  "Packaging Design": "Packaging Design"
+},
+
+
+  "home": {
+    "hero": {
+      "line1": "developer.",
+      "line2": "designer.",
+      "line3": "maker.",
+      "descriptionLine1": "I build interactive experiences across software,",
+      "descriptionLine2": "hardware and design – turning ideas into things people can see, touch and use."
+    },
+
+    "homeShowcase": {
+      "quote": "I like working where software, design and the physical world meet.",
+      "skills": "web development / interaction design / creative technology / prototyping"
+
+  }
+  },
+
+  "selectedWork": {
+    "title": "selected work",
+    "viewAll": "view all work",
+    "viewProject": "view project"
+  },
+
+  "journalSection": {
+    "title": "journal",
+    "readArticle": "read article",
+    "viewAll": "view all articles"
+  },
+
+  "footer": {
+    "ctaLine1": "let's make something worth",
+    "ctaLine2": "remembering.",
+    "privacy": "privacy policy",
+    "location": "Ghent, Belgium",
+    "copyright": "© 2026 Teynur Yuseinov",
+    "disciplines": "software · design · interaction",
+    "copyEmail": "Copy email address",
+    "copied": "copied!"
+  },
+
+  "work": {
+    
+    "hero": {
+      "eyebrow": "selected projects",
+      "title": "work",
+      "description": "A selection of digital products, interactive experiences and visual identities – built across software, design and physical interaction."
+    },
+
+    "filters": {
+      "all": "all",
+      "webDevelopment": "web development",
+      "brandIdentity": "brand identity",
+      "interactive": "interactive",
+      "ariaLabel": "Filter projects"
+    },
+
+    "card": {
+      "viewProject": "view project"
+    },
+
+    "detail": {
+      "year": "year",
+      "client": "client",
+      "role": "role",
+      "type": "type",
+      "status": "status",
+      "overview": "overview",
+      "technologies": "technologies",
+      "about": "about",
+      "challenge": "challenge",
+      "approach": "approach",
+      "result": "result",
+      "gallery": "gallery",
+      "back": "back to work",
+      "nextProject": "next project",
+      "category": "category"
+    }
+  },
+  "experience": {
+    "hero": {
+      "line1": "from design",
+      "line2": "to development",
+      "line3": "and beyond.",
+      "description": "My background started in graphic design and gradually moved into software development, interaction design and creative technology. Today I like working where those disciplines meet."
+    },
+
+    "sections": {
+      "experience": "experience",
+      "education": "education",
+      "toolbox": "toolbox"
+    },
+
+    "labels": {
+      "current": "current"
+    },
+
+    "jobs": {
+      "sqlDeveloper": {
+        "period": "2026 - present",
+        "role": "SQL Developer",
+        "location": "Brussels, Belgium",
+        "description": "Working on SQL-driven data analysis, database updates and migration-related tasks within a large government IT environment. My work includes writing and validating SQL scripts, analysing DB2 data, testing database changes and supporting application and data migration processes."
+      },
+
+      "applicationTester": {
+        "period": "2025 — 2026",
+        "role": "Application Tester",
+        "location": "Brussels, Belgium",
+        "description": "Started at FPS Finance as an application tester, validating financial applications through functional testing, test scenarios, API testing and database checks before moving into a more SQL-focused development role."
+      },
+
+      "webDeveloperIntern": {
+        "period": "2024",
+        "role": "Web Developer Intern",
+        "location": "Belgium",
+        "description": "Worked in a development environment where I gained practical experience building and maintaining digital products and translating designs into working web interfaces."
+      },
+
+      "graphicIntern": {
+        "period": "2022",
+        "role": "Graphic Designer & Print Production Intern",
+        "location": "Belgium",
+        "description": "Worked with graphic production, print preparation and visual design. This experience gave me a strong foundation in typography, layout, colour and production-oriented design."
+      }
+    },
+
+    "education": {
+      "bachelor": {
+        "period": "2025 — present",
+        "programme": "Bachelor Applied Computer Science",
+        "description": "Continuing my studies while working, with a focus on software development, interactive applications, IoT and creative technology."
+      },
+
+      "graduate": {
+        "period": "2022 — 2024",
+        "programme": "Graduate Degree in Programming",
+        "description": "A practice-oriented programming programme covering frontend and backend development, databases, APIs and full-stack application development."
+      },
+
+      "secondary": {
+        "period": "2015 — 2021",
+        "programme": "Graphic Design & Print Production",
+        "description": "Built my visual foundation in graphic design, typography, prepress, print production and digital communication."
+      }
+    },
+
+    "toolbox": {
+      "intro": "I work across software, design and physical computing. The tools change depending on the project - the goal stays the same: making something that works and feels considered.",
+      "development": "development",
+      "frameworks": "frameworks",
+      "creativeTechnology": "creative technology",
+      "dataBackend": "data & backend",
+      "design": "design",
+      "tools": "tools"
+    }
+  },
+
+  "about": {
+    "hero": {
+      "line1": "developer.",
+      "line2": "designer.",
+      "line3": "maker.",
+      "intro": "I work across software, interaction design and physical computing, combining technical development with a visual background in design.",
+      "portraitAlt": "Portrait of Teynur Yuseinov"
+    },
+
+    "intro": {
+      "title": "who I am",
+      "text": "I started with graphic design and gradually moved into programming, software development and creative technology. That mix still defines how I work today: I care about how something functions, how it looks and how people experience it."
+    },
+
+    "story": {
+      "title": "background",
+      "paragraph1": "My first background was visual. I worked with typography, layout, branding and print production before moving deeper into digital design and development.",
+      "paragraph2": "Programming gave me another way to create. Instead of only designing what something should look like, I could build how it behaves, how data moves through it and how people interact with it."
+    },
+
+    "current": {
+      "title": "today",
+      "lead": "Today my work sits somewhere between software development, database work, interaction design and creative technology.",
+      "paragraph1": "Professionally, I work as an SQL Developer while continuing to build interactive digital and physical projects alongside my studies.",
+      "paragraph2": "I particularly enjoy projects where software connects to the physical world — interfaces, installations, sensors, embedded systems and experiences people can actually touch."
+    },
+
+    "approach": {
+      "title": "how I work",
+
+      "understand": {
+        "title": "understand",
+        "text": "I start by understanding the problem, the context and what the experience actually needs to achieve."
+      },
+
+      "make": {
+        "title": "make",
+        "text": "I like turning ideas into working prototypes early instead of keeping everything theoretical for too long."
+      },
+
+      "refine": {
+        "title": "refine",
+        "text": "Once something works, I refine the interaction, visual details and technical structure until the experience feels coherent."
+      }
+    },
+
+    "focus": {
+      "title": "what I work with",
+
+      "software": {
+        "title": "software",
+        "text": "TypeScript, React, Next.js, Node.js, SQL, APIs and backend development."
+      },
+
+      "interaction": {
+        "title": "interaction",
+        "text": "UI design, interaction design, prototyping and digital product experiences."
+      },
+
+      "physical": {
+        "title": "physical",
+        "text": "Raspberry Pi, ESP32, RFID, sensors, LEDs and interactive installations."
+      },
+
+      "visual": {
+        "title": "visual",
+        "text": "Graphic design, brand identity, typography, layout and visual systems."
+      }
+    }
+  },
+  "journal": {
+    "hero": {
+      "line1": "thoughts from",
+      "line2": "the things",
+      "line3": "I make.",
+      "description": "Notes about software, design, creative technology and what I learn while building things."
+    },
+
+    "sections": {
+      "latest": "latest entry",
+      "all": "all entries"
+    },
+
+    "card": {
+      "readEntry": "read entry"
+    },
+
+    "bottom": {
+      "text": "A place for things that do not necessarily belong in a case study - observations, lessons and notes from the work behind the work."
+    },
+    "detail": {
+          "back": "all journal entries",
+          "nextArticle": "next entry",
+          "readingTime": "{minutes} min read",
+          "label": "journal"
+      }
+  },
+
+  "contact": {
+  "hero": {
+    "eyebrow": "contact",
+    "line1": "have something",
+    "line2": "in mind?",
+    "line3": "let's talk.",
+    "description": "Whether it is a digital product, an interactive experience, creative technology or simply an interesting idea. Feel free to reach out."
+  },
+
+  "info": {
+    "eyebrow": "contact details",
+    "title": "get in touch",
+    "description": "Have a project, idea or opportunity in mind? You can reach me directly here.",
+    "email": "email",
+    "basedIn": "based in",
+    "location": "Ghent, Belgium",
+    "online": "online",
+    "reply": "I usually reply as soon as I can."
+  },
+
+  "form": {
+    "eyebrow": "your message",
+    "title": "send me a message",
+    "description": "Tell me what you have in mind. You don't need a perfect brief to start a conversation.",
+
+    "name": "name",
+    "email": "email",
+    "subject": "subject",
+    "message": "message",
+
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "you@example.com",
+    "subjectPlaceholder": "What would you like to talk about?",
+    "messagePlaceholder": "Tell me a little about your idea...",
+
+    "hint": "Your message will be sent directly to me.",
+    "sendingMessage": "Your message is being sent...",
+
+    "send": "send message",
+    "sending": "sending...",
+
+    "successTitle": "Message sent!",
+    "success": "Thanks for reaching out. I'll get back to you as soon as I can.",
+
+    "errorTitle": "Message not sent",
+    "error": "Something went wrong. Please try again."
+  },
+
+  "message": {
+    "label": "no perfect brief required.",
+    "text": "Sometimes a good project starts with nothing more than an idea and a conversation."
+  }
+},
+
+  "privacy": {
+    "title": "privacy policy",
+    "intro": "This website respects your privacy and only processes the information needed to respond to messages sent through the contact form.",
+
+    "sections": {
+      "data": "personal data",
+      "purpose": "how your data is used",
+      "storage": "data storage",
+      "thirdParties": "third parties",
+      "rights": "your rights",
+      "contact": "contact"
+    }
+  },
+
+  "common": {
+    "viewProject": "view project",
+    "viewAll": "view all",
+    "readMore": "read more",
+    "readArticle": "read article",
+    "back": "back",
+    "next": "next",
+    "previous": "previous",
+    "copy": "copy",
+    "copied": "copied!",
+    "close": "close",
+    "open": "open"
+  }
+}

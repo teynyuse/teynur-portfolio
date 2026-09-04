@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import ProjectCard from "@/components/ProjectCard";
 import projects from "@/data/projects.json";
@@ -8,15 +9,32 @@ import projects from "@/data/projects.json";
 import styles from "./WorkGrid.module.css";
 
 const filters = [
-  "all",
-  "web development",
-  "brand identity",
-  "interactive",
-];
+  {
+    key: "all",
+    value: "all",
+  },
+  {
+    key: "webDevelopment",
+    value: "web development",
+  },
+  {
+    key: "brandIdentity",
+    value: "brand identity",
+  },
+  {
+    key: "interactive",
+    value: "interactive",
+  },
+] as const;
+
+type FilterValue =
+  (typeof filters)[number]["value"];
 
 export default function WorkGrid() {
+  const t = useTranslations("work.filters");
+
   const [activeFilter, setActiveFilter] =
-    useState("all");
+    useState<FilterValue>("all");
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "all") {
@@ -36,22 +54,22 @@ export default function WorkGrid() {
     <div className={styles.wrapper}>
       <div
         className={styles.filters}
-        aria-label="Filter projects"
+        aria-label={t("ariaLabel")}
       >
         {filters.map((filter) => (
           <button
-            key={filter}
+            key={filter.value}
             type="button"
             className={`${styles.filterButton} ${
-              activeFilter === filter
+              activeFilter === filter.value
                 ? styles.activeFilter
                 : ""
             }`}
             onClick={() =>
-              setActiveFilter(filter)
+              setActiveFilter(filter.value)
             }
           >
-            {filter}
+            {t(filter.key)}
           </button>
         ))}
       </div>

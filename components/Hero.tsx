@@ -1,20 +1,30 @@
+import { useTranslations } from "next-intl";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
+  const t = useTranslations("home.hero");
+
   return (
     <section className={`siteContainer ${styles.hero}`}>
       <div className={styles.content}>
         <h1 className={styles.title}>
-          <span className={styles.line}>developer.</span>
-          <span className={styles.line}>designer.</span>
-          <span className={styles.line}>maker.</span>
+          <span className={styles.line}>
+            {t("line1")}
+          </span>
+
+          <span className={styles.line}>
+            {t("line2")}
+          </span>
+
+          <span className={styles.line}>
+            {t("line3")}
+          </span>
         </h1>
 
         <p className={styles.description}>
-          I build interactive experiences across software,
+          {t("descriptionLine1")}
           <br />
-          hardware and design – turning ideas into things people can see,
-          touch and use.
+          {t("descriptionLine2")}
         </p>
       </div>
     </section>

@@ -1,0 +1,364 @@
+{
+  "nav": {
+    "work": "werk",
+    "experience": "ervaring",
+    "about": "over mij",
+    "journal": "journal",
+    "contact": "contact",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "role1": "developer.",
+    "role2": "designer.",
+    "role3": "maker."
+  },
+
+  "projectTags": {
+  "Interactive": "Interactief",
+  "Creative Technology": "Creatieve technologie",
+  "Internet of Things": "Internet of Things",
+  "Web Development": "Webontwikkeling",
+  "Product Design": "Productdesign",
+  "Mobile": "Mobiel",
+  "Interaction Design": "Interactiedesign",
+  "Brand Identity": "Visuele identiteit",
+  "Graphic Design": "Grafisch design",
+  "Portfolio": "Portfolio",
+  "Packaging Design": "Verpakkingsdesign"
+},
+
+  "home": {
+    "hero": {
+      "line1": "developer.",
+      "line2": "designer.",
+      "line3": "maker.",
+      "descriptionLine1": "Ik bouw interactieve ervaringen met software,",
+      "descriptionLine2": "hardware en design – en zet ideeën om in dingen die mensen kunnen zien, aanraken en gebruiken."
+    },
+
+    "homeShowcase": {
+      "quote": "Ik werk graag op het snijpunt van software, design en de fysieke wereld.",
+      "skills": "webontwikkeling / interactiedesign / creatieve technologie / prototyping"
+    }
+  },
+
+  "selectedWork": {
+    "title": "geselecteerd werk",
+    "viewAll": "bekijk alle projecten",
+    "viewProject": "bekijk project"
+  },
+
+  "journalSection": {
+    "title": "journal",
+    "readArticle": "lees artikel",
+    "viewAll": "bekijk alle artikels"
+  },
+
+  "footer": {
+    "ctaLine1": "laten we iets maken dat",
+    "ctaLine2": "bijblijft.",
+    "privacy": "privacybeleid",
+    "location": "Gent, België",
+    "copyright": "© 2026 Teynur Yuseinov",
+    "disciplines": "software · design · interactie",
+    "copyEmail": "E-mailadres kopiëren",
+    "copied": "gekopieerd!"
+  },
+
+  "work": {
+    "hero": {
+      "eyebrow": "geselecteerde projecten",
+      "title": "werk",
+      "description": "Een selectie van digitale producten, interactieve ervaringen en visuele identiteiten – gebouwd met software, design en fysieke interactie."
+    },
+
+    "filters": {
+      "all": "alles",
+      "webDevelopment": "webontwikkeling",
+      "brandIdentity": "visuele identiteit",
+      "interactive": "interactief",
+      "ariaLabel": "Projecten filteren"
+    },
+
+    "card": {
+      "viewProject": "bekijk project"
+    },
+
+    "detail": {
+      "year": "jaar",
+      "client": "klant",
+      "role": "rol",
+      "type": "type",
+      "status": "status",
+      "overview": "overzicht",
+      "technologies": "technologieën",
+      "about": "over het project",
+      "challenge": "uitdaging",
+      "approach": "aanpak",
+      "result": "resultaat",
+      "gallery": "galerij",
+      "back": "terug naar werk",
+      "nextProject": "volgend project",
+      "category": "categorie"
+    }
+  },
+
+  "experience": {
+    "hero": {
+      "line1": "van design",
+      "line2": "naar development",
+      "line3": "en verder.",
+      "description": "Mijn achtergrond begon in grafisch ontwerp en verschoof geleidelijk naar softwareontwikkeling, interactiedesign en creatieve technologie. Vandaag werk ik het liefst waar die disciplines samenkomen."
+    },
+
+    "sections": {
+      "experience": "ervaring",
+      "education": "opleiding",
+      "toolbox": "toolbox"
+    },
+
+    "labels": {
+      "current": "huidig"
+    },
+
+    "jobs": {
+      "sqlDeveloper": {
+        "period": "2026 - heden",
+        "role": "SQL Developer",
+        "location": "Brussel, België",
+        "description": "Ik werk aan SQL-gedreven data-analyse, database-updates en migratiegerelateerde taken binnen een grote IT-omgeving van de overheid. Mijn werk omvat het schrijven en valideren van SQL-scripts, het analyseren van DB2-data, het testen van databasewijzigingen en het ondersteunen van applicatie- en datamigraties."
+      },
+
+      "applicationTester": {
+        "period": "2025 — 2026",
+        "role": "Applicatietester",
+        "location": "Brussel, België",
+        "description": "Ik startte bij FOD Financiën als applicatietester, waar ik financiële applicaties valideerde via functionele tests, testscenario's, API-tests en databasecontroles, voordat ik doorgroeide naar een meer SQL-gerichte ontwikkelaarsrol."
+      },
+
+      "webDeveloperIntern": {
+        "period": "2024",
+        "role": "Web Developer stagiair",
+        "location": "België",
+        "description": "Ik werkte in een developmentomgeving waar ik praktische ervaring opdeed met het bouwen en onderhouden van digitale producten en het omzetten van ontwerpen naar werkende webinterfaces."
+      },
+
+      "graphicIntern": {
+        "period": "2022",
+        "role": "Grafisch ontwerper & printproductie stagiair",
+        "location": "België",
+        "description": "Ik werkte met grafische productie, drukvoorbereiding en visueel ontwerp. Deze ervaring gaf mij een sterke basis in typografie, lay-out, kleur en productiegericht design."
+      }
+    },
+
+    "education": {
+      "bachelor": {
+        "period": "2025 — heden",
+        "programme": "Bachelor Toegepaste Informatica",
+        "description": "Ik zet mijn studies voort terwijl ik werk, met een focus op softwareontwikkeling, interactieve toepassingen, IoT en creatieve technologie."
+      },
+
+      "graduate": {
+        "period": "2022 — 2024",
+        "programme": "Graduaat Programmeren",
+        "description": "Een praktijkgerichte programmeeropleiding met frontend- en backendontwikkeling, databases, API's en full-stack applicatieontwikkeling."
+      },
+
+      "secondary": {
+        "period": "2015 — 2021",
+        "programme": "Grafisch Ontwerp & Printproductie",
+        "description": "Hier bouwde ik mijn visuele basis op in grafisch ontwerp, typografie, prepress, printproductie en digitale communicatie."
+      }
+    },
+
+    "toolbox": {
+      "intro": "Ik werk op het snijpunt van software, design en physical computing. De tools verschillen per project, maar het doel blijft hetzelfde: iets maken dat goed werkt en doordacht aanvoelt.",
+      "development": "development",
+      "frameworks": "frameworks",
+      "creativeTechnology": "creatieve technologie",
+      "dataBackend": "data & backend",
+      "design": "design",
+      "tools": "tools"
+    }
+  },
+
+  "about": {
+    "hero": {
+      "line1": "developer.",
+      "line2": "designer.",
+      "line3": "maker.",
+      "intro": "Ik werk met software, interactiedesign en physical computing, waarbij ik technische ontwikkeling combineer met mijn visuele achtergrond in design.",
+      "portraitAlt": "Portret van Teynur Yuseinov"
+    },
+
+    "intro": {
+      "title": "wie ik ben",
+      "text": "Ik begon met grafisch ontwerp en groeide geleidelijk door naar programmeren, softwareontwikkeling en creatieve technologie. Die combinatie bepaalt nog altijd hoe ik werk: ik vind het belangrijk hoe iets functioneert, hoe het eruitziet en hoe mensen het ervaren."
+    },
+
+    "story": {
+      "title": "achtergrond",
+      "paragraph1": "Mijn eerste achtergrond was visueel. Ik werkte met typografie, lay-out, branding en printproductie voordat ik mij verder verdiepte in digitaal design en development.",
+      "paragraph2": "Programmeren gaf mij een andere manier om dingen te creëren. In plaats van alleen te ontwerpen hoe iets eruit moet zien, kon ik ook bouwen hoe het werkt, hoe data erdoor stroomt en hoe mensen ermee interageren."
+    },
+
+    "current": {
+      "title": "vandaag",
+      "lead": "Vandaag ligt mijn werk ergens tussen softwareontwikkeling, databasewerk, interactiedesign en creatieve technologie.",
+      "paragraph1": "Professioneel werk ik als SQL Developer, terwijl ik naast mijn studies interactieve digitale en fysieke projecten blijf bouwen.",
+      "paragraph2": "Ik werk vooral graag aan projecten waarbij software verbonden wordt met de fysieke wereld — interfaces, installaties, sensoren, embedded systems en ervaringen die mensen daadwerkelijk kunnen aanraken."
+    },
+
+    "approach": {
+      "title": "hoe ik werk",
+
+      "understand": {
+        "title": "begrijpen",
+        "text": "Ik begin met het begrijpen van het probleem, de context en wat de ervaring uiteindelijk moet bereiken."
+      },
+
+      "make": {
+        "title": "maken",
+        "text": "Ik zet ideeën graag snel om in werkende prototypes in plaats van alles te lang theoretisch te houden."
+      },
+
+      "refine": {
+        "title": "verfijnen",
+        "text": "Wanneer iets werkt, verfijn ik de interactie, visuele details en technische structuur totdat het geheel coherent aanvoelt."
+      }
+    },
+
+    "focus": {
+      "title": "waar ik mee werk",
+
+      "software": {
+        "title": "software",
+        "text": "TypeScript, React, Next.js, Node.js, SQL, API's en backendontwikkeling."
+      },
+
+      "interaction": {
+        "title": "interactie",
+        "text": "UI-design, interactiedesign, prototyping en digitale productervaringen."
+      },
+
+      "physical": {
+        "title": "fysiek",
+        "text": "Raspberry Pi, ESP32, RFID, sensoren, LEDs en interactieve installaties."
+      },
+
+      "visual": {
+        "title": "visueel",
+        "text": "Grafisch ontwerp, visuele identiteit, typografie, lay-out en visuele systemen."
+      }
+    }
+  },
+
+  "journal": {
+    "hero": {
+      "line1": "gedachten uit",
+      "line2": "de dingen",
+      "line3": "die ik maak.",
+      "description": "Notities over software, design, creatieve technologie en wat ik leer terwijl ik dingen bouw."
+    },
+
+    "sections": {
+      "latest": "laatste artikel",
+      "all": "alle artikels"
+    },
+
+    "card": {
+      "readEntry": "lees artikel"
+    },
+
+    "bottom": {
+      "text": "Een plek voor dingen die niet noodzakelijk in een case study thuishoren - observaties, lessen en notities uit het werk achter het werk."
+    },
+    "detail": {
+      "back": "alle journalartikels",
+      "nextArticle": "volgend artikel",
+      "readingTime": "{minutes} min leestijd",
+      "label": "journal"
+    }
+  },
+
+"contact": {
+  "hero": {
+    "eyebrow": "contact",
+    "line1": "iets",
+    "line2": "in gedachten?",
+    "line3": "laten we praten.",
+    "description": "Of het nu gaat om een digitaal product, een interactieve ervaring, creatieve technologie of gewoon een interessant idee. Neem gerust contact op."
+  },
+
+  "info": {
+    "eyebrow": "contactgegevens",
+    "title": "neem contact op",
+    "description": "Heb je een project, idee of opportuniteit in gedachten? Je kunt mij hier rechtstreeks bereiken.",
+    "email": "e-mail",
+    "basedIn": "gevestigd in",
+    "location": "Gent, België",
+    "online": "online",
+    "reply": "Ik antwoord meestal zo snel mogelijk."
+  },
+
+  "form": {
+    "eyebrow": "jouw bericht",
+    "title": "stuur me een bericht",
+    "description": "Vertel me wat je in gedachten hebt. Je hebt geen perfecte briefing nodig om een gesprek te beginnen.",
+
+    "name": "naam",
+    "email": "e-mail",
+    "subject": "onderwerp",
+    "message": "bericht",
+
+    "namePlaceholder": "Je naam",
+    "emailPlaceholder": "jij@voorbeeld.be",
+    "subjectPlaceholder": "Waarover wil je praten?",
+    "messagePlaceholder": "Vertel me kort iets over je idee...",
+
+    "hint": "Je bericht wordt rechtstreeks naar mij verstuurd.",
+    "sendingMessage": "Je bericht wordt verstuurd...",
+
+    "send": "verstuur bericht",
+    "sending": "versturen...",
+
+    "successTitle": "Bericht verzonden!",
+    "success": "Bedankt voor je bericht. Ik antwoord zo snel mogelijk.",
+
+    "errorTitle": "Bericht niet verzonden",
+    "error": "Er ging iets mis. Probeer het opnieuw."
+  },
+
+  "message": {
+    "label": "geen perfecte briefing nodig.",
+    "text": "Soms begint een goed project met niets meer dan een idee en een gesprek."
+  }
+},
+
+  "privacy": {
+    "title": "privacybeleid",
+    "intro": "Deze website respecteert je privacy en verwerkt alleen de gegevens die nodig zijn om te antwoorden op berichten die via het contactformulier worden verstuurd.",
+
+    "sections": {
+      "data": "persoonsgegevens",
+      "purpose": "waarvoor je gegevens worden gebruikt",
+      "storage": "bewaring van gegevens",
+      "thirdParties": "derde partijen",
+      "rights": "je rechten",
+      "contact": "contact"
+    }
+  },
+
+  "common": {
+    "viewProject": "bekijk project",
+    "viewAll": "bekijk alles",
+    "readMore": "lees meer",
+    "readArticle": "lees artikel",
+    "back": "terug",
+    "next": "volgende",
+    "previous": "vorige",
+    "copy": "kopiëren",
+    "copied": "gekopieerd!",
+    "close": "sluiten",
+    "open": "openen"
+  }
+}

@@ -30,11 +30,14 @@
 
   transform: translateY(10px);
 
-  animation: fadeUp 0.5s ease forwards;
+  animation:
+    fadeUp
+    0.6s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
 }
 
 .hero h1 {
-
   margin: 0;
 
   font-size: clamp(58px, 7vw, 104px);
@@ -50,15 +53,16 @@
 
   transform: translateY(30px);
 
-  animation: heroIn 0.8s
-    cubic-bezier(0.22, 1, 0.36, 1)
+  animation:
+    heroIn
+    0.85s
+    cubic-bezier(0.16, 1, 0.3, 1)
     forwards;
 
   animation-delay: 0.1s;
 }
 
 .excerpt {
-
   margin: 36px 0 0;
 
   font-size: clamp(20px, 2vw, 28px);
@@ -70,7 +74,11 @@
 
   transform: translateY(18px);
 
-  animation: fadeUp 0.65s ease forwards;
+  animation:
+    fadeUp
+    0.7s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
 
   animation-delay: 0.35s;
 }
@@ -84,14 +92,15 @@
 }
 
 .coverInner {
-  padding-top: 0;
-  padding-bottom: 0;
+  width: 100%;
+
+  padding: 0;
 }
 
 .cover {
   width: 100%;
 
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 7;
 
   overflow: hidden;
 
@@ -105,6 +114,22 @@
   height: 100%;
 
   object-fit: cover;
+
+  transform: scale(1.001);
+
+  transition:
+    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cover:hover img {
+    transform: scale(1.015);
+
+    filter:
+      saturate(1.02)
+      contrast(1.01);
+  }
 }
 
 /* ========================================
@@ -161,7 +186,7 @@
 .introduction {
   margin: 0 0 100px;
 
-  font-size: clamp(27px, 1vw, 38px);
+  font-size: clamp(27px, 2.2vw, 38px);
   line-height: 1.35;
 
   font-weight: 500;
@@ -226,8 +251,7 @@
 
   padding: 40px 0 40px 38px;
 
-  border-left: 3px solid
-    var(--color-text-secondary);
+  border-left: 3px solid var(--color-brand);
 
   font-size: clamp(28px, 3vw, 43px);
   line-height: 1.25;
@@ -237,6 +261,13 @@
   letter-spacing: -0.02em;
 
   color: var(--color-text-secondary);
+
+  background:
+    linear-gradient(
+      to right,
+      var(--color-brand-soft),
+      transparent 72%
+    );
 }
 
 /* ========================================
@@ -248,8 +279,7 @@
 
   padding-top: 60px;
 
-  border-top: 0.5px solid
-    var(--color-border);
+  border-top: 0.5px solid var(--color-border);
 
   font-size: clamp(25px, 2.2vw, 34px);
   line-height: 1.4;
@@ -283,20 +313,45 @@
   align-items: center;
 }
 
+/* ========================================
+   BACK LINK
+======================================== */
+
 .backLink {
   width: fit-content;
 
-  color: inherit;
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  border: 0.5px solid var(--button-text-hover);
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--button-text-hover);
   text-decoration: none;
 
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
 
-  opacity: 0.75;
+  opacity: 0.88;
 
   transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    opacity 0.4s ease,
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ========================================
+   NEXT ARTICLE
+======================================== */
 
 .nextArticle {
   display: grid;
@@ -307,8 +362,18 @@
 
   column-gap: 30px;
 
-  color: inherit;
+  padding: 26px 0;
+
+  color: var(--color-accent-text);
   text-decoration: none;
+
+  border-top: 0.5px solid var(--color-accent-text);
+  border-bottom: 0.5px solid var(--color-accent-text);
+
+  transition:
+    padding-left 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    padding-right 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.4s ease;
 }
 
 .nextArticle > span:first-child {
@@ -317,6 +382,8 @@
   margin-bottom: 12px;
 
   font-size: 11px;
+
+  color: var(--color-accent-text);
 
   opacity: 0.6;
 }
@@ -330,12 +397,20 @@
   font-weight: 700;
 
   letter-spacing: -0.025em;
+
+  color: var(--color-accent-text);
+
+  transition:
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .arrow {
   font-size: 38px;
 
-  transition: transform 0.25s ease;
+  color: var(--color-accent-text);
+
+  transition:
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ========================================
@@ -344,13 +419,32 @@
 
 @media (hover: hover) and (pointer: fine) {
   .backLink:hover {
+    background: var(--button-text-hover);
+
+    border-color: var(--button-text-hover);
+
+    color: var(--color-section-bg);
+
     opacity: 1;
 
-    transform: translateX(-4px);
+    transform: translateX(-3px);
+  }
+
+  .nextArticle:hover {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    background: var(--color-brand-medium);
+  }
+
+  .nextArticle:hover strong {
+    transform: translateX(2px);
   }
 
   .nextArticle:hover .arrow {
-    transform: translateX(6px);
+    transform:
+      translateX(6px)
+      translateY(-4px);
   }
 }
 
@@ -361,11 +455,13 @@
 @keyframes heroIn {
   from {
     opacity: 0;
+
     transform: translateY(30px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -373,11 +469,13 @@
 @keyframes fadeUp {
   from {
     opacity: 0;
+
     transform: translateY(14px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -418,6 +516,10 @@
 
     padding-top: 90px;
     padding-bottom: 90px;
+  }
+
+  .backLink {
+    width: fit-content;
   }
 }
 
@@ -462,6 +564,8 @@
     padding-bottom: 90px;
 
     gap: 32px;
+
+    box-sizing: border-box;
   }
 
   .articleMeta {
@@ -495,7 +599,11 @@
   .articleSection blockquote {
     margin: 55px 0;
 
-    padding: 25px 0 25px 24px;
+    padding:
+      25px
+      0
+      25px
+      24px;
 
     font-size: 27px;
   }
@@ -511,6 +619,16 @@
 
     padding-top: 75px;
     padding-bottom: 75px;
+  }
+
+  .backLink {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .nextArticle {
+    column-gap: 16px;
   }
 
   .nextArticle strong {
@@ -537,8 +655,18 @@
     animation: none;
   }
 
+  .cover img,
   .backLink,
+  .nextArticle,
+  .nextArticle strong,
   .arrow {
     transition: none;
+  }
+
+  .cover:hover img,
+  .backLink:hover,
+  .nextArticle:hover strong,
+  .nextArticle:hover .arrow {
+    transform: none;
   }
 }

@@ -31,7 +31,11 @@
   opacity: 0;
   transform: translateY(10px);
 
-  animation: fadeUp 0.5s ease forwards;
+  animation:
+    fadeUp
+    0.6s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
 }
 
 .title {
@@ -39,6 +43,7 @@
 
   font-size: clamp(64px, 7.4vw, 112px);
   line-height: 0.91;
+
 
   font-weight: 800;
 
@@ -49,7 +54,9 @@
   opacity: 0;
   transform: translateY(26px);
 
-  animation: heroIn 0.75s
+  animation:
+    heroIn
+    0.8s
     cubic-bezier(0.16, 1, 0.3, 1)
     forwards;
 
@@ -69,7 +76,12 @@
   opacity: 0;
   transform: translateY(18px);
 
-  animation: fadeUp 0.65s ease forwards;
+  animation:
+    fadeUp
+    0.7s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+
   animation-delay: 0.38s;
 }
 
@@ -139,6 +151,10 @@
   color: var(--color-accent-text);
 }
 
+/* =========================
+   FEATURED CARD
+========================= */
+
 .featuredCard {
   display: grid;
   grid-template-columns: 1.35fr 0.65fr;
@@ -150,7 +166,7 @@
 
   background: var(--color-bg);
 
-  border: 0.5px solid rgba(121, 149, 135, 0.7);
+  border: 0.5px solid var(--color-border-strong);
   border-radius: 20px;
 
   overflow: hidden;
@@ -176,7 +192,7 @@
 
   background: var(--color-soft);
 
-  border-right: 0.5px solid rgba(121, 149, 135, 0.55);
+  border-right: 0.5px solid var(--color-border);
 }
 
 .featuredImage img {
@@ -247,6 +263,8 @@
 
   letter-spacing: -0.025em;
 
+  color: var(--color-text);
+
   transition:
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -284,19 +302,19 @@
 
   padding: 0 16px;
 
-  border: 0.5px solid rgba(121, 149, 135, 0.95);
+  border: 0.5px solid var(--button-border);
   border-radius: 999px;
 
-  background: rgba(121, 149, 135, 0.28);
+  background: var(--button-bg);
 
   font-size: 11px;
   line-height: 1;
   font-weight: 700;
 
-  color: #3f5f51;
+  color: var(--button-text);
 
   transition:
-    background 0.4s ease,
+    background-color 0.4s ease,
     color 0.4s ease,
     border-color 0.4s ease,
     transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
@@ -335,9 +353,10 @@
   border-bottom: 0.5px solid var(--color-border);
 
   transition:
-    padding-left 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    padding-left 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    padding-right 0.65s cubic-bezier(0.16, 1, 0.3, 1),
     color 0.4s ease,
-    background 0.4s ease;
+    background-color 0.4s ease;
 }
 
 .number {
@@ -382,8 +401,10 @@
 
   letter-spacing: -0.02em;
 
+  color: var(--color-text);
+
   transition:
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .archiveMain p {
@@ -404,10 +425,10 @@
 
   font-size: 24px;
 
-  color: var(--color-accent-text);
+  color: var(--color-text-secondary);
 
   transition:
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* =========================
@@ -436,6 +457,8 @@
   line-height: 1.2;
 
   letter-spacing: -0.02em;
+
+  color: var(--color-accent-text);
 }
 
 /* =========================
@@ -446,10 +469,9 @@
   .featuredCard:hover {
     transform: translateY(-5px);
 
-    border-color: rgba(121, 149, 135, 0.95);
+    border-color: var(--color-border-strong);
 
-    box-shadow:
-      0 18px 45px rgba(38, 55, 47, 0.1);
+    box-shadow: var(--shadow-card);
   }
 
   .featuredCard:hover .featuredImage img {
@@ -465,16 +487,18 @@
   }
 
   .featuredCard:hover .readMore {
-    background: #799587;
-    border-color: #799587;
+    background: var(--button-bg-hover);
 
-    color: #ffffff;
+    border-color: var(--button-bg-hover);
+
+    color: var(--button-text-hover);
 
     transform: translateY(-2px);
   }
 
   .archiveItem:hover {
     padding-left: 10px;
+    padding-right: 10px;
 
     color: var(--color-text-secondary);
   }
@@ -497,11 +521,13 @@
 @keyframes heroIn {
   from {
     opacity: 0;
+
     transform: translateY(26px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -509,11 +535,13 @@
 @keyframes fadeUp {
   from {
     opacity: 0;
+
     transform: translateY(14px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -540,7 +568,7 @@
     min-height: 420px;
 
     border-right: 0;
-    border-bottom: 0.5px solid rgba(121, 149, 135, 0.55);
+    border-bottom: 0.5px solid var(--color-border);
   }
 
   .featuredContent {
@@ -741,6 +769,7 @@
   .featuredCard:hover .featuredImage img,
   .featuredCard:hover .featuredContent h3,
   .featuredCard:hover .readMore,
+  .archiveItem:hover,
   .archiveItem:hover .archiveMain h3,
   .archiveItem:hover .arrow {
     transform: none;

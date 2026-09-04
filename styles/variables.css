@@ -1,25 +1,172 @@
 :root {
-  --color-bg: #F8FFFB;
-  --color-text: #000000;
-  --color-text-secondary: #799587;
-  --color-accent: #C1D1C9;
+
+  /* =========================
+     BASE COLORS
+  ========================= */
+
+  --color-bg: #f4f4f1;
+
+  --color-text: #111111;
+
+  --color-text-secondary: #2b2b2b;
+
+  --color-accent: #d8d8d2;
+
   --color-accent-text: #ffffff;
-  --color-soft: #ededed;
-  --color-border: #13740c;
-  --color-section-bg: #799587;
+
+  --color-soft: #e7e7e2;
+
+  --color-section-bg: #171717;
+
+
+  /* =========================
+     BRAND / BLACK
+  ========================= */
+
+  --color-brand: #2b2b2b;
+
+  --color-brand-dark: #0d0d0d;
+
+  --color-brand-light: #d8d8d2;
+
+  --color-brand-soft: rgba(20, 20, 20, 0.14);
+
+  --color-brand-medium: rgba(20, 20, 20, 0.38);
+
+  --color-brand-strong: rgba(20, 20, 20, 0.78);
+
+
+  /* =========================
+     BORDERS
+  ========================= */
+
+  --color-border: rgba(20, 20, 20, 0.28);
+
+  --color-border-strong: rgba(20, 20, 20, 0.82);
+
+  --color-border-dark: #111111;
+
+
+  /* =========================
+     BUTTONS
+  ========================= */
+
+  --button-bg: rgba(20, 20, 20, 0.12);
+
+  --button-bg-hover: #171717;
+
+  --button-text: #171717;
+
+  --button-text-hover: #ffffff;
+
+  --button-border: rgba(20, 20, 20, 0.78);
+
+
+  /* =========================
+     TAGS / PILLS
+  ========================= */
+
+  --tag-bg: rgba(20, 20, 20, 0.58);
+
+  --tag-bg-hover: rgba(20, 20, 20, 0.9);
+
+  --tag-border: rgba(255, 255, 255, 0.28);
+
+  --tag-text: #ffffff;
+
+
+  /* =========================
+     OVERLAYS
+  ========================= */
+
+  --overlay-top: rgba(0, 0, 0, 0.08);
+
+  --overlay-middle: rgba(0, 0, 0, 0.1);
+
+  --overlay-bottom: rgba(0, 0, 0, 0.9);
+
+
+  /* =========================
+     SHADOWS
+  ========================= */
+
+  --shadow-soft:
+    0 14px 35px rgba(0, 0, 0, 0.08);
+
+  --shadow-card:
+    0 20px 50px rgba(0, 0, 0, 0.16);
+
+
+  /* =========================
+     GLOBAL GRADIENT
+  ========================= */
+
+  --gradient-color-one: 45, 45, 45;
+
+  --gradient-color-two: 185, 185, 175;
+
+  --gradient-one-inner: rgba(
+    var(--gradient-color-one),
+    0.24
+  );
+
+  --gradient-one-middle: rgba(
+    var(--gradient-color-one),
+    0.12
+  );
+
+  --gradient-one-transparent: rgba(
+    var(--gradient-color-one),
+    0
+  );
+
+  --gradient-two-inner: rgba(
+    var(--gradient-color-two),
+    0.3
+  );
+
+  --gradient-two-middle: rgba(
+    var(--gradient-color-two),
+    0.14
+  );
+
+  --gradient-two-transparent: rgba(
+    var(--gradient-color-two),
+    0
+  );
+
+
+  /* =========================
+     LAYOUT
+  ========================= */
 
   --site-width: 1320px;
+
   --page-padding: 40px;
+
   --section-height: 900px;
 
-  /* typography */
+
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+
   --font-size-hero: 84px;
+
   --font-size-section: 42px;
+
   --font-size-body-lg: 32px;
+
   --font-size-body: 30px;
+
   --font-size-card-title: 15px;
+
   --font-size-card-body: 12px;
+
   --font-size-meta: 10px;
+
   --font-size-nav: 16px;
+
   --font-size-footer-cta: 28px;
+
 }

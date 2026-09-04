@@ -1,19 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+
 import projects from "@/data/projects.json";
+
 import styles from "./ProjectDetail.module.css";
+
+type Locale = "en" | "nl";
 
 type Props = {
   params: Promise<{
+    locale: string;
     slug: string;
   }>;
 };
 
+/* ========================================
+   METADATA
+======================================== */
+
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+
+  const currentLocale: Locale =
+    locale === "nl" ? "nl" : "en";
 
   const project = projects.find(
     (project) => project.slug === slug
@@ -25,19 +39,24 @@ export async function generateMetadata({
 
   return {
     title: project.seo.title,
+
     description: project.seo.description,
+
     keywords: project.seo.keywords,
 
     openGraph: {
       title: project.seo.title,
+
       description: project.seo.description,
+
       type: "article",
 
       images: project.image
         ? [
             {
               url: project.image,
-              alt: `${project.title} — ${project.subtitle}`,
+
+              alt: `${project.title} — ${project.subtitle[currentLocale]}`,
             },
           ]
         : [],
@@ -45,7 +64,9 @@ export async function generateMetadata({
 
     twitter: {
       card: "summary_large_image",
+
       title: project.seo.title,
+
       description: project.seo.description,
 
       images: project.image
@@ -55,10 +76,22 @@ export async function generateMetadata({
   };
 }
 
+/* ========================================
+   PAGE
+======================================== */
+
 export default async function ProjectPage({
   params,
 }: Props) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+
+  const currentLocale: Locale =
+    locale === "nl" ? "nl" : "en";
+
+  const t = await getTranslations({
+    locale,
+    namespace: "work.detail",
+  });
 
   const project = projects.find(
     (project) => project.slug === slug
@@ -70,15 +103,19 @@ export default async function ProjectPage({
 
   return (
     <main className={styles.page}>
+      {/* ========================================
+          HERO
+      ======================================== */}
 
-      <section className={`siteContainer ${styles.hero}`}>
+      <section
+        className={`siteContainer ${styles.hero}`}
+      >
         <div className={styles.heading}>
           <div>
-
             <h1>{project.title}</h1>
 
             <p className={styles.subtitle}>
-              {project.subtitle}
+              {project.subtitle[currentLocale]}
             </p>
           </div>
 
@@ -88,6 +125,9 @@ export default async function ProjectPage({
         </div>
       </section>
 
+      {/* ========================================
+          COVER
+      ======================================== */}
 
       <section className={styles.coverSection}>
         <div className={styles.coverInner}>
@@ -95,7 +135,7 @@ export default async function ProjectPage({
             {project.image ? (
               <img
                 src={project.image}
-                alt={`${project.title} – ${project.subtitle}`}
+                alt={`${project.title} – ${project.subtitle[currentLocale]}`}
               />
             ) : (
               <div
@@ -107,39 +147,55 @@ export default async function ProjectPage({
         </div>
       </section>
 
+      {/* ========================================
+          OVERVIEW
+      ======================================== */}
 
-      <section className={`siteContainer ${styles.overviewSection}`}>
+      <section
+        className={`siteContainer ${styles.overviewSection}`}
+      >
         <div className={styles.projectInfo}>
           <div className={styles.infoItem}>
-            <span>client</span>
+            <span>{t("client")}</span>
+
             <p>{project.details.client}</p>
           </div>
 
           <div className={styles.infoItem}>
-            <span>role</span>
-            <p>{project.details.role}</p>
+            <span>{t("role")}</span>
+
+            <p>
+              {project.details.role[currentLocale]}
+            </p>
           </div>
 
           <div className={styles.infoItem}>
-            <span>type</span>
-            <p>{project.details.type}</p>
+            <span>{t("type")}</span>
+
+            <p>
+              {project.details.type[currentLocale]}
+            </p>
           </div>
 
           <div className={styles.infoItem}>
-            <span>year</span>
+            <span>{t("year")}</span>
+
             <p>{project.year}</p>
           </div>
 
           {project.details.status && (
             <div className={styles.infoItem}>
-              <span>status</span>
-              <p>{project.details.status}</p>
+              <span>{t("status")}</span>
+
+              <p>
+                {project.details.status[currentLocale]}
+              </p>
             </div>
           )}
 
           {project.tag.length > 0 && (
             <div className={styles.infoItem}>
-              <span>category</span>
+              <span>{t("category")}</span>
 
               <p>
                 {project.tag.join(" / ")}
@@ -149,10 +205,15 @@ export default async function ProjectPage({
         </div>
 
         <div className={styles.overview}>
-          <p>{project.overview}</p>
+          <p>
+            {project.overview[currentLocale]}
+          </p>
         </div>
       </section>
 
+      {/* ========================================
+          TECHNOLOGIES
+      ======================================== */}
 
       {project.technologies.length > 0 && (
         <section
@@ -160,7 +221,10 @@ export default async function ProjectPage({
         >
           <div className={styles.sectionLabel}>
             <span>01</span>
-            <h2>technologies</h2>
+
+            <h2>
+              {t("technologies")}
+            </h2>
           </div>
 
           <div className={styles.technologyList}>
@@ -175,6 +239,9 @@ export default async function ProjectPage({
         </section>
       )}
 
+      {/* ========================================
+          ABOUT
+      ======================================== */}
 
       <section className={styles.contentSection}>
         <div
@@ -187,14 +254,22 @@ export default async function ProjectPage({
                 : "01"}
             </span>
 
-            <h2>about the project</h2>
+            <h2>
+              {t("about")}
+            </h2>
           </div>
 
           <div className={styles.largeText}>
-            <p>{project.content.intro}</p>
+            <p>
+              {project.content.intro[currentLocale]}
+            </p>
           </div>
         </div>
       </section>
+
+      {/* ========================================
+          CHALLENGE + APPROACH
+      ======================================== */}
 
       {(project.content.challenge ||
         project.content.approach) && (
@@ -202,7 +277,9 @@ export default async function ProjectPage({
           className={`siteContainer ${styles.twoColumnSection}`}
         >
           {project.content.challenge && (
-            <article className={styles.contentBlock}>
+            <article
+              className={styles.contentBlock}
+            >
               <div className={styles.sectionLabel}>
                 <span>
                   {project.technologies.length > 0
@@ -210,17 +287,25 @@ export default async function ProjectPage({
                     : "02"}
                 </span>
 
-                <h2>challenge</h2>
+                <h2>
+                  {t("challenge")}
+                </h2>
               </div>
 
               <p>
-                {project.content.challenge}
+                {
+                  project.content.challenge[
+                    currentLocale
+                  ]
+                }
               </p>
             </article>
           )}
 
           {project.content.approach && (
-            <article className={styles.contentBlock}>
+            <article
+              className={styles.contentBlock}
+            >
               <div className={styles.sectionLabel}>
                 <span>
                   {project.technologies.length > 0
@@ -228,17 +313,26 @@ export default async function ProjectPage({
                     : "03"}
                 </span>
 
-                <h2>approach</h2>
+                <h2>
+                  {t("approach")}
+                </h2>
               </div>
 
               <p>
-                {project.content.approach}
+                {
+                  project.content.approach[
+                    currentLocale
+                  ]
+                }
               </p>
             </article>
           )}
         </section>
       )}
 
+      {/* ========================================
+          RESULT
+      ======================================== */}
 
       {project.content.result && (
         <section className={styles.resultSection}>
@@ -252,16 +346,27 @@ export default async function ProjectPage({
                   : "04"}
               </span>
 
-              <h2>result</h2>
+              <h2>
+                {t("result")}
+              </h2>
             </div>
 
             <div className={styles.largeText}>
-              <p>{project.content.result}</p>
+              <p>
+                {
+                  project.content.result[
+                    currentLocale
+                  ]
+                }
+              </p>
             </div>
           </div>
         </section>
       )}
 
+      {/* ========================================
+          GALLERY
+      ======================================== */}
 
       {project.gallery.length > 0 && (
         <section className={styles.gallerySection}>
@@ -275,7 +380,9 @@ export default async function ProjectPage({
                   : "05"}
               </span>
 
-              <h2>gallery</h2>
+              <h2>
+                {t("gallery")}
+              </h2>
             </div>
 
             <div className={styles.gallery}>

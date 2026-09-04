@@ -1,20 +1,27 @@
 .header {
   width: 100%;
+
   margin-top: 2rem;
 
   position: relative;
-  z-index: 2000;
 
+  z-index: 2000;
 }
+
+/* =========================
+   NAV
+========================= */
 
 .nav {
   position: relative;
+
   z-index: 2002;
 
   height: 80px;
 
   display: grid;
   grid-template-columns: 1fr auto 1fr;
+
   align-items: center;
 }
 
@@ -27,21 +34,25 @@
 
   display: flex;
   align-items: center;
+
   gap: 0;
 
   color: var(--color-text-secondary);
   text-decoration: none;
 
   transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    color 0.25s ease;
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.4s ease;
 }
 
 .logo {
   font-size: 32px;
   line-height: 1;
+
   font-weight: 800;
+
+  color: inherit;
 }
 
 .logoDots {
@@ -53,7 +64,10 @@
 
   font-size: 28px;
   line-height: 0.25;
+
   font-weight: 800;
+
+  color: inherit;
 
   opacity: 0;
 
@@ -62,8 +76,8 @@
     translateX(-3px);
 
   transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .logoDots span {
@@ -95,6 +109,7 @@
 .navLink {
   display: flex;
   align-items: center;
+
   gap: 0;
 
   color: var(--color-text-secondary);
@@ -102,13 +117,14 @@
 
   font-size: var(--font-size-nav);
   line-height: 1;
+
   font-weight: 400;
 
   white-space: nowrap;
 
   transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dots {
@@ -120,7 +136,10 @@
 
   font-size: 24px;
   line-height: 0.25;
+
   font-weight: 800;
+
+  color: inherit;
 
   opacity: 0;
 
@@ -129,8 +148,8 @@
     translateX(-3px);
 
   transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dots span {
@@ -175,9 +194,11 @@
   padding: 0;
 
   border: 0;
-  background: none;
+
+  background: transparent;
 
   color: inherit;
+
   font: inherit;
 
   opacity: 0.5;
@@ -185,12 +206,13 @@
   cursor: pointer;
 
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+    opacity 0.35s ease,
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .languageActive {
   opacity: 1 !important;
+
   font-weight: 700 !important;
 }
 
@@ -209,6 +231,7 @@
   position: relative;
 
   border: 0;
+
   background: transparent;
 
   cursor: pointer;
@@ -227,9 +250,9 @@
   transform-origin: center;
 
   transition:
-    top 0.3s ease,
-    transform 0.3s ease,
-    background 0.3s ease;
+    top 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.35s ease;
 }
 
 .menuButton span:first-child {
@@ -314,10 +337,12 @@
     margin-top: 0;
 
     position: relative;
+
     z-index: 2000;
 
     background: transparent;
   }
+
   .nav {
     position: relative;
 
@@ -394,7 +419,7 @@
     justify-self: end;
   }
 
-  /* menu open = logo + X wit */
+  /* menu open = light logo + X */
 
   .header:has(.mobileMenuOpen) .logoLink {
     color: var(--color-accent-text);
@@ -431,9 +456,9 @@
     transform: translateY(-12px);
 
     transition:
-      opacity 0.3s ease,
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-      visibility 0s linear 0.45s;
+      opacity 0.4s ease,
+      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s linear 0.65s;
   }
 
   .mobileMenuOpen {
@@ -446,8 +471,8 @@
     transform: translateY(0);
 
     transition:
-      opacity 0.3s ease,
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.4s ease,
+      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
       visibility 0s;
   }
 
@@ -474,29 +499,34 @@
     display: flex;
     flex-direction: column;
 
-    border-top: 0.5px solid currentColor;
+    border-top: 0.5px solid var(--color-accent-text);
   }
 
   .mobileLink {
     min-height: 72px;
 
     display: grid;
-    grid-template-columns: 38px minmax(0, 1fr) auto;
+
+    grid-template-columns:
+      38px
+      minmax(0, 1fr)
+      auto;
 
     align-items: center;
 
-    color: inherit;
+    color: var(--color-accent-text);
     text-decoration: none;
 
-    border-bottom: 0.5px solid currentColor;
+    border-bottom: 0.5px solid var(--color-accent-text);
 
     opacity: 0;
 
     transform: translateY(14px);
 
     transition:
-      opacity 0.35s ease,
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 0.45s ease,
+      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 0.4s ease;
   }
 
   .mobileMenuOpen .mobileLink {
@@ -508,6 +538,8 @@
   .mobileIndex {
     font-size: 9px;
     line-height: 1;
+
+    color: var(--color-accent-text);
 
     opacity: 0.5;
   }
@@ -521,6 +553,8 @@
     font-weight: 700;
 
     letter-spacing: -0.03em;
+
+    color: var(--color-accent-text);
   }
 
   /* =========================
@@ -537,15 +571,18 @@
 
     font-size: 32px;
     line-height: 0.2;
+
     font-weight: 800;
+
+    color: var(--color-accent-text);
 
     opacity: 0;
 
     transform: translateX(-4px);
 
     transition:
-      opacity 0.25s ease,
-      transform 0.25s ease;
+      opacity 0.4s ease,
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .mobileDots span {
@@ -630,7 +667,10 @@
   .mobileLink {
     min-height: 66px;
 
-    grid-template-columns: 30px minmax(0, 1fr) auto;
+    grid-template-columns:
+      30px
+      minmax(0, 1fr)
+      auto;
   }
 
   .mobileLabel {

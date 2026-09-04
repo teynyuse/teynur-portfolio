@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import "./globals.css";
 
 const kefa = localFont({
@@ -26,7 +24,7 @@ const kefa = localFont({
   variable: "--font-kefa",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://www.teynuryuseinov.be"),
 
   title: {
@@ -60,11 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kefa.variable}>
-        <Navigation />
-
         {children}
-
-        <Footer />
       </body>
     </html>
   );

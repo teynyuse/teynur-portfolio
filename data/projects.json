@@ -3,7 +3,10 @@
     "id": 1,
     "slug": "evolution-wall",
     "title": "Evolution Wall",
-    "subtitle": "Interactive museum installation",
+    "subtitle": {
+      "en": "Interactive museum installation",
+      "nl": "Interactieve museuminstallatie"
+    },
     "year": 2026,
     "featured": true,
     "tag": [
@@ -30,18 +33,42 @@
         "portfolio"
       ]
     },
-    "overview": "An interactive installation that connects digital content with physical interaction to create an accessible museum experience.",
+    "overview": {
+      "en": "An interactive installation that connects digital content with physical interaction to create an accessible museum experience.",
+      "nl": "Een interactieve installatie die digitale content verbindt met fysieke interactie om een toegankelijke museumervaring te creëren."
+    },
     "details": {
       "client": "Academic project",
-      "role": "Design and Development",
-      "type": "Interactive Installation",
-      "status": "Completed"
+      "role": {
+        "en": "Design and Development",
+        "nl": "Design en development"
+      },
+      "type": {
+        "en": "Interactive Installation",
+        "nl": "Interactieve installatie"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Evolution Wall explores how software, visual design and physical interaction can work together in a museum environment. The experience was designed to make digital content feel tangible rather than presenting information on a traditional screen.",
-      "challenge": "The project required a clear interaction flow that visitors could understand immediately while also connecting several technical systems behind the scenes.",
-      "approach": "I designed the visitor journey, built the interactive experience and connected the application to supporting services responsible for content and media handling. The visual interface was kept deliberately simple so that the interaction remained the main focus.",
-      "result": "The final installation combines physical interaction with a responsive digital experience and demonstrates how software can become part of a physical environment."
+      "intro": {
+        "en": "Evolution Wall explores how software, visual design and physical interaction can work together in a museum environment. The experience was designed to make digital content feel tangible rather than presenting information on a traditional screen.",
+        "nl": "Evolution Wall onderzoekt hoe software, visueel design en fysieke interactie kunnen samenwerken in een museumomgeving. De ervaring werd ontworpen om digitale content tastbaar te maken in plaats van informatie alleen op een traditioneel scherm te tonen."
+      },
+      "challenge": {
+        "en": "The project required a clear interaction flow that visitors could understand immediately while also connecting several technical systems behind the scenes.",
+        "nl": "Het project vereiste een duidelijke interactieflow die bezoekers onmiddellijk konden begrijpen, terwijl achter de schermen verschillende technische systemen met elkaar verbonden moesten worden."
+      },
+      "approach": {
+        "en": "I designed the visitor journey, built the interactive experience and connected the application to supporting services responsible for content and media handling. The visual interface was kept deliberately simple so that the interaction remained the main focus.",
+        "nl": "Ik ontwierp de bezoekerservaring, bouwde de interactieve toepassing en koppelde die aan ondersteunende services voor content- en mediaverwerking. De visuele interface werd bewust eenvoudig gehouden zodat de interactie centraal bleef staan."
+      },
+      "result": {
+        "en": "The final installation combines physical interaction with a responsive digital experience and demonstrates how software can become part of a physical environment.",
+        "nl": "De uiteindelijke installatie combineert fysieke interactie met een responsieve digitale ervaring en toont hoe software onderdeel kan worden van een fysieke omgeving."
+      }
     },
     "gallery": []
   },
@@ -49,7 +76,10 @@
     "id": 2,
     "slug": "het-fossielenspoor",
     "title": "Het Fossielenspoor",
-    "subtitle": "Physical and digital museum experience",
+    "subtitle": {
+      "en": "Physical and digital museum experience",
+      "nl": "Fysieke en digitale museumervaring"
+    },
     "year": 2026,
     "featured": true,
     "tag": [
@@ -81,18 +111,42 @@
         "creative technology"
       ]
     },
-    "overview": "A museum experience in which visitors discover fossils through RFID-enabled physical objects, light, sound and an interactive touchscreen.",
+    "overview": {
+      "en": "A museum experience in which visitors discover fossils through RFID-enabled physical objects, light, sound and an interactive touchscreen.",
+      "nl": "Een museumervaring waarbij bezoekers fossielen ontdekken via fysieke objecten met RFID, licht, geluid en een interactief touchscreen."
+    },
     "details": {
       "client": "Huis van Kina",
-      "role": "Interaction Design and Development",
-      "type": "Interactive Museum Installation",
-      "status": "Completed"
+      "role": {
+        "en": "Interaction Design and Development",
+        "nl": "Interactiedesign en development"
+      },
+      "type": {
+        "en": "Interactive Museum Installation",
+        "nl": "Interactieve museuminstallatie"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Het Fossielenspoor was designed as a playful way for children to discover fossils through physical exploration. Instead of navigating a conventional interface, visitors interact with physical fossil objects that trigger digital information on a touchscreen.",
-      "challenge": "The experience had to remain simple enough for young visitors while coordinating RFID detection, LED feedback, audio, images and interface states across several pieces of hardware.",
-      "approach": "I created a React and TypeScript interface running on a Raspberry Pi and connected RFID scanning to the application. An ESP32 controls LED feedback around the installation. Fossil information, images and audio are managed through structured data so the content can be updated without rebuilding the interface.",
-      "result": "The finished installation creates a direct connection between touching a physical object and discovering its digital story, combining web development, embedded hardware and interaction design in one experience."
+      "intro": {
+        "en": "Het Fossielenspoor was designed as a playful way for children to discover fossils through physical exploration. Instead of navigating a conventional interface, visitors interact with physical fossil objects that trigger digital information on a touchscreen.",
+        "nl": "Het Fossielenspoor werd ontworpen als een speelse manier voor kinderen om fossielen te ontdekken via fysieke verkenning. In plaats van een klassieke interface te gebruiken, werken bezoekers met fysieke fossielobjecten die digitale informatie op een touchscreen activeren."
+      },
+      "challenge": {
+        "en": "The experience had to remain simple enough for young visitors while coordinating RFID detection, LED feedback, audio, images and interface states across several pieces of hardware.",
+        "nl": "De ervaring moest eenvoudig genoeg blijven voor jonge bezoekers, terwijl RFID-detectie, LED-feedback, audio, afbeeldingen en verschillende interfacestaten over meerdere hardwarecomponenten gecoördineerd werden."
+      },
+      "approach": {
+        "en": "I created a React and TypeScript interface running on a Raspberry Pi and connected RFID scanning to the application. An ESP32 controls LED feedback around the installation. Fossil information, images and audio are managed through structured data so the content can be updated without rebuilding the interface.",
+        "nl": "Ik bouwde een React- en TypeScript-interface op een Raspberry Pi en koppelde RFID-scanning aan de applicatie. Een ESP32 stuurt de LED-feedback rond de installatie aan. Fossielinformatie, afbeeldingen en audio worden beheerd via gestructureerde data zodat de inhoud kan worden aangepast zonder de interface opnieuw te bouwen."
+      },
+      "result": {
+        "en": "The finished installation creates a direct connection between touching a physical object and discovering its digital story, combining web development, embedded hardware and interaction design in one experience.",
+        "nl": "De afgewerkte installatie creëert een directe verbinding tussen het aanraken van een fysiek object en het ontdekken van het digitale verhaal ervan, waarbij webdevelopment, embedded hardware en interactiedesign samenkomen in één ervaring."
+      }
     },
     "gallery": []
   },
@@ -100,7 +154,10 @@
     "id": 3,
     "slug": "vree",
     "title": "Vree",
-    "subtitle": "Social scheduling app",
+    "subtitle": {
+      "en": "Social scheduling app",
+      "nl": "Sociale planningsapp"
+    },
     "year": 2026,
     "featured": true,
     "tag": [
@@ -121,18 +178,42 @@
         "calendar app"
       ]
     },
-    "overview": "A mobile app concept focused on making it easier for friends to discover when they are available at the same time.",
+    "overview": {
+      "en": "A mobile app concept focused on making it easier for friends to discover when they are available at the same time.",
+      "nl": "Een mobiel appconcept dat het makkelijker maakt voor vrienden om te ontdekken wanneer ze tegelijk beschikbaar zijn."
+    },
     "details": {
       "client": "Personal project",
-      "role": "Product and Interaction Design",
-      "type": "Mobile Application",
-      "status": "Concept"
+      "role": {
+        "en": "Product and Interaction Design",
+        "nl": "Product- en interactiedesign"
+      },
+      "type": {
+        "en": "Mobile Application",
+        "nl": "Mobiele applicatie"
+      },
+      "status": {
+        "en": "Concept",
+        "nl": "Concept"
+      }
     },
     "content": {
-      "intro": "Vree started from a simple question: when are you free? The application is designed around shared availability instead of long conversations trying to find a date that works for everyone.",
-      "challenge": "Scheduling with friends often requires comparing several calendars, sending multiple messages and repeatedly suggesting dates.",
-      "approach": "The concept combines personal availability, calendar synchronisation and event-specific conversations. Friends can indicate when they are free and immediately discover matching moments.",
-      "result": "Vree turns scheduling into a shared social experience and provides a foundation for a mobile product centred around real-life meetings rather than another general-purpose chat platform."
+      "intro": {
+        "en": "Vree started from a simple question: when are you free? The application is designed around shared availability instead of long conversations trying to find a date that works for everyone.",
+        "nl": "Vree begon vanuit een eenvoudige vraag: wanneer ben jij vrij? De applicatie draait rond gedeelde beschikbaarheid in plaats van lange gesprekken om een datum te vinden die voor iedereen past."
+      },
+      "challenge": {
+        "en": "Scheduling with friends often requires comparing several calendars, sending multiple messages and repeatedly suggesting dates.",
+        "nl": "Afspreken met vrienden vraagt vaak om verschillende agenda’s te vergelijken, meerdere berichten te sturen en telkens opnieuw datums voor te stellen."
+      },
+      "approach": {
+        "en": "The concept combines personal availability, calendar synchronisation and event-specific conversations. Friends can indicate when they are free and immediately discover matching moments.",
+        "nl": "Het concept combineert persoonlijke beschikbaarheid, agendasynchronisatie en gesprekken per evenement. Vrienden kunnen aangeven wanneer ze vrij zijn en meteen overlappende momenten ontdekken."
+      },
+      "result": {
+        "en": "Vree turns scheduling into a shared social experience and provides a foundation for a mobile product centred around real-life meetings rather than another general-purpose chat platform.",
+        "nl": "Vree maakt van plannen een gedeelde sociale ervaring en vormt de basis voor een mobiel product dat draait rond echte ontmoetingen in plaats van nog een algemene chatapp."
+      }
     },
     "gallery": []
   },
@@ -140,7 +221,10 @@
     "id": 4,
     "slug": "quibo",
     "title": "Quibo",
-    "subtitle": "Book exchange platform",
+    "subtitle": {
+      "en": "Book exchange platform",
+      "nl": "Platform voor boekenruil"
+    },
     "year": 2024,
     "featured": false,
     "tag": [
@@ -164,18 +248,42 @@
         "full stack development"
       ]
     },
-    "overview": "A full-stack platform that allows readers to exchange books, organise their collection and connect with other book lovers.",
+    "overview": {
+      "en": "A full-stack platform that allows readers to exchange books, organise their collection and connect with other book lovers.",
+      "nl": "Een full-stack platform waarmee lezers boeken kunnen ruilen, hun collectie organiseren en in contact komen met andere boekenliefhebbers."
+    },
     "details": {
       "client": "Artevelde University of Applied Sciences",
-      "role": "Full-stack Developer",
-      "type": "Web Application",
-      "status": "Completed"
+      "role": {
+        "en": "Full-stack Developer",
+        "nl": "Full-stack developer"
+      },
+      "type": {
+        "en": "Web Application",
+        "nl": "Webapplicatie"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Quibo was my graduation project for the Graduate Degree in Programming. The platform was created around the idea of giving books a second life while bringing readers together.",
-      "challenge": "The application needed to combine several features such as book management, user accounts, reviews, exchanges and conversations while keeping the experience understandable.",
-      "approach": "I developed the frontend with Next.js and created a backend using Express.js and PostgreSQL. The application allows users to maintain a personal bookshelf, discover books from other users, read reviews and communicate with one another.",
-      "result": "Quibo became a complete full-stack application that combined the technical skills I developed throughout the programme into one graduation project."
+      "intro": {
+        "en": "Quibo was my graduation project for the Graduate Degree in Programming. The platform was created around the idea of giving books a second life while bringing readers together.",
+        "nl": "Quibo was mijn afstudeerproject voor het Graduaat Programmeren. Het platform werd gebouwd rond het idee om boeken een tweede leven te geven en lezers met elkaar te verbinden."
+      },
+      "challenge": {
+        "en": "The application needed to combine several features such as book management, user accounts, reviews, exchanges and conversations while keeping the experience understandable.",
+        "nl": "De applicatie moest functies zoals boekbeheer, gebruikersaccounts, reviews, ruilacties en gesprekken combineren zonder de ervaring onoverzichtelijk te maken."
+      },
+      "approach": {
+        "en": "I developed the frontend with Next.js and created a backend using Express.js and PostgreSQL. The application allows users to maintain a personal bookshelf, discover books from other users, read reviews and communicate with one another.",
+        "nl": "Ik ontwikkelde de frontend met Next.js en bouwde een backend met Express.js en PostgreSQL. Gebruikers kunnen een persoonlijke boekenkast beheren, boeken van anderen ontdekken, reviews lezen en met elkaar communiceren."
+      },
+      "result": {
+        "en": "Quibo became a complete full-stack application that combined the technical skills I developed throughout the programme into one graduation project.",
+        "nl": "Quibo groeide uit tot een volledige full-stack applicatie waarin de technische vaardigheden die ik tijdens de opleiding ontwikkelde samenkwamen in één afstudeerproject."
+      }
     },
     "gallery": []
   },
@@ -183,7 +291,10 @@
     "id": 5,
     "slug": "sweet-tooth",
     "title": "Sweet Tooth",
-    "subtitle": "Bakery brand identity",
+    "subtitle": {
+      "en": "Bakery brand identity",
+      "nl": "Visuele identiteit voor een bakkerij"
+    },
     "year": 2024,
     "featured": false,
     "tag": [
@@ -206,18 +317,42 @@
         "logo design"
       ]
     },
-    "overview": "A warm and playful visual identity created for a bakery specialising in cheesecakes and handmade desserts.",
+    "overview": {
+      "en": "A warm and playful visual identity created for a bakery specialising in cheesecakes and handmade desserts.",
+      "nl": "Een warme en speelse visuele identiteit voor een bakkerij gespecialiseerd in cheesecakes en handgemaakte desserts."
+    },
     "details": {
       "client": "Serhat Eyigün",
-      "role": "Brand and Graphic Designer",
-      "type": "Brand Identity",
-      "status": "Completed"
+      "role": {
+        "en": "Brand and Graphic Designer",
+        "nl": "Brand- en grafisch designer"
+      },
+      "type": {
+        "en": "Brand Identity",
+        "nl": "Visuele identiteit"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Sweet Tooth is a visual identity created for a bakery focused on cheesecakes and handmade desserts. The goal was to translate the playful and handcrafted character of the products into a recognisable brand.",
-      "challenge": "The identity needed to feel professional while maintaining the warm and approachable personality associated with a small independent bakery.",
-      "approach": "I developed the visual language around typography, colour, logo design and packaging. The individual elements were designed to work together consistently across physical and digital applications.",
-      "result": "The finished identity gives Sweet Tooth a recognisable visual character that can be applied consistently across packaging, communication and promotional material."
+      "intro": {
+        "en": "Sweet Tooth is a visual identity created for a bakery focused on cheesecakes and handmade desserts. The goal was to translate the playful and handcrafted character of the products into a recognisable brand.",
+        "nl": "Sweet Tooth is een visuele identiteit voor een bakkerij die zich richt op cheesecakes en handgemaakte desserts. Het doel was om het speelse en ambachtelijke karakter van de producten te vertalen naar een herkenbaar merk."
+      },
+      "challenge": {
+        "en": "The identity needed to feel professional while maintaining the warm and approachable personality associated with a small independent bakery.",
+        "nl": "De identiteit moest professioneel aanvoelen en tegelijk de warme en toegankelijke persoonlijkheid van een kleine onafhankelijke bakkerij behouden."
+      },
+      "approach": {
+        "en": "I developed the visual language around typography, colour, logo design and packaging. The individual elements were designed to work together consistently across physical and digital applications.",
+        "nl": "Ik ontwikkelde de visuele taal rond typografie, kleur, logo-ontwerp en verpakking. De verschillende elementen werden ontworpen om consistent samen te werken in fysieke en digitale toepassingen."
+      },
+      "result": {
+        "en": "The finished identity gives Sweet Tooth a recognisable visual character that can be applied consistently across packaging, communication and promotional material.",
+        "nl": "De afgewerkte identiteit geeft Sweet Tooth een herkenbaar visueel karakter dat consequent kan worden toegepast op verpakking, communicatie en promotiemateriaal."
+      }
     },
     "gallery": []
   },
@@ -225,7 +360,10 @@
     "id": 6,
     "slug": "studio-t",
     "title": "Studio T",
-    "subtitle": "Digital agency website",
+    "subtitle": {
+      "en": "Digital agency website",
+      "nl": "Website voor een digitaal bureau"
+    },
     "year": 2022,
     "featured": false,
     "tag": [
@@ -246,18 +384,42 @@
         "digital agency website"
       ]
     },
-    "overview": "A fictional digital agency website created to explore fundamental web design, layout and frontend development.",
+    "overview": {
+      "en": "A fictional digital agency website created to explore fundamental web design, layout and frontend development.",
+      "nl": "Een fictieve website voor een digitaal bureau, gemaakt om de basis van webdesign, lay-out en frontenddevelopment te verkennen."
+    },
     "details": {
       "client": "Academic project",
-      "role": "Designer and Developer",
-      "type": "Website",
-      "status": "Completed"
+      "role": {
+        "en": "Designer and Developer",
+        "nl": "Designer en developer"
+      },
+      "type": {
+        "en": "Website",
+        "nl": "Website"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Studio T is a fictional digital agency created as one of my earlier web design projects.",
-      "challenge": "The goal was to build a coherent agency website while learning how structure, typography and layout translate from design into code.",
-      "approach": "The website was developed using HTML and CSS and includes agency information, project presentation and contact content.",
-      "result": "The project formed part of my transition from visual design toward frontend development and helped establish the foundations of my web development skills."
+      "intro": {
+        "en": "Studio T is a fictional digital agency created as one of my earlier web design projects.",
+        "nl": "Studio T is een fictief digitaal bureau dat ik creëerde als een van mijn eerdere webdesignprojecten."
+      },
+      "challenge": {
+        "en": "The goal was to build a coherent agency website while learning how structure, typography and layout translate from design into code.",
+        "nl": "Het doel was om een samenhangende agencywebsite te bouwen en tegelijk te leren hoe structuur, typografie en lay-out van design naar code worden vertaald."
+      },
+      "approach": {
+        "en": "The website was developed using HTML and CSS and includes agency information, project presentation and contact content.",
+        "nl": "De website werd ontwikkeld met HTML en CSS en bevat informatie over het bureau, projectpresentaties en contactinhoud."
+      },
+      "result": {
+        "en": "The project formed part of my transition from visual design toward frontend development and helped establish the foundations of my web development skills.",
+        "nl": "Het project maakte deel uit van mijn overgang van visueel design naar frontenddevelopment en hielp de basis van mijn webdevelopmentvaardigheden te leggen."
+      }
     },
     "gallery": []
   },
@@ -265,7 +427,10 @@
     "id": 7,
     "slug": "vandotrans",
     "title": "Vandotrans",
-    "subtitle": "Logistics company website",
+    "subtitle": {
+      "en": "Logistics company website",
+      "nl": "Website voor een logistiek bedrijf"
+    },
     "year": 2024,
     "featured": false,
     "tag": [
@@ -285,18 +450,42 @@
         "web development"
       ]
     },
-    "overview": "A straightforward business website presenting the services and contact information of a logistics company.",
+    "overview": {
+      "en": "A straightforward business website presenting the services and contact information of a logistics company.",
+      "nl": "Een duidelijke bedrijfswebsite die de diensten en contactinformatie van een logistiek bedrijf presenteert."
+    },
     "details": {
       "client": "Vandotrans",
-      "role": "Web Designer and Developer",
-      "type": "Business Website",
-      "status": "Completed"
+      "role": {
+        "en": "Web Designer and Developer",
+        "nl": "Webdesigner en developer"
+      },
+      "type": {
+        "en": "Business Website",
+        "nl": "Bedrijfswebsite"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Vandotrans is a logistics company specialising in the transportation of goods and materials.",
-      "challenge": "The company required a straightforward online presence where customers could quickly understand its services and find contact information.",
-      "approach": "I created the website in WordPress with an emphasis on simple navigation and clear presentation of the company's services.",
-      "result": "The finished website provides Vandotrans with a practical digital presence that communicates its core services without unnecessary complexity."
+      "intro": {
+        "en": "Vandotrans is a logistics company specialising in the transportation of goods and materials.",
+        "nl": "Vandotrans is een logistiek bedrijf gespecialiseerd in het vervoeren van goederen en materialen."
+      },
+      "challenge": {
+        "en": "The company required a straightforward online presence where customers could quickly understand its services and find contact information.",
+        "nl": "Het bedrijf had nood aan een duidelijke online aanwezigheid waar klanten snel de diensten konden begrijpen en contactinformatie konden vinden."
+      },
+      "approach": {
+        "en": "I created the website in WordPress with an emphasis on simple navigation and clear presentation of the company's services.",
+        "nl": "Ik bouwde de website in WordPress met de nadruk op eenvoudige navigatie en een heldere presentatie van de diensten van het bedrijf."
+      },
+      "result": {
+        "en": "The finished website provides Vandotrans with a practical digital presence that communicates its core services without unnecessary complexity.",
+        "nl": "De afgewerkte website geeft Vandotrans een praktische digitale aanwezigheid die de kerndiensten communiceert zonder onnodige complexiteit."
+      }
     },
     "gallery": []
   },
@@ -304,7 +493,10 @@
     "id": 8,
     "slug": "cereus-creative",
     "title": "Cereus Creative",
-    "subtitle": "Previous portfolio website",
+    "subtitle": {
+      "en": "Previous portfolio website",
+      "nl": "Vorige portfolio website"
+    },
     "year": 2024,
     "featured": false,
     "tag": [
@@ -326,18 +518,42 @@
         "frontend development"
       ]
     },
-    "overview": "My previous personal portfolio, created to combine my graphic design and development work in a single digital identity.",
+    "overview": {
+      "en": "My previous personal portfolio, created to combine my graphic design and development work in a single digital identity.",
+      "nl": "Mijn vorige persoonlijke portfolio, gemaakt om mijn grafisch design- en developmentwerk samen te brengen in één digitale identiteit."
+    },
     "details": {
       "client": "Personal project",
-      "role": "Designer and Developer",
-      "type": "Portfolio Website",
-      "status": "Completed"
+      "role": {
+        "en": "Designer and Developer",
+        "nl": "Designer en developer"
+      },
+      "type": {
+        "en": "Portfolio Website",
+        "nl": "Portfolio website"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Cereus Creative was an earlier version of my personal portfolio and served as a place to bring together my design and programming work.",
-      "challenge": "My work covered several disciplines, so the website needed to present graphic design and development projects within one consistent visual system.",
-      "approach": "I built the portfolio with Nuxt.js and Tailwind CSS and developed a modular structure for presenting individual projects.",
-      "result": "The project gave me experience designing and developing a personal digital identity and eventually became the predecessor of my current portfolio."
+      "intro": {
+        "en": "Cereus Creative was an earlier version of my personal portfolio and served as a place to bring together my design and programming work.",
+        "nl": "Cereus Creative was een eerdere versie van mijn persoonlijke portfolio en diende als plek om mijn design- en programmeerwerk samen te brengen."
+      },
+      "challenge": {
+        "en": "My work covered several disciplines, so the website needed to present graphic design and development projects within one consistent visual system.",
+        "nl": "Mijn werk omvatte verschillende disciplines, dus de website moest grafisch design en developmentprojecten binnen één consistent visueel systeem presenteren."
+      },
+      "approach": {
+        "en": "I built the portfolio with Nuxt.js and Tailwind CSS and developed a modular structure for presenting individual projects.",
+        "nl": "Ik bouwde het portfolio met Nuxt.js en Tailwind CSS en ontwikkelde een modulaire structuur om individuele projecten te presenteren."
+      },
+      "result": {
+        "en": "The project gave me experience designing and developing a personal digital identity and eventually became the predecessor of my current portfolio.",
+        "nl": "Het project gaf me ervaring in het ontwerpen en ontwikkelen van een persoonlijke digitale identiteit en werd uiteindelijk de voorganger van mijn huidige portfolio."
+      }
     },
     "gallery": []
   },
@@ -345,7 +561,10 @@
     "id": 9,
     "slug": "safe-place",
     "title": "Safe Place",
-    "subtitle": "Online support platform",
+    "subtitle": {
+      "en": "Online support platform",
+      "nl": "Online ondersteuningsplatform"
+    },
     "year": 2024,
     "featured": false,
     "tag": [
@@ -368,18 +587,42 @@
         "web application"
       ]
     },
-    "overview": "An online platform designed to provide young people with an accessible place for community support and information.",
+    "overview": {
+      "en": "An online platform designed to provide young people with an accessible place for community support and information.",
+      "nl": "Een online platform dat jongeren een toegankelijke plek biedt voor steun vanuit de community en informatie."
+    },
     "details": {
       "client": "Academic project",
-      "role": "Web Developer",
-      "type": "Web Application",
-      "status": "Completed"
+      "role": {
+        "en": "Web Developer",
+        "nl": "Webdeveloper"
+      },
+      "type": {
+        "en": "Web Application",
+        "nl": "Webapplicatie"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Safe Place is a web platform designed around providing young people experiencing bullying with an accessible online community.",
-      "challenge": "The platform needed to support community interaction while allowing users to participate without exposing unnecessary personal information.",
-      "approach": "The application was built with Laravel and PHP and includes a forum, anonymous user functionality and an activities section. Tailwind CSS was used to create the responsive interface.",
-      "result": "The project provided practical experience in backend application development while exploring how digital platforms can support community-focused experiences."
+      "intro": {
+        "en": "Safe Place is a web platform designed around providing young people experiencing bullying with an accessible online community.",
+        "nl": "Safe Place is een webplatform dat jongeren die met pesten te maken krijgen een toegankelijke online community biedt."
+      },
+      "challenge": {
+        "en": "The platform needed to support community interaction while allowing users to participate without exposing unnecessary personal information.",
+        "nl": "Het platform moest interactie binnen de community ondersteunen en gebruikers tegelijk laten deelnemen zonder onnodige persoonlijke informatie bloot te geven."
+      },
+      "approach": {
+        "en": "The application was built with Laravel and PHP and includes a forum, anonymous user functionality and an activities section. Tailwind CSS was used to create the responsive interface.",
+        "nl": "De applicatie werd gebouwd met Laravel en PHP en bevat een forum, anonieme gebruikersfunctionaliteit en een activiteitenrubriek. Tailwind CSS werd gebruikt voor de responsieve interface."
+      },
+      "result": {
+        "en": "The project provided practical experience in backend application development while exploring how digital platforms can support community-focused experiences.",
+        "nl": "Het project gaf me praktische ervaring met backendapplicatieontwikkeling en liet me onderzoeken hoe digitale platformen communitygerichte ervaringen kunnen ondersteunen."
+      }
     },
     "gallery": []
   },
@@ -387,7 +630,10 @@
     "id": 10,
     "slug": "twins-see",
     "title": "Twins See",
-    "subtitle": "Optician brand identity",
+    "subtitle": {
+      "en": "Optician brand identity",
+      "nl": "Visuele identiteit voor een opticien"
+    },
     "year": 2022,
     "featured": false,
     "tag": [
@@ -409,18 +655,42 @@
         "logo design"
       ]
     },
-    "overview": "A visual identity built around the fictional story of twin sisters creating a modern and approachable optician brand.",
+    "overview": {
+      "en": "A visual identity built around the fictional story of twin sisters creating a modern and approachable optician brand.",
+      "nl": "Een visuele identiteit rond het fictieve verhaal van tweelingzussen die een moderne en toegankelijke optiekzaak oprichten."
+    },
     "details": {
       "client": "Twins See",
-      "role": "Brand and Graphic Designer",
-      "type": "Brand Identity",
-      "status": "Completed"
+      "role": {
+        "en": "Brand and Graphic Designer",
+        "nl": "Brand- en grafisch designer"
+      },
+      "type": {
+        "en": "Brand Identity",
+        "nl": "Visuele identiteit"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Twins See is a brand identity created around the fictional optician business of twin sisters Martha and Carla.",
-      "challenge": "The identity needed to communicate professionalism while still feeling personal, accessible and distinct from traditional clinical optical branding.",
-      "approach": "I developed the logo, colour system, graphic elements, icons, packaging, posters and business cards as parts of one coherent visual language.",
-      "result": "The project resulted in a complete visual identity that can consistently communicate the brand across both physical and promotional applications."
+      "intro": {
+        "en": "Twins See is a brand identity created around the fictional optician business of twin sisters Martha and Carla.",
+        "nl": "Twins See is een visuele identiteit rond de fictieve optiekzaak van de tweelingzussen Martha en Carla."
+      },
+      "challenge": {
+        "en": "The identity needed to communicate professionalism while still feeling personal, accessible and distinct from traditional clinical optical branding.",
+        "nl": "De identiteit moest professionaliteit uitstralen en tegelijk persoonlijk, toegankelijk en duidelijk anders dan traditionele klinische optiekbranding aanvoelen."
+      },
+      "approach": {
+        "en": "I developed the logo, colour system, graphic elements, icons, packaging, posters and business cards as parts of one coherent visual language.",
+        "nl": "Ik ontwikkelde het logo, kleursysteem, grafische elementen, iconen, verpakking, posters en visitekaartjes als onderdelen van één samenhangende visuele taal."
+      },
+      "result": {
+        "en": "The project resulted in a complete visual identity that can consistently communicate the brand across both physical and promotional applications.",
+        "nl": "Het project resulteerde in een volledige visuele identiteit waarmee het merk consistent kan communiceren in zowel fysieke als promotionele toepassingen."
+      }
     },
     "gallery": [
       {
@@ -441,7 +711,10 @@
     "id": 11,
     "slug": "dija",
     "title": "Dija",
-    "subtitle": "Beverage brand identity",
+    "subtitle": {
+      "en": "Beverage brand identity",
+      "nl": "Visuele identiteit voor een drankmerk"
+    },
     "year": 2022,
     "featured": false,
     "tag": [
@@ -463,18 +736,42 @@
         "graphic design"
       ]
     },
-    "overview": "A colourful sparkling beverage identity built around freshness, fruit flavours and a playful summer aesthetic.",
+    "overview": {
+      "en": "A colourful sparkling beverage identity built around freshness, fruit flavours and a playful summer aesthetic.",
+      "nl": "Een kleurrijke identiteit voor een bruisende drank, opgebouwd rond frisheid, fruitsmaken en een speelse zomerse uitstraling."
+    },
     "details": {
       "client": "Academic project",
-      "role": "Brand and Packaging Designer",
-      "type": "Brand Identity",
-      "status": "Completed"
+      "role": {
+        "en": "Brand and Packaging Designer",
+        "nl": "Brand- en packagingdesigner"
+      },
+      "type": {
+        "en": "Brand Identity",
+        "nl": "Visuele identiteit"
+      },
+      "status": {
+        "en": "Completed",
+        "nl": "Voltooid"
+      }
     },
     "content": {
-      "intro": "Dija is a fictional sparkling beverage brand created around freshness, energy and colourful fruit flavours.",
-      "challenge": "The packaging needed to distinguish several flavours while allowing every product to remain clearly recognisable as part of the same brand.",
-      "approach": "I developed a flexible visual system using vibrant colour combinations, typography, illustration and repeating graphic patterns across the beverage packaging.",
-      "result": "The final identity creates a coherent product family while allowing each flavour to maintain its own visual personality."
+      "intro": {
+        "en": "Dija is a fictional sparkling beverage brand created around freshness, energy and colourful fruit flavours.",
+        "nl": "Dija is een fictief merk voor bruisende dranken, opgebouwd rond frisheid, energie en kleurrijke fruitsmaken."
+      },
+      "challenge": {
+        "en": "The packaging needed to distinguish several flavours while allowing every product to remain clearly recognisable as part of the same brand.",
+        "nl": "De verpakking moest verschillende smaken van elkaar onderscheiden, terwijl elk product duidelijk herkenbaar bleef als onderdeel van hetzelfde merk."
+      },
+      "approach": {
+        "en": "I developed a flexible visual system using vibrant colour combinations, typography, illustration and repeating graphic patterns across the beverage packaging.",
+        "nl": "Ik ontwikkelde een flexibel visueel systeem met levendige kleurcombinaties, typografie, illustratie en herhalende grafische patronen over de verschillende verpakkingen."
+      },
+      "result": {
+        "en": "The final identity creates a coherent product family while allowing each flavour to maintain its own visual personality.",
+        "nl": "De uiteindelijke identiteit vormt een samenhangende productfamilie, terwijl elke smaak zijn eigen visuele persoonlijkheid behoudt."
+      }
     },
     "gallery": [
       {

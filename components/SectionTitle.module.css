@@ -1,15 +1,29 @@
 .sectionTitle {
   display: flex;
   align-items: center;
-  gap: 0px;
+
+  gap: 0;
+
   margin-bottom: 18px;
+
   color: var(--color-text-secondary);
+
+  opacity: 0;
+  transform: translateX(-10px);
+
+  animation:
+    sectionTitleIn
+    0.65s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
 }
 
 .sectionTitle h2 {
   margin: 0;
+
   font-size: var(--font-size-section);
   line-height: 1;
+
   font-weight: 700;
 }
 
@@ -22,18 +36,19 @@
 
   font-size: 48px;
   line-height: 0.25;
+
   font-weight: 800;
+
+  transform: translateY(-0.5rem);
 }
 
 .dots span {
   display: block;
+
   height: 15px;
   line-height: 7px;
 }
 
-.dots {
-  transform: translateY(-0.5rem);
-}
 .dark {
   color: var(--color-text-secondary);
 }
@@ -42,16 +57,61 @@
   color: var(--color-accent-text);
 }
 
-.sectionTitle {
-  opacity: 0;
-  transform: translateX(-10px);
-
-  animation: sectionTitleIn 0.55s ease forwards;
-}
+/* =========================
+   ANIMATION
+========================= */
 
 @keyframes sectionTitleIn {
+  from {
+    opacity: 0;
+
+    transform: translateX(-10px);
+  }
+
   to {
     opacity: 1;
+
     transform: translateX(0);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .sectionTitle {
+    margin-bottom: 18px;
+  }
+
+  .sectionTitle h2 {
+    font-size: var(--font-size-section);
+  }
+
+  .dots {
+    height: 25px;
+
+    font-size: 36px;
+
+    transform: translateY(-0.35rem);
+  }
+
+  .dots span {
+    height: 10px;
+    line-height: 5px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .sectionTitle {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none;
   }
 }
