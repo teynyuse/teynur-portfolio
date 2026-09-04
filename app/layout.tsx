@@ -43,6 +43,10 @@ export const metadata: Metadata = {
 
   creator: "Teynur Yuseinov",
 
+  icons: {
+    icon: "/icon",
+  },
+
   openGraph: {
     type: "website",
     locale: "en_BE",
